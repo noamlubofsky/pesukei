@@ -1,0 +1,18 @@
+import React from "react";
+import styled from "styled-components";
+
+function BaruchHashemLeolam() {
+    return(
+        <div>
+            <Text>
+            בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן: בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ: בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ: וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן:            </Text>
+        </div>
+    )
+}
+
+const Text = styled.div`
+width: 50%;
+font-size: 50px;
+`;
+
+export default BaruchHashemLeolam;
