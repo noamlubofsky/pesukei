@@ -157,20 +157,20 @@ function Footer({minimum,
 }
 
 const FooterSpace = styled.div`
+position: absolute;
   bottom: 0;
-  position: absolute;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 10vh;
+//   min-height: 10vh;
   padding: 2vh;
-  width: 100%;
   border-top: 4px solid grey;
   background-color: rgb(37, 38, 51);
 `;
 
 const Container = styled.div`
 position: relative;
-  min-height: 30vh;
+  min-height: 35vh;
 `;
 
 const Button = styled.button`
