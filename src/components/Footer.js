@@ -170,7 +170,7 @@ const FooterSpace = styled.div`
 
 const Container = styled.div`
 position: relative;
-  min-height: 40vh;
+  min-height: 30vh;
 `;
 
 const Button = styled.button`
