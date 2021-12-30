@@ -119,6 +119,8 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
             navigate('/')
             setUpTo('start')
             setOrder(false)
+            setIsRushing(false)
+            setSaidAshrei(false)
         }
       }
 
@@ -138,7 +140,7 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
             {minimum ? <Button onClick={minimumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</Button> : null}
             {maximum ? <Button onClick={maximumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</Button> : null}
             {order ? <Button onClick={orderClick}>{upTo === 'Barchu' ? 'Done' : 'Keep Going'}</Button> : null}
-            {order === true && upTo !== 'Barchu' ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
+            {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
             </Container>
     )
 }
@@ -158,7 +160,7 @@ const Button = styled.button`
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 90vw;
-  height: 16vh;
+  height: 8vh;
   /* line-height: 50px; */
   font-weight: bold;
   text-decoration: none;
