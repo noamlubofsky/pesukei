@@ -22,6 +22,7 @@ font-size: 30px;
 text-align: right;
 margin-right: 2vw;
 margin-left: 2vw;
+margin-bottom: 5vh;
 `;
 
 export default VayevarechDavidPrimary;
