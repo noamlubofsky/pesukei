@@ -2,7 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
 
-function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo, setUpTo, saidAshrei, setSaidAshrei, isRushing, setIsRushing}) {
+function Footer({minimum, 
+    maximum, 
+    order, 
+    setMinimum, 
+    setMaximum, 
+    setOrder, 
+    upTo, 
+    setUpTo, 
+    saidAshrei, 
+    setSaidAshrei, 
+    isRushing, 
+    setIsRushing,
+    setSaidHallelukah1,
+    setSaidHallelukah2,
+    setSaidHallelukah4
+}) {
 
     let navigate = useNavigate();
 
@@ -14,12 +29,9 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
         navigate('/Yishtabach')
         setUpTo('Yishtabach')
       }else if(upTo === 'Yishtabach'){
-          navigate('/Barchu')
-          setUpTo('Barchu')
-      }else if (upTo === 'Barchu'){
-          navigate('/')
-          setUpTo('start')
-          setMinimum(false)
+        navigate('/')
+        setUpTo('start')
+        setMinimum(false)
       }
     }
 
@@ -70,9 +82,6 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
             navigate('/Yishtabach')
             setUpTo('Yishtabach')
         }else if(upTo === 'Yishtabach'){
-            navigate('/Barchu')
-            setUpTo('Barchu')
-        }else if (upTo === 'Barchu'){
             navigate('/')
             setUpTo('start')
             setMaximum(false)
@@ -83,8 +92,8 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
         if(upTo === 'BaruchSheamar'){
           navigate('/Ashrei')
           setUpTo('Ashrei')
+          setSaidAshrei(true)
         }else if(upTo === 'Ashrei'){
-            setSaidAshrei(true)
             if(isRushing === true){
                 navigate('/Yishtabach')
                 setUpTo('Yishtabach')
@@ -103,6 +112,9 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
         }else if(upTo === 'HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
+            setSaidHallelukah1(false)
+            setSaidHallelukah2(false)
+            setSaidHallelukah4(false)
         }else if(upTo === 'VayevarechDavidPrimary'){
             navigate('/HoduPrimary')
             setUpTo('HoduPrimary')
@@ -113,9 +125,6 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
             navigate('/Extras')
             setUpTo('Extras')
         }else if(upTo === 'Yishtabach'){
-            navigate('/Barchu')
-            setUpTo('Barchu')
-        }else if (upTo === 'Barchu'){
             navigate('/')
             setUpTo('start')
             setOrder(false)
@@ -136,23 +145,32 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
       }
 
     return(
-            <Container>
-            {minimum ? <Button onClick={minimumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</Button> : null}
-            {maximum ? <Button onClick={maximumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</Button> : null}
-            {order ? <Button onClick={orderClick}>{upTo === 'Barchu' ? 'Done' : 'Keep Going'}</Button> : null}
+        <Container>
+                <FooterSpace>
+            {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
+            {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
+            {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
+            </FooterSpace>
             </Container>
     )
 }
 
-const Container = styled.header`
-  float: bottom;
+const FooterSpace = styled.div`
+  bottom: 0;
+  position: absolute;
   justify-content: center;
   align-items: center;
+  min-height: 10vh;
   padding: 2vh;
   width: 100%;
-  border-bottom: 4px solid grey;
+  border-top: 4px solid grey;
   background-color: rgb(37, 38, 51);
+`;
+
+const Container = styled.div`
+position: relative;
+  min-height: 55vh;
 `;
 
 const Button = styled.button`
@@ -160,7 +178,7 @@ const Button = styled.button`
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 90vw;
-  height: 8vh;
+  height: 12vh;
   /* line-height: 50px; */
   font-weight: bold;
   text-decoration: none;

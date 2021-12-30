@@ -6,7 +6,7 @@ function Header() {
         <div>
             <Container>
             <Heading>
-            <h1>פסוקי דזמרא</h1>
+            <h1>סדר פסוקי דזמרא</h1>
             </Heading>
             </Container>
         </div>
@@ -30,6 +30,7 @@ align-items: right;
 justify-content: right;
 float: right;
 margin-right: 5vw;
+color: grey;
 `;
 
 export default Header;

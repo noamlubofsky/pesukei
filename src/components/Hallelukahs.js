@@ -40,6 +40,7 @@ saidHallelukah1
 
     return(
         <div>
+            <Container>
                         {
                 saidHallelukah1 === true 
                 && saidHallelukah2 === true
@@ -47,11 +48,40 @@ saidHallelukah1
                 ? <h1>done</h1>
                 : <h3>All of these are of equal importance. Pick whichever you like and say however many you can.</h3>
             }
-            {saidHallelukah1 ? null : <button onClick={sayHallelukah1}>Hallelukah 1</button>}
-            {saidHallelukah2 ? null : <button onClick={sayHallelukah2}>Hallelukah 2</button>}
-            {saidHallelukah4 ? null : <button onClick={sayHallelukah4}>Hallelukah 4</button>}
+            {saidHallelukah1 ? null : <Button onClick={sayHallelukah1}>Hallelukah 1</Button>}
+            {saidHallelukah2 ? null : <Button onClick={sayHallelukah2}>Hallelukah 2</Button>}
+            {saidHallelukah4 ? null : <Button onClick={sayHallelukah4}>Hallelukah 4</Button>}
+            </Container>
         </div>
     )
 }
+
+
+const Container = styled.header`
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+  width: 100%;
+`;
+
+const Button = styled.button`
+
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 90vw;
+  height: 12vh;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: rgb(37, 38, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* border: 3px solid #2E6268; */
+  transition: all .35s;
+  justify-content: center;
+  font-size: 1.5vh;
+  `;
 
 export default Extras;

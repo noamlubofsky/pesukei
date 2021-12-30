@@ -37,13 +37,12 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo}) {
 }
 
 const Container = styled.div`
-  position: relative;
-  align-items: center;
+//   position: relative;
+  justify-content: center;
+  align-items: center;  
   text-align: center;
-  box-shadow: 0px 0px 5px 0px #DBDBDB;
-  &::-webkit-scrollbar {
-      width: 10px;
-  }
+  width: 100%;
+//   box-shadow: 0px 0px 5px 0px #DBDBDB;
 `;
 
 
@@ -51,7 +50,7 @@ const Button = styled.button`
 
   margin-top: 2vh;
   margin-bottom: 2vh;
-  width: 90vw;
+  width: 90%;
   height: 16vh;
   /* line-height: 50px; */
   font-weight: bold;

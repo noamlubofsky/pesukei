@@ -125,6 +125,9 @@ function App() {
       setSaidAshrei={setSaidAshrei}
       isRushing={isRushing}
       setIsRushing={setIsRushing}
+      setSaidHallelukah1={setSaidHallelukah1}
+      setSaidHallelukah2={setSaidHallelukah2}
+      setSaidHallelukah4={setSaidHallelukah4}
       />
       </Router>
     </div>
