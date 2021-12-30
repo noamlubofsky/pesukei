@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
 
-function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo, setUpTo}) {
+function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo, setUpTo, saidAshrei, setSaidAshrei, isRushing, setIsRushing}) {
 
     let navigate = useNavigate();
 
@@ -84,21 +84,23 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
           navigate('/Ashrei')
           setUpTo('Ashrei')
         }else if(upTo === 'Ashrei'){
+            setSaidAshrei(true)
+            if(isRushing === true){
+                navigate('/Yishtabach')
+                setUpTo('Yishtabach')
+            }else{
           navigate('/Hallelukah5')
-          setUpTo('Hallelukah5')
+          setUpTo('Hallelukah5')}
         }else if(upTo === 'Hallelukah5'){
             navigate('/Hallelukah3')
             setUpTo('Hallelukah3')
         }else if(upTo === 'Hallelukah3'){
-            navigate('/Hallelukah1')
-            setUpTo('Hallelukah1')
-        }else if(upTo === 'Hallelukah1'){
-            navigate('/Hallelukah2')
-            setUpTo('Hallelukah2')
-        }else if(upTo === 'Hallelukah2'){
-            navigate('/Hallelukah4')
-            setUpTo('Hallelukah4')
-        }else if(upTo === 'Hallelukah4'){
+            navigate('/Hallelukahs')
+            setUpTo('Hallelukahs')
+        }else if(upTo === 'Hallelukahs'){
+            navigate('/Hallelukahs')
+            setUpTo('Hallelukahs')
+        }else if(upTo === 'HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
         }else if(upTo === 'VayevarechDavidPrimary'){
@@ -110,46 +112,65 @@ function Footer({minimum, maximum, order, setMinimum, setMaximum, setOrder, upTo
         }else if(upTo === 'Extras'){
             navigate('/Extras')
             setUpTo('Extras')
-        }else if(upTo === 'Hallelukah5'){
-            navigate('/BaruchHashemLeolam')
-            setUpTo('BaruchHashemLeolam')
-        }else if(upTo === 'BaruchHashemLeolam'){
-            navigate('/VayevarechDavidFull')
-            setUpTo('VayevarechDavidFull')
-        }else if(upTo === 'VayevarechDavidFull'){
-            navigate('/Vecharot')
-            setUpTo('Vecharot')
-        }else if(upTo === 'Vecharot'){
-            navigate('/Vayosha')
-            setUpTo('Vayosha')
-        }else if(upTo === 'Vayosha'){
-            navigate('/AzYashir')
-            setUpTo('AzYashir')
-        }else if(upTo === 'AzYashir'){
-            navigate('/Yishtabach')
-            setUpTo('Yishtabach')
         }else if(upTo === 'Yishtabach'){
             navigate('/Barchu')
             setUpTo('Barchu')
         }else if (upTo === 'Barchu'){
             navigate('/')
             setUpTo('start')
-            setMaximum(false)
+            setOrder(false)
         }
       }
 
       const outOfTime = () => {
-          
+          setIsRushing(true)
+        if(saidAshrei === true){
+            navigate('/Yishtabach')
+            setUpTo('Yishtabach')
+      }else{
+          navigate('/Ashrei')
+      }
+        
       }
 
     return(
-        <div>
-            {minimum ? <button onClick={minimumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</button> : null}
-            {maximum ? <button onClick={maximumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</button> : null}
-            {order ? <button onClick={orderClick}>{upTo === 'Extras' ? 'I still have time' : 'Next'}</button> : null}
-            {order ? <button onClick={outOfTime}>I'm out of time</button> : null}
-        </div>
+            <Container>
+            {minimum ? <Button onClick={minimumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</Button> : null}
+            {maximum ? <Button onClick={maximumClick}>{upTo === 'Barchu' ? 'Done' : 'Next'}</Button> : null}
+            {order ? <Button onClick={orderClick}>{upTo === 'Barchu' ? 'Done' : 'Keep Going'}</Button> : null}
+            {order === true && upTo !== 'Barchu' ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
+            </Container>
     )
 }
+
+const Container = styled.header`
+  float: bottom;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+  width: 100%;
+  border-bottom: 4px solid grey;
+  background-color: rgb(37, 38, 51);
+`;
+
+const Button = styled.button`
+
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 90vw;
+  height: 16vh;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: rgb(37, 38, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* border: 3px solid #2E6268; */
+  transition: all .35s;
+  justify-content: center;
+  font-size: 1.5vh;
+  `;
 
 export default Footer;

@@ -28,6 +28,7 @@ import Vecharot from './components/Vecharot'
 import AzYashir from './components/AzYashir'
 import Yishtabach from './components/Yishtabach'
 import Barchu from './components/Barchu'
+import Hallelukahs from './components/Hallelukahs'
 import Extras from './components/Extras'
 
 function App() {
@@ -35,6 +36,19 @@ function App() {
   const [maximum, setMaximum] = useState(false)
   const [order, setOrder] = useState(false)
   const [upTo, setUpTo] = useState('start')
+  const [saidHallelukah1, setSaidHallelukah1] = useState(false)
+  const [saidHallelukah2, setSaidHallelukah2] = useState(false)
+  const [saidHallelukah4, setSaidHallelukah4] = useState(false)
+  const [saidMizmorShir, setSaidMizmorShir] = useState(false)
+  const [saidFullHodu, setSaidFullHodu] = useState(false)
+  const [saidMizmorLetodah, setSaidMizmorLetodah] = useState(false)
+  const [saidYehiChevod, setSaidYehiChevod] = useState(false)
+  const [saidBaruchHashemLeolam, setSaidBaruchHashemLeolam] = useState(false)
+  const [saidFullVayevarechDavid, setSaidFullVayevarechDavid] = useState(false)
+  const [saidVecharot, setSaidVecharot] = useState(false)
+  const [saidAzYashir, setSaidAzYashir] = useState(false)
+  const [saidAshrei, setSaidAshrei] = useState(false)
+  const [isRushing, setIsRushing] = useState(false)
 
   return (
     <div>
@@ -69,7 +83,34 @@ function App() {
           <Route path="/AzYashir" element={<AzYashir/>}/>
           <Route path="/Yishtabach" element={<Yishtabach/>}/>
           <Route path="/Barchu" element={<Barchu/>}/>
-          <Route path="/Extras" element={<Extras/>}/>
+          <Route path="/Hallelukahs" element={<Hallelukahs
+          saidHallelukah1={saidHallelukah1}
+          setSaidHallelukah1={setSaidHallelukah1}
+          saidHallelukah2={saidHallelukah2}
+          setSaidHallelukah2={setSaidHallelukah2}
+          saidHallelukah4={saidHallelukah4}
+          setSaidHallelukah4={setSaidHallelukah4}
+          setUpTo={setUpTo}
+          />}/>
+          <Route path="/Extras" element={<Extras
+          saidMizmorShir={saidMizmorShir}
+          setSaidMizmorShir={setSaidMizmorShir}
+          saidFullHodu={saidFullHodu}
+          setSaidFullHodu={setSaidFullHodu}
+          saidMizmorLetodah={saidMizmorLetodah}
+          setSaidMizmorLetodah={setSaidMizmorLetodah}
+          saidYehiChevod={saidYehiChevod}
+          setSaidYehiChevod={setSaidYehiChevod}
+          saidBaruchHashemLeolam={saidBaruchHashemLeolam}
+          setSaidBaruchHashemLeolam={setSaidBaruchHashemLeolam}
+          saidFullVayevarechDavid={saidFullVayevarechDavid}
+          setSaidFullVayevarechDavid={setSaidFullVayevarechDavid}
+          saidVecharot={saidVecharot}
+          setSaidVecharot={setSaidVecharot}
+          saidAzYashir={saidAzYashir}
+          setSaidAzYashir={setSaidAzYashir}
+          setUpTo={setUpTo}
+          />}/>
       </Routes>
       <Footer 
       minimum={minimum}
@@ -80,6 +121,10 @@ function App() {
       setOrder={setOrder}
       upTo={upTo}
       setUpTo={setUpTo}
+      saidAshrei={saidAshrei}
+      setSaidAshrei={setSaidAshrei}
+      isRushing={isRushing}
+      setIsRushing={setIsRushing}
       />
       </Router>
     </div>

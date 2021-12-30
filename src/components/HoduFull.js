@@ -15,8 +15,10 @@ function HoduFull() {
 }
 
 const Text = styled.div`
-width: 50%;
-font-size: 50px;
+font-size: 30px;
+text-align: right;
+margin-right: 2vw;
+margin-left: 2vw;
 `;
 
 export default HoduFull;

@@ -1,16 +1,25 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
 
-function Extras() {
-    const [saidMizmorShir, setSaidMizmorShir] = useState(false)
-    const [saidFullHodu, setSaidFullHodu] = useState(false)
-    const [saidMizmorLetodah, setSaidMizmorLetodah] = useState(false)
-    const [saidYehiChevod, setSaidYehiChevod] = useState(false)
-    const [saidBaruchHashemLeolam, setSaidBaruchHashemLeolam] = useState(false)
-    const [saidFullVayevarechDavid, setSaidFullVayevarechDavid] = useState(false)
-    const [saidVecharot, setSaidVecharot] = useState(false)
-    const [saidAzYashir, setSaidAzYashir] = useState(false)
+function Extras({
+saidMizmorShir
+,saidFullHodu
+,saidMizmorLetodah
+,saidYehiChevod
+,saidBaruchHashemLeolam
+,saidFullVayevarechDavid
+,saidVecharot
+,saidAzYashir
+,setSaidMizmorShir
+,setSaidFullHodu
+,setSaidMizmorLetodah
+,setSaidYehiChevod
+,setSaidBaruchHashemLeolam
+,setSaidFullVayevarechDavid
+,setSaidVecharot
+,setSaidAzYashir
+,setUpTo}) {
 
     let navigate = useNavigate();
 
@@ -55,10 +64,27 @@ function Extras() {
         setSaidAzYashir(true)
     }
 
+    const sayYishtabach = () => {
+        navigate('/Yishtabach')
+        setUpTo('Yishtabach')
+    }
+
 
     return(
         <div>
-            {saidMizmorShir ? null : <button onClick={() => sayMizmorShir()}>Mizmor Shir</button>}
+                        {
+                saidMizmorShir === true 
+                && saidFullHodu === true
+                && saidMizmorLetodah === true
+                && saidYehiChevod === true
+                && saidBaruchHashemLeolam === true
+                && saidFullVayevarechDavid === true
+                && saidVecharot === true
+                && saidAzYashir === true
+                ? <button onClick={sayYishtabach}>Yishtabach</button>
+                : <h3>All of these are of equal importance. Pick whichever you like and say however many you can.</h3>
+            }
+            {saidMizmorShir ? null : <button onClick={sayMizmorShir}>Mizmor Shir</button>}
             {saidFullHodu ? null : <button onClick={sayFullHodu}>Rest of Hodu</button>}
             {saidMizmorLetodah ? null : <button onClick={sayMizmorLetodah}>Mizmor Letodah</button>}
             {saidYehiChevod ? null : <button onClick={sayYehiChevod}>Yehi Chevod</button>}

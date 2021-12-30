@@ -12,8 +12,8 @@ function MizmorShir() {
 }
 
 const Text = styled.div`
-width: 50%;
-font-size: 50px;
+// width: 50%;
+// font-size: 50px;
 `;
 
 export default MizmorShir;
