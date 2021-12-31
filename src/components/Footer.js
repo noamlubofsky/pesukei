@@ -28,13 +28,16 @@ function Footer({minimum,
       if(upTo === 'BaruchSheamar'){
         navigate('/Ashrei')
         setUpTo('Ashrei')
+        window.scrollTo(0, 0)
       }else if(upTo === 'Ashrei'){
         navigate('/Yishtabach')
         setUpTo('Yishtabach')
+        window.scrollTo(0, 0)
       }else if(upTo === 'Yishtabach'){
         navigate('/')
         setUpTo('start')
         setMinimum(false)
+        window.scrollTo(0, 0)
       }
     }
 
@@ -42,52 +45,68 @@ function Footer({minimum,
         if(upTo === 'MizmorShir'){
           navigate('/BaruchSheamar')
           setUpTo('BaruchSheamar')
+          window.scrollTo(0, 0)
         }else if(upTo === 'BaruchSheamar'){
           navigate('/HoduFull')
           setUpTo('HoduFull')
+          window.scrollTo(0, 0)
         }else if(upTo === 'HoduFull'){
             navigate('/MizmorLetodah')
             setUpTo('MizmorLetodah')
+            window.scrollTo(0, 0)
         }else if(upTo === 'MizmorLetodah'){
             navigate('/YehiChevod')
             setUpTo('YehiChevod')
+            window.scrollTo(0, 0)
         }else if(upTo === 'YehiChevod'){
             navigate('/Ashrei')
             setUpTo('Ashrei')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Ashrei'){
             navigate('/Hallelukah1')
             setUpTo('Hallelukah1')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah1'){
             navigate('/Hallelukah2')
             setUpTo('Hallelukah2')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah2'){
             navigate('/Hallelukah3')
             setUpTo('Hallelukah3')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah3'){
             navigate('/Hallelukah4')
             setUpTo('Hallelukah4')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah4'){
             navigate('/Hallelukah5')
             setUpTo('Hallelukah5')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah5'){
             navigate('/BaruchHashemLeolam')
             setUpTo('BaruchHashemLeolam')
+            window.scrollTo(0, 0)
         }else if(upTo === 'BaruchHashemLeolam'){
             navigate('/VayevarechDavidFull')
             setUpTo('VayevarechDavidFull')
+            window.scrollTo(0, 0)
         }else if(upTo === 'VayevarechDavidFull'){
             navigate('/Vecharot')
             setUpTo('Vecharot')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Vecharot'){
             navigate('/AzYashir')
             setUpTo('AzYashir')
+            window.scrollTo(0, 0)
         }else if(upTo === 'AzYashir'){
             navigate('/Yishtabach')
             setUpTo('Yishtabach')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Yishtabach'){
             navigate('/')
             setUpTo('start')
             setMaximum(false)
+            window.scrollTo(0, 0)
         }
       }
 
@@ -96,22 +115,28 @@ function Footer({minimum,
           navigate('/Ashrei')
           setUpTo('Ashrei')
           setSaidAshrei(true)
+          window.scrollTo(0, 0)
         }else if(upTo === 'Ashrei'){
             if(isRushing === true){
                 navigate('/Yishtabach')
                 setUpTo('Yishtabach')
+                window.scrollTo(0, 0)
             }else{
           navigate('/Hallelukah5')
           setUpTo('Hallelukah5')}
+          window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah5'){
             navigate('/Hallelukah3')
             setUpTo('Hallelukah3')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukah3'){
             navigate('/Hallelukahs')
             setUpTo('Hallelukahs')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Hallelukahs'){
             navigate('/Hallelukahs')
             setUpTo('Hallelukahs')
+            window.scrollTo(0, 0)
             // if(saidHallelukah1 === false
             //     || saidHallelukah2 === false
             //     || saidHallelukah4 === false){
@@ -120,24 +145,29 @@ function Footer({minimum,
         }else if(upTo === 'HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
+            window.scrollTo(0, 0)
             setSaidHallelukah1(false)
             setSaidHallelukah2(false)
             setSaidHallelukah4(false)
         }else if(upTo === 'VayevarechDavidPrimary'){
             navigate('/HoduPrimary')
             setUpTo('HoduPrimary')
+            window.scrollTo(0, 0)
         }else if(upTo === 'HoduPrimary'){
             navigate('/Extras')
             setUpTo('Extras')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Extras'){
             navigate('/Extras')
             setUpTo('Extras')
+            window.scrollTo(0, 0)
         }else if(upTo === 'Yishtabach'){
             navigate('/')
             setUpTo('start')
             setOrder(false)
             setIsRushing(false)
             setSaidAshrei(false)
+            window.scrollTo(0, 0)
         }
       }
 
@@ -146,8 +176,10 @@ function Footer({minimum,
         if(saidAshrei === true){
             navigate('/Yishtabach')
             setUpTo('Yishtabach')
+            window.scrollTo(0, 0)
       }else{
           navigate('/Ashrei')
+          window.scrollTo(0, 0)
       }
         
       }
@@ -165,7 +197,7 @@ function Footer({minimum,
 }
 
 const FooterSpace = styled.div`
-position: fixed;
+position: absolute;
 min-height: 10vh;
   bottom: 0;
   width: 100%;
@@ -180,10 +212,11 @@ background-image: url( https://media.istockphoto.com/photos/dark-blue-leather-te
 
 const Container = styled.div`
 position: relative;
-min-height: 40vh;
-margin-top: 7vh;
-display: flex;
-flex-direction: column;
+min-height: 20vh;
+margin-top: 20vh;
+// display: flex;
+// flex-direction: column;
+bottom: 0px;
 `;
 
 const Button = styled.button`
