@@ -195,7 +195,9 @@ function Footer({minimum,
         <Container>
                 <FooterSpace>
             {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
+            {minimum ? <Button onClick={toHome}>Home</Button> : null}
             {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
+            {maximum ? <Button onClick={toHome}>Home</Button> : null}
             {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
             {reviewingHalachot ? <Button onClick={toHome}>Home</Button> : null}
