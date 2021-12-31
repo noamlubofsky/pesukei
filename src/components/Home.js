@@ -57,14 +57,15 @@ const Button = styled.button`
   text-decoration: none;
   text-align: center;
   align-items: center;
-  color: rgb(37, 38, 51);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  /* border: 3px solid #2E6268; */
-  transition: all .35s;
-  justify-content: center;
-  font-size: 2vh;
-  background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+//   color: rgb(37, 38, 51);
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all .35s;
+justify-content: center;
+font-size: 2vh;
+//   background-image: url(https://media.istockphoto.com/photos/genuine-leather-texture-background-picture-id885433636?b=1&k=20&m=885433636&s=170667a&w=0&h=f0Mw8HS7Lm3ZZ7CvbSmdBO5Imn7YjPboaNaDZrFIaiQ=);
+color: silver;
+background-image: url( https://media.istockphoto.com/photos/dark-blue-leather-texture-on-macro-blue-leather-background-picture-id1148387834?b=1&k=20&m=1148387834&s=170667a&w=0&h=tUrUhDjNf_LUvdAslD2fWi8eCk70alMrp-L4ukx3kws=);
 
   `;
 
