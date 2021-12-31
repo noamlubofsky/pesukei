@@ -165,12 +165,13 @@ function Footer({minimum,
 }
 
 const FooterSpace = styled.div`
-position: absolute;
+position: fixed;
+min-height: 10vh;
   bottom: 0;
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 10vh;
+//   min-height: 10vh;
   padding: 2vh;
 //   border-top: 4px solid grey;
 //   background-color: rgb(37, 38, 51);
@@ -179,7 +180,10 @@ background-image: url( https://media.istockphoto.com/photos/dark-blue-leather-te
 
 const Container = styled.div`
 position: relative;
-min-height: 35vh;
+min-height: 40vh;
+margin-top: 7vh;
+display: flex;
+flex-direction: column;
 `;
 
 const Button = styled.button`

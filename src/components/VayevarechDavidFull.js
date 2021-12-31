@@ -16,12 +16,13 @@ function VayevarechDavidFull() {
 
 const Heading = styled.h1`
 text-align: right;
+margin-right: 5vw;
 `;
 
 const Text = styled.div`
 font-size: 30px;
 text-align: right;
-margin-right: 2vw;
+margin-right: 5vw;
 margin-left: 2vw;
 margin-bottom: 5vh;
 `;

@@ -62,6 +62,9 @@ const Container = styled.header`
   align-items: center;
   padding: 2vh;
   width: 100%;
+  min-height: 30vh;
+  margin-bottom: 25vh;
+
 `;
 
 const Button = styled.button`
