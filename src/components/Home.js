@@ -33,9 +33,18 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHala
         <div>
             <Container>
             <Button onClick={reviewHalachot}><Heading>Review the Halachot</Heading></Button>
-            <Button onClick={sayMinimum}><Heading>I only have time to say the minimum amount פסוקי דזמרא</Heading></Button>
-            <Button onClick={sayOrder}><Heading>I don't know how much of פסוקי דזמרא I'll be able to say</Heading></Button>
-            <Button onClick={sayMaximum}><Heading>I have time to say all of פסוקי דזמרא</Heading></Button>
+            <Button onClick={sayMinimum}>
+                <Heading>Minimum requirement of</Heading>
+                <Heading>פסוקי דזמרא</Heading>
+            </Button>
+            <Button onClick={sayOrder}>
+                <Heading>פסוקי דזמרא</Heading>
+                <Heading>in order of importance</Heading>
+            </Button>
+            <Button onClick={sayMaximum}>
+                <Heading>Full</Heading>
+                <Heading>פסוקי דזמרא</Heading>
+                </Button>
             </Container>
         </div>
     )

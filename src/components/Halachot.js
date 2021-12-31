@@ -20,9 +20,9 @@ function Halachot() {
 
 < h3>ברוך שאמר, אשרי, ישתבח </ h3>
 
-< p>Selecting the minimum amount of פסוקי דזמרה from the menu will take you through these תפילות. </ p>
+< p>Selecting the minimum requirement of פסוקי דזמרה from the menu will take you through these תפילות. </ p>
 
-< p>Selecting “I don’t know how much I’ll be able to say” will take you through פסוקי דזמרה in the order of importance. At any point you can select “I’m out of time” which will take you straight to ישתבח (or אשרי if not yet said, then ישתבח). 
+< p>Selecting “פסוקי דזמרא in order of importance” will take you through פסוקי דזמרה in the Halachic order of importance. When the ציבור reaches ישתבח you can select “I’m out of time” which will take you straight to ישתבח (or אשרי if not yet said, then ישתבח). 
 </ p>
 
             </Container>
