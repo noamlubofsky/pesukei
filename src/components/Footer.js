@@ -14,6 +14,9 @@ function Footer({minimum,
     setSaidAshrei, 
     isRushing, 
     setIsRushing,
+    saidHallelukah1,
+    saidHallelukah2,
+    saidHallelukah4,
     setSaidHallelukah1,
     setSaidHallelukah2,
     setSaidHallelukah4
@@ -109,6 +112,11 @@ function Footer({minimum,
         }else if(upTo === 'Hallelukahs'){
             navigate('/Hallelukahs')
             setUpTo('Hallelukahs')
+            // if(saidHallelukah1 === false
+            //     || saidHallelukah2 === false
+            //     || saidHallelukah4 === false){
+            //         alert(`Say all Hallelukah's before continuing!`)
+            //     }
         }else if(upTo === 'HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
@@ -162,7 +170,7 @@ position: absolute;
   width: 100%;
   justify-content: center;
   align-items: center;
-//   min-height: 10vh;
+  min-height: 10vh;
   padding: 2vh;
   border-top: 4px solid grey;
   background-color: rgb(37, 38, 51);
@@ -170,7 +178,7 @@ position: absolute;
 
 const Container = styled.div`
 position: relative;
-  min-height: 35vh;
+min-height: 35vh;
 `;
 
 const Button = styled.button`
@@ -190,7 +198,10 @@ const Button = styled.button`
   /* border: 3px solid #2E6268; */
   transition: all .35s;
   justify-content: center;
-  font-size: 1.5vh;
+  font-size: 3vh;
+//   font-color: rgb(37, 38, 51);
+  background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+
   `;
 
 export default Footer;

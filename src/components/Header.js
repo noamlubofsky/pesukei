@@ -6,7 +6,7 @@ function Header() {
         <div>
             <Container>
             <Heading>
-            <h1>סדר פסוקי דזמרא</h1>
+            סדר פסוקי דזמרא
             </Heading>
             </Container>
         </div>
@@ -25,12 +25,14 @@ const Container = styled.header`
   background-color: rgb(37, 38, 51);
 `;
 
-const Heading = styled.header`
-align-items: right;
-justify-content: right;
-float: right;
-margin-right: 5vw;
-color: grey;
+const Heading = styled.h1`
+// background-image: url(https://w2.chabad.org/media/images/281/vGWn2817694.jpg);
+background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+// text-shadow: 2px 2px 4px #000000;
+
 `;
 
 export default Header;

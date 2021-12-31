@@ -82,16 +82,16 @@ saidMizmorShir
                 && saidVecharot === true
                 && saidAzYashir === true
                 ? <Button onClick={sayYishtabach}>Yishtabach</Button>
-                : <h3>All of these are of equal importance. Pick whichever you like and say however many you can.</h3>
+                : <h3>The following Tefillot are of equal importance. Pick whichever you like and say however many you can.</h3>
             }
-            {saidMizmorShir ? null : <Button onClick={sayMizmorShir}>Mizmor Shir</Button>}
-            {saidFullHodu ? null : <Button onClick={sayFullHodu}>Rest of Hodu</Button>}
-            {saidMizmorLetodah ? null : <Button onClick={sayMizmorLetodah}>Mizmor Letodah</Button>}
-            {saidYehiChevod ? null : <Button onClick={sayYehiChevod}>Yehi Chevod</Button>}
-            {saidBaruchHashemLeolam ? null : <Button onClick={sayBaruchHashemLeolam}>Baruch Hashem Leolam</Button>}
-            {saidFullVayevarechDavid ? null : <Button onClick={sayFullVayevarechDavid}>Rest of Vayevarech David</Button>}
-            {saidVecharot ? null : <Button onClick={sayVecharot}>Vecharot</Button>}
-            {saidAzYashir ? null : <Button onClick={sayAzYashir}>Az Yashir</Button>}
+            {saidMizmorShir ? null : <Button onClick={sayMizmorShir}>מִזְמוֹר שִׁיר</Button>}
+            {saidFullHodu ? null : <Button onClick={sayFullHodu}>Rest of הוֹדוּ</Button>}
+            {saidMizmorLetodah ? null : <Button onClick={sayMizmorLetodah}>מִזְמוֹר לְתוֹדָה</Button>}
+            {saidYehiChevod ? null : <Button onClick={sayYehiChevod}>יְהִי כְבוֹד</Button>}
+            {saidBaruchHashemLeolam ? null : <Button onClick={sayBaruchHashemLeolam}>בָּרוּךְ ה' לְעוֹלָם</Button>}
+            {saidFullVayevarechDavid ? null : <Button onClick={sayFullVayevarechDavid}>Rest of וַיְבָֽרֶךְ דָּוִיד</Button>}
+            {saidVecharot ? null : <Button onClick={sayVecharot}>וְכָרוֹת עִמּוֹ הַבְּ֒רִית</Button>}
+            {saidAzYashir ? null : <Button onClick={sayAzYashir}>אָז יָשִׁיר</Button>}
             </Container>
         </div>
     )
@@ -116,12 +116,11 @@ const Button = styled.button`
   text-align: center;
   align-items: center;
   color: rgb(37, 38, 51);
-  text-transform: uppercase;
   letter-spacing: 1px;
   /* border: 3px solid #2E6268; */
   transition: all .35s;
   justify-content: center;
-  font-size: 1.5vh;
+  font-size: 3vh;
   `;
 
 export default Extras;

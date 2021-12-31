@@ -46,11 +46,11 @@ saidHallelukah1
                 && saidHallelukah2 === true
                 && saidHallelukah4 === true
                 ? <h1>done</h1>
-                : <h3>All of these are of equal importance. Pick whichever you like and say however many you can.</h3>
+                : <h3>Hallelukah's 1, 2 and 4 are of equal importance. Pick whichever you like and say however many you can.</h3>
             }
-            {saidHallelukah1 ? null : <Button onClick={sayHallelukah1}>Hallelukah 1</Button>}
-            {saidHallelukah2 ? null : <Button onClick={sayHallelukah2}>Hallelukah 2</Button>}
-            {saidHallelukah4 ? null : <Button onClick={sayHallelukah4}>Hallelukah 4</Button>}
+            {saidHallelukah1 ? null : <Button onClick={sayHallelukah1}>1 הַלְ֒לוּיָהּ</Button>}
+            {saidHallelukah2 ? null : <Button onClick={sayHallelukah2}>2 הַלְ֒לוּיָהּ</Button>}
+            {saidHallelukah4 ? null : <Button onClick={sayHallelukah4}>4 הַלְ֒לוּיָהּ</Button>}
             </Container>
         </div>
     )
@@ -76,12 +76,11 @@ const Button = styled.button`
   text-align: center;
   align-items: center;
   color: rgb(37, 38, 51);
-  text-transform: uppercase;
   letter-spacing: 1px;
   /* border: 3px solid #2E6268; */
   transition: all .35s;
   justify-content: center;
-  font-size: 1.5vh;
+  font-size: 3vh;
   `;
 
 export default Extras;

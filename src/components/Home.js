@@ -63,7 +63,9 @@ const Button = styled.button`
   /* border: 3px solid #2E6268; */
   transition: all .35s;
   justify-content: center;
-  font-size: 1.5vh;
+  font-size: 2vh;
+  background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+
   `;
 
 export default Home;

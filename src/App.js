@@ -125,6 +125,9 @@ function App() {
       setSaidAshrei={setSaidAshrei}
       isRushing={isRushing}
       setIsRushing={setIsRushing}
+      saidHallelukah1={saidHallelukah1}
+      saidHallelukah2={saidHallelukah2}
+      saidHallelukah4={saidHallelukah4}
       setSaidHallelukah1={setSaidHallelukah1}
       setSaidHallelukah2={setSaidHallelukah2}
       setSaidHallelukah4={setSaidHallelukah4}
