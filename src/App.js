@@ -30,11 +30,13 @@ import Yishtabach from './components/Yishtabach'
 import Barchu from './components/Barchu'
 import Hallelukahs from './components/Hallelukahs'
 import Extras from './components/Extras'
+import Halachot from './components/Halachot'
 
 function App() {
   const [minimum, setMinimum] = useState(false)
   const [maximum, setMaximum] = useState(false)
   const [order, setOrder] = useState(false)
+  const [reviewingHalachot, setReviewingHalachot] = useState(false)
   const [upTo, setUpTo] = useState('start')
   const [saidHallelukah1, setSaidHallelukah1] = useState(false)
   const [saidHallelukah2, setSaidHallelukah2] = useState(false)
@@ -59,6 +61,7 @@ function App() {
                 setMinimum={setMinimum}
                 setMaximum={setMaximum}
                 setOrder={setOrder}
+                setReviewingHalachot={setReviewingHalachot}
                 upTo={upTo}
                 setUpTo={setUpTo}
                 />}/>
@@ -83,6 +86,7 @@ function App() {
           <Route path="/AzYashir" element={<AzYashir/>}/>
           <Route path="/Yishtabach" element={<Yishtabach/>}/>
           <Route path="/Barchu" element={<Barchu/>}/>
+          <Route path="/Halachot" element={<Halachot/>}/>
           <Route path="/Hallelukahs" element={<Hallelukahs
           saidHallelukah1={saidHallelukah1}
           setSaidHallelukah1={setSaidHallelukah1}
@@ -116,9 +120,11 @@ function App() {
       minimum={minimum}
       maximum={maximum}
       order={order}
+      reviewingHalachot={reviewingHalachot}
       setMinimum={setMinimum}
       setMaximum={setMaximum}
       setOrder={setOrder}
+      setReviewingHalachot={setReviewingHalachot}
       upTo={upTo}
       setUpTo={setUpTo}
       saidAshrei={saidAshrei}

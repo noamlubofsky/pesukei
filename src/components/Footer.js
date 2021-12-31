@@ -19,7 +19,9 @@ function Footer({minimum,
     saidHallelukah4,
     setSaidHallelukah1,
     setSaidHallelukah2,
-    setSaidHallelukah4
+    setSaidHallelukah4,
+    reviewingHalachot,
+    setReviewingHalachot
 }) {
 
     let navigate = useNavigate();
@@ -181,7 +183,12 @@ function Footer({minimum,
           navigate('/Ashrei')
           window.scrollTo(0, 0)
       }
-        
+      }
+
+      const toHome = () => {
+          navigate('/')
+          window.scrollTo(0, 0)
+          setReviewingHalachot(false)
       }
 
     return(
@@ -191,6 +198,7 @@ function Footer({minimum,
             {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
             {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
+            {reviewingHalachot ? <Button onClick={toHome}>Home</Button> : null}
             </FooterSpace>
             </Container>
     )
