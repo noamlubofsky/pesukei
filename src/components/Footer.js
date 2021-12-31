@@ -201,8 +201,8 @@ const Button = styled.button`
   font-size: 3vh;
 //   font-color: rgb(37, 38, 51);
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
-background-image: url(https://us.123rf.com/450wm/bank2cool/bank2cool1409/bank2cool140900007/31247391-grey-leather-texture-background.jpg?ver=6);
-
+// background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
+background-color: silver;
   `;
 
 export default Footer;

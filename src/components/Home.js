@@ -27,14 +27,24 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo}) {
     return(
         <div>
             <Container>
-            <Button >Review the Halachot</Button>
-            <Button onClick={sayMinimum}>I only have time to say the minimum amount of Pesukei D'zimra</Button>
-            <Button onClick={sayMaximum}>I have time to say all of Pesukei D'zimra</Button>
-            <Button onClick={sayOrder}>I don't know how much I'll be able to say</Button>
+            <Button><Heading>Review the Halachot</Heading></Button>
+            <Button onClick={sayMinimum}><Heading>I only have time to say the minimum amount of Pesukei D'zimra</Heading></Button>
+            <Button onClick={sayMaximum}><Heading>I have time to say all of Pesukei D'zimra</Heading></Button>
+            <Button onClick={sayOrder}><Heading>I don't know how much I'll be able to say</Heading></Button>
             </Container>
         </div>
     )
 }
+
+const Heading = styled.h3`
+// background-image: url(https://w2.chabad.org/media/images/281/vGWn2817694.jpg);
+background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+// text-shadow: 2px 2px 4px #000000;
+
+`;
 
 const Container = styled.div`
 //   position: relative;

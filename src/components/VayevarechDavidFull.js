@@ -15,7 +15,7 @@ function VayevarechDavidFull() {
 }
 
 const Heading = styled.h1`
-margin-left: 40vw;
+text-align: right;
 `;
 
 const Text = styled.div`
