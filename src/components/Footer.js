@@ -189,6 +189,14 @@ function Footer({minimum,
           navigate('/')
           window.scrollTo(0, 0)
           setReviewingHalachot(false)
+          setMinimum(false)
+          setMaximum(false)
+          setOrder(false)
+          setIsRushing(false)
+          setSaidAshrei(false)
+          setSaidHallelukah1(false)
+          setSaidHallelukah2(false)
+          setSaidHallelukah4(false)
       }
 
     return(
