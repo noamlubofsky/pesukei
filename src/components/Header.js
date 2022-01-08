@@ -23,8 +23,10 @@ const Container = styled.header`
   width: 100%;
 //   border-bottom: 4px solid grey;
 //   background-color: rgb(37, 38, 51);
-background-image: url( https://media.istockphoto.com/photos/dark-blue-leather-texture-on-macro-blue-leather-background-picture-id1148387834?b=1&k=20&m=1148387834&s=170667a&w=0&h=tUrUhDjNf_LUvdAslD2fWi8eCk70alMrp-L4ukx3kws=);
-
+background-image: url(https://i.pinimg.com/originals/91/e5/44/91e54491d5be212fccc1ea9a2b23c617.jpg);
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
 `;
 
 const Heading = styled.h1`
