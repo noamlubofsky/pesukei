@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
+import blueleather from '../blueleather.jpeg'
 
 function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHalachot}) {
 
@@ -91,8 +92,10 @@ font-size: 2vh;
 
 //   background-image: url(https://media.istockphoto.com/photos/genuine-leather-texture-background-picture-id885433636?b=1&k=20&m=885433636&s=170667a&w=0&h=f0Mw8HS7Lm3ZZ7CvbSmdBO5Imn7YjPboaNaDZrFIaiQ=);
 color: silver;
-background-image: url( https://media.istockphoto.com/photos/dark-blue-leather-texture-on-macro-blue-leather-background-picture-id1148387834?b=1&k=20&m=1148387834&s=170667a&w=0&h=tUrUhDjNf_LUvdAslD2fWi8eCk70alMrp-L4ukx3kws=);
-
+background-image: url(${blueleather});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
   `;
 
 export default Home;

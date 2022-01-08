@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
+import blueleather from '../blueleather.jpeg'
 
 function Footer({minimum, 
     maximum, 
@@ -225,8 +226,10 @@ min-height: 10vh;
   padding: 2vh;
 //   border-top: 4px solid grey;
 //   background-color: rgb(37, 38, 51);
-background-image: url( https://media.istockphoto.com/photos/dark-blue-leather-texture-on-macro-blue-leather-background-picture-id1148387834?b=1&k=20&m=1148387834&s=170667a&w=0&h=tUrUhDjNf_LUvdAslD2fWi8eCk70alMrp-L4ukx3kws=);
-`;
+background-image: url(${blueleather});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;`;
 
 const Container = styled.div`
 position: relative;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import blueleather from '../blueleather.jpeg'
 
 function Header() {
     return(
@@ -23,7 +24,7 @@ const Container = styled.header`
   width: 100%;
 //   border-bottom: 4px solid grey;
 //   background-color: rgb(37, 38, 51);
-background-image: url(https://i.pinimg.com/originals/91/e5/44/91e54491d5be212fccc1ea9a2b23c617.jpg);
+background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
