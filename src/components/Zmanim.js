@@ -24,6 +24,7 @@ function Zmanim() {
     setLatest(zmanim.sofZmanTfilla.split('T')[1].split('-')[0])
     setChatzot(zmanim.chatzot.split('T')[1].split('-')[0])
         setHaveTimes(true)
+        console.log(haveTimes)
 
     }
 
