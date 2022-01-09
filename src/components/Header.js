@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
+import scroll from '../scroll.jpeg'
 
 function Header() {
     return(
@@ -32,7 +33,10 @@ background-size: cover;
 
 const Heading = styled.h1`
 // background-image: url(https://w2.chabad.org/media/images/281/vGWn2817694.jpg);
-background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+background-image: url(${scroll});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
 background-clip: text;
 -webkit-background-clip: text;
 color: transparent;

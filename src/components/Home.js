@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
 import blueleather from '../blueleather.jpeg'
+import scroll from '../scroll.jpeg'
 
 function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHalachot}) {
 
@@ -53,8 +54,10 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHala
 
 const Heading = styled.h3`
 // background-image: url(https://w2.chabad.org/media/images/281/vGWn2817694.jpg);
-background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
-background-clip: text;
+background-image: url(${scroll});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;background-clip: text;
 -webkit-background-clip: text;
 color: transparent;
 // text-shadow: 2px 2px 4px #000000;
