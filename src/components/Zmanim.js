@@ -10,8 +10,7 @@ function Zmanim() {
     const [latest, setLatest] = useState('')
     const [chatzot, setChatzot] = useState('')
 
-    const getZmanim = (e) => {
-        e.preventDefault()
+    const getZmanim = () => {
         fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=${zip}`, {
     })
     .then((res) => res.json())
@@ -19,14 +18,14 @@ function Zmanim() {
     setEarliest(zmanim.alotHaShachar.split('T')[1].split('-')[0])
     setLatest(zmanim.sofZmanTfilla.split('T')[1].split('-')[0])
     setChatzot(zmanim.chatzot.split('T')[1].split('-')[0])
-    
-console.log(zmanim)
-    setHaveTimes(true)
-    // const removeDate = zmanim.alotHaShachar.split('T')
-    // const removeEnd = removeDate[1].split('-')
-    // setEarliest(removeEnd[0])
-    
-    
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        getZmanim()
+
+        setHaveTimes(true)
+
     }
 
 
@@ -37,7 +36,7 @@ console.log(zmanim)
             <form>
             <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Zip Code"></Input>
             <br></br>
-            <Button type="submit" onClick={getZmanim}>Get my Zmanim</Button>
+            <Button type="submit" onClick={handleSubmit}>Get my Zmanim</Button>
             </form>
 
             {!haveTimes ? null : 
@@ -104,6 +103,7 @@ const Input = styled.input`
 font-size: large;
 outline: none;
 background-color: transparent;
+border-radius: none;
 &:focus {
     outline: none;
     border-bottom: 2px solid #B96630;
