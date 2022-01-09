@@ -14,18 +14,18 @@ function Zmanim() {
         fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=${zip}`, {
     })
     .then((res) => res.json())
-    .then((data) => setZmanim(data.times))
+    .then((data) => {
+        setZmanim(data.times);
+        setEarliest(data.times.alotHaShachar.split('T')[1].split('-')[0]);
+        setLatest(data.times.sofZmanTfilla.split('T')[1].split('-')[0]);
+        setChatzot(data.times.chatzot.split('T')[1].split('-')[0])
+    });
+    setHaveTimes(true)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         getZmanim()
-    setEarliest(zmanim.alotHaShachar.split('T')[1].split('-')[0])
-    setLatest(zmanim.sofZmanTfilla.split('T')[1].split('-')[0])
-    setChatzot(zmanim.chatzot.split('T')[1].split('-')[0])
-        setHaveTimes(true)
-        console.log(haveTimes)
-
     }
 
 
