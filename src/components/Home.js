@@ -12,28 +12,33 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHala
         setMinimum(true)
         setUpTo('BaruchSheamar')
         navigate('/BaruchSheamar')
+        window.scrollTo(0, 0)
     }
 
     const sayMaximum = () => {
         setMaximum(true)
         setUpTo('MizmorShir')
         navigate('/MizmorShir')
+        window.scrollTo(0, 0)
     }
 
     const sayOrder = () => {
         setOrder(true)
         setUpTo('BaruchSheamar')
         navigate('/BaruchSheamar')
+        window.scrollTo(0, 0)
     }
 
     const reviewHalachot = () => {
         setReviewingHalachot(true)
         navigate('/Halachot')
+        window.scrollTo(0, 0)
     }
 
     const seeZmanim = () => {
         setViewingZmanim(true)
         navigate('/Zmanim')
+        window.scrollTo(0, 0)
     }
 
     return(
