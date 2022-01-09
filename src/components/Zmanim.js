@@ -15,15 +15,14 @@ function Zmanim() {
     })
     .then((res) => res.json())
     .then((data) => setZmanim(data.times))
-    setEarliest(zmanim.alotHaShachar.split('T')[1].split('-')[0])
-    setLatest(zmanim.sofZmanTfilla.split('T')[1].split('-')[0])
-    setChatzot(zmanim.chatzot.split('T')[1].split('-')[0])
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         getZmanim()
-
+    setEarliest(zmanim.alotHaShachar.split('T')[1].split('-')[0])
+    setLatest(zmanim.sofZmanTfilla.split('T')[1].split('-')[0])
+    setChatzot(zmanim.chatzot.split('T')[1].split('-')[0])
         setHaveTimes(true)
 
     }
@@ -110,20 +109,24 @@ border-radius: none;
 }
 `;
 
-const Heading = styled.h2`
+const Heading = styled.h5`
 margin-left: 5vw;
 margin-right: 5vw;
+font-size: 1.5em;
+font-weight: 300;
+
 `;
 
 const Time = styled.h1`
 margin-right: 5vw;
 margin-left: 5vw;
-font-weight: 300;
+font-weight: 600;
 `;
 
 const P = styled.p`
 margin-right: 5vw;
 margin-left: 5vw;
+font-size: 1em;
 `;
 
 const Container = styled.div`
