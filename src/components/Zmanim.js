@@ -73,7 +73,7 @@ const Button = styled.button`
 
   margin-top: 2vh;
   margin-bottom: 2vh;
-  width: 30%;
+  width: 60%;
   height: 8vh;
   /* line-height: 50px; */
   font-weight: bold;
@@ -97,15 +97,16 @@ background-size: cover;
   `;
 
 const Input = styled.input`
-    width: 20vw;
+    width: 40vw;
     height: 5vh;
     border: none;
-    border-bottom: 2px solid #E3E3E3;
+    border-bottom: 2px solid #001939;
 font-size: large;
 outline: none;
+background-color: transparent;
 &:focus {
     outline: none;
-    border-bottom: 2px solid #7F7F7F;
+    border-bottom: 2px solid #B96630;
 }
 `;
 

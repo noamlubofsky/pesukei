@@ -54,24 +54,17 @@ function App() {
   const [saidAshrei, setSaidAshrei] = useState(false)
   const [isRushing, setIsRushing] = useState(false)
 
-  useEffect(() => {
-    fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=10605`, {
-    })
-    .then((res) => res.json())
-    .then((data) => console.log(data))
-  }, []);
+  // useEffect(() => {
+  //  componentDidMount()
+  // }, []);
 
-  useEffect(() => {
-   componentDidMount()
-  }, []);
-
-  function componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-      console.log(position)
-    });
-  }
+  // function componentDidMount() {
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //     console.log("Latitude is :", position.coords.latitude);
+  //     console.log("Longitude is :", position.coords.longitude);
+  //     console.log(position)
+  //   });
+  // }
 
   return (
     <div>
