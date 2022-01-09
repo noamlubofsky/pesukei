@@ -4,7 +4,7 @@ import {useNavigate} from "react-router";
 import blueleather from '../blueleather.jpeg'
 import scroll from '../scroll.jpeg'
 
-function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHalachot}) {
+function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHalachot, setViewingZmanim}) {
 
     let navigate = useNavigate();
 
@@ -31,6 +31,11 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHala
         navigate('/Halachot')
     }
 
+    const seeZmanim = () => {
+        setViewingZmanim(true)
+        navigate('/Zmanim')
+    }
+
     return(
         <div>
             <Container>
@@ -47,6 +52,10 @@ function Home({setMinimum, setMaximum, setOrder, upTo, setUpTo, setReviewingHala
                 <Heading>Full</Heading>
                 <Heading>פסוקי דזמרא</Heading>
                 </Button>
+            <Button onClick={seeZmanim}>
+                <Heading>Zmanim for</Heading>
+                <Heading>פסוקי דזמרא</Heading>
+            </Button>
             </Container>
         </div>
     )

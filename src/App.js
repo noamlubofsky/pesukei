@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router,
   Routes,
   Route,
@@ -31,12 +31,14 @@ import Barchu from './components/Barchu'
 import Hallelukahs from './components/Hallelukahs'
 import Extras from './components/Extras'
 import Halachot from './components/Halachot'
+import Zmanim from './components/Zmanim'
 
 function App() {
   const [minimum, setMinimum] = useState(false)
   const [maximum, setMaximum] = useState(false)
   const [order, setOrder] = useState(false)
   const [reviewingHalachot, setReviewingHalachot] = useState(false)
+  const [viewingZmanim, setViewingZmanim] = useState(false)
   const [upTo, setUpTo] = useState('start')
   const [saidHallelukah1, setSaidHallelukah1] = useState(false)
   const [saidHallelukah2, setSaidHallelukah2] = useState(false)
@@ -52,6 +54,25 @@ function App() {
   const [saidAshrei, setSaidAshrei] = useState(false)
   const [isRushing, setIsRushing] = useState(false)
 
+  useEffect(() => {
+    fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=10605`, {
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+  }, []);
+
+  useEffect(() => {
+   componentDidMount()
+  }, []);
+
+  function componentDidMount() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+      console.log(position)
+    });
+  }
+
   return (
     <div>
       <Router>
@@ -64,6 +85,7 @@ function App() {
                 setReviewingHalachot={setReviewingHalachot}
                 upTo={upTo}
                 setUpTo={setUpTo}
+      setViewingZmanim={setViewingZmanim}
                 />}/>
           <Route path="/MizmorShir" element={<MizmorShir/>}/>
           <Route path="/BaruchSheamar" element={<BaruchSheamar/>}/>
@@ -87,6 +109,7 @@ function App() {
           <Route path="/Yishtabach" element={<Yishtabach/>}/>
           <Route path="/Barchu" element={<Barchu/>}/>
           <Route path="/Halachot" element={<Halachot/>}/>
+          <Route path="/Zmanim" element={<Zmanim/>}/>
           <Route path="/Hallelukahs" element={<Hallelukahs
           saidHallelukah1={saidHallelukah1}
           setSaidHallelukah1={setSaidHallelukah1}
@@ -137,6 +160,8 @@ function App() {
       setSaidHallelukah1={setSaidHallelukah1}
       setSaidHallelukah2={setSaidHallelukah2}
       setSaidHallelukah4={setSaidHallelukah4}
+      viewingZmanim={viewingZmanim}
+      setViewingZmanim={setViewingZmanim}
       />
       </Router>
     </div>

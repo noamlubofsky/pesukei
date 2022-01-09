@@ -22,7 +22,9 @@ function Footer({minimum,
     setSaidHallelukah2,
     setSaidHallelukah4,
     reviewingHalachot,
-    setReviewingHalachot
+    setReviewingHalachot,
+    viewingZmanim,
+    setViewingZmanim
 }) {
 
     let navigate = useNavigate();
@@ -198,6 +200,7 @@ function Footer({minimum,
           setSaidHallelukah1(false)
           setSaidHallelukah2(false)
           setSaidHallelukah4(false)
+          setViewingZmanim(false)
       }
 
     return(
@@ -210,6 +213,7 @@ function Footer({minimum,
             {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
             {reviewingHalachot ? <Button onClick={toHome}>Home</Button> : null}
+            {viewingZmanim ? <Button onClick={toHome}>Home</Button> : null}
             </FooterSpace>
             </Container>
     )
