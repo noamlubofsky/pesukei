@@ -53,7 +53,10 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
         setLatitude(position.coords.latitude)
         setLongitude(position.coords.longitude)
       console.log(position)
-      setLoading(false)
+      setTimeout(() => {
+          setLoading(false)
+      }, 2000)
+    //   setLoading(false)
     });
   }
 console.log(loading)
