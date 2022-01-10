@@ -59,7 +59,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     //   setLoading(false)
     });
   }
-console.log(loading)
+
   const locate = () => {
     setZip('')
     // componentDidMount()
@@ -141,8 +141,13 @@ console.log(loading)
             </Select>  */}
 
             {!haveLocation ? <Button onClick={componentDidMount}>Get my location</Button>
-            : <Button onClick={locate}>{loading ? `Locating...` : `Show my Zmanim`}</Button>}
-
+            : <div>{loading ? <Button>`Loading`</Button> : 
+            <ShowButton onClick={locate}>
+                <div>Done Locating</div>
+                <br></br>
+                <div>Show my Zmanim</div>
+                </ShowButton>}
+            </div>  }
             {!errors ? null : 
             <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
             }
@@ -192,6 +197,33 @@ background-color: transparent;
     border-bottom: 2px solid #B96630;
 }
 `;
+
+const ShowButton = styled.button`
+
+  margin-top: 2vh;
+//   margin-bottom: 2vh;
+  width: 60%;
+  height: 12vh;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+//   color: rgb(37, 38, 51);
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all .35s;
+justify-content: center;
+font-size: 2vh;
+// border: 2px solid #F5C983;
+
+//   background-image: url(https://media.istockphoto.com/photos/genuine-leather-texture-background-picture-id885433636?b=1&k=20&m=885433636&s=170667a&w=0&h=f0Mw8HS7Lm3ZZ7CvbSmdBO5Imn7YjPboaNaDZrFIaiQ=);
+color: silver;
+background-image: url(${blueleather});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
+  `;
 
 const Button = styled.button`
 
