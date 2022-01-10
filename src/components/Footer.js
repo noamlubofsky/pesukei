@@ -211,7 +211,7 @@ function Footer({minimum,
             {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
             {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
-            <Button onClick={toHome}>Home</Button>
+            {window.location.pathname === '/' ? null : <Button onClick={toHome}>Home</Button>}
             </FooterSpace>
             </Container>
     )
