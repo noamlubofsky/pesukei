@@ -10,6 +10,8 @@ function Zmanim() {
     const [latest, setLatest] = useState('')
     const [chatzot, setChatzot] = useState('')
     const [errors, setErrors] = useState(false)
+    const [latitude, setLatitude] = useState('')
+    const [longitude, setLongitude] = useState('')
 
     const getZmanim = () => {
         setErrors(false)
@@ -30,7 +32,55 @@ function Zmanim() {
         getZmanim()
     }
 
+    // const timezone = (new Date()).getTimezoneOffset()
+    // console.log(timezone)
+
+//     const date = new Date();
+// const dateAsString = date.toString();
+// const timezone = dateAsString.match(/\(([^\)]+)\)$/)[1];
+
+// console.log(timezone);
+
+const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
+    
+  function componentDidMount() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        setLatitude(position.coords.latitude)
+        setLongitude(position.coords.longitude)
+      console.log(position)
+    });
+  }
+
+  const locate = () => {
+    setZip('')
+    componentDidMount()
+    fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}`, {
+})
+.then((r) => {
+    if (r.ok) {
+        setErrors(false)
+      r.json().then((data) => {
+        setZmanim(data.times);
+        if(data.times.alotHaShachar.includes('+')){
+            setEarliest(data.times.alotHaShachar.split('T')[1].split('+')[0]);
+            setLatest(data.times.sofZmanTfilla.split('T')[1].split('+')[0]);
+            setChatzot(data.times.chatzot.split('T')[1].split('+')[0])
+        }else{
+        setEarliest(data.times.alotHaShachar.split('T')[1].split('-')[0]);
+        setLatest(data.times.sofZmanTfilla.split('T')[1].split('-')[0]);
+        setChatzot(data.times.chatzot.split('T')[1].split('-')[0])
+        }
+      });
+      setHaveTimes(true)
+    } else {
+      setErrors(true);
+    }
+  });
+  }
+
+
     const countryCodes = ["Select Location", "AD-Andorra La Vella", "AE-Abu Dhab", "AE-Duba", "AF-Kabul", "AI-The Valley", "AL-Tirana", "AM-Yereva", "AO-Luanda", "AR-Buenos Aires", "AR-Cordoba", "AR-Rosario", "AS-Pago Pago", "AT-Vienna", "AU-Adelaide", "AU-Brisbane", "AU-Canberra", "AU-Gold Coast", "AU-Hobart", "AU-Melbourne", "AU-Perth", "AU-Sydney", "AW-Oranjestad", "AZ-Bak", "BA-Sarajevo", "BB-Bridgetown", "BD-Chittagong", "BD-Dhaka", "BD-Khulna", "BE-Brussels", "BF-Ouagadougou", "BG-Sofi", "BH-Manam", "BI-Bujumbur", "BJ-Porto-novo", "BM-Hamilton", "BN-Bandar Seri Begawan", "BO-La Paz", "BO-Santa Cruz de la Sierra", "BR-Belo Horizonte", "BR-Brasilia", "BR-Fortaleza", "BR-Rio de Janeiro", "BR-Salvador", "BR-Sao Paulo", "BS-Nassau", "BT-Thimphu", "BW-Gaboron", "BY-Mins", "BZ-Belmopan", "CA-Calgary", "CA-Edmonton", "CA-Halifax", "CA-Mississauga", "CA-Montreal", "CA-Ottawa", "CA-Quebec City", "CA-Regina", "CA-Saskatoon", "CA-St. John's-05", "CA-Toronto", "CA-Vancouver", "CA-Victoria", "CA-Winnipeg", "CD-Kinshasa", "CD-Lubumbash", "CF-Bangui", "CG-Brazzaville", "CH-Bern", "CH-Geneva", "CH-Zurich", "CI-Abidjan", "CI-Yamoussoukro", "CK-Avarua", "CL-Santiago", "CM-Douala", "CM-Yaounde", "CN-Beijing", "CN-Chengdu", "CN-Chongqing", "CN-Guangzhou", "CN-Harbin", "CN-Kaifeng", "CN-Lanzhou", "CN-Nanchong", "CN-Nanjing", "CN-Puyang", "CN-Shanghai", "CN-Shenyang", "CN-Shenzhen", "CN-Shiyan", "CN-Tai'an", "CN-Tianjin", "CN-Wuhan", "CN-Xi'an", "CN-Yueyang", "CN-Zhumadian", "CO-Barranquilla", "CO-Bogota", "CO-Cali", "CO-Medellin", "CR-San José", "CU-Havana", "CV-Praia", "CW-Willemstad", "CY-Nicosi", "CZ-Prague", "DE-Berlin", "DE-Hamburg", "DE-Munich", "DK-Copenhagen", "DM-Roseau", "DO-Santiago de los Caballeros", "DO-Santo Domingo", "DZ-Algiers", "EC-Guayaquil", "EC-Quito", "EE-Tallin", "EG-Al Jiza", "EG-Alexandri", "EG-Cair", "ER-Asmar", "ES-Barcelona", "ES-Madrid", "ET-Addis Abab", "FI-Helsink", "FJ-Suva", "FK-Stanley", "FO-Tórshavn", "FR-Marseilles", "FR-Paris", "GA-Libreville", "GB-Belfast", "GB-Birmingham", "GB-Bristol", "GB-Cardiff", "GB-Edinburgh", "GB-Glasgow", "GB-Leeds", "GB-Liverpool", "GB-London", "GB-Manchester", "GB-Sheffield", "GE-Tbilis", "GH-Accra", "GH-Kumasi", "GI-Gibraltar", "GL-Nuuk", "GM-Banjul", "GN-Camayenne", "GN-Conakry", "GQ-Malabo", "GR-Athen", "GT-Guatemala City", "GW-Bissau", "GY-Georgetown", "HK-Hong Kong", "HN-Tegucigalpa", "HR-Zagreb", "HT-Port-au-Prince", "HU-Budapest", "ID-Bandung", "ID-Bekasi", "ID-Depok", "ID-Jakarta", "ID-Makassar", "ID-Medan", "ID-Palembang", "ID-Semarang", "ID-South Tangerang", "ID-Surabaya", "ID-Tangerang", "IE-Dublin", "IL-Ashdo", "IL-Ashkelo", "IL-Bat Ya", "IL-Be'er Shev", "IL-Beit Shemes", "IL-Bnei Bra", "IL-Eila", "IL-Hader", "IL-Haif", "IL-Herzliy", "IL-Holo", "IL-Jerusale", "IL-Kfar Sab", "IL-Lo", "IL-Modii", "IL-Nazaret", "IL-Netany", "IL-Petach Tikva", "IL-Ra'anan", "IL-Ramat Ga", "IL-Raml", "IL-Rishon LeZio", "IL-Tel Avi", "IL-Tiberia", "IM-Douglas", "IN-Ahmadabad", "IN-Bangalore", "IN-Bombay", "IN-Calcutta", "IN-Chennai", "IN-Cochin", "IN-Hyderabad", "IN-Jaipur", "IN-Kanpur", "IN-New Delhi", "IN-Pune", "IN-Surat", "IQ-Baghd", "IR-Tehra", "IS-Reykjavík", "IT-Milano", "IT-Rome", "JM-Kingston", "JO-Amma", "JP-Kobe-shi", "JP-Kyoto", "JP-Nagoya-shi", "JP-Osaka-shi", "JP-Sapporo", "JP-Tokyo", "KE-Nairob", "KG-Bishkek", "KH-Phnom Penh", "KM-Moron", "KN-Basseterre", "KP-Pyongyang", "KR-Busan", "KR-Seoul", "KW-Kuwai", "KY-George Town", "KZ-Almaty", "KZ-Astana", "LA-Vientiane", "LB-Beiru", "LC-Castries", "LI-Vaduz", "LR-Monrovia", "LS-Maser", "LT-Vilniu", "LU-Luxemburg", "LV-Rig", "LY-Tripoli", "MA-Casablanca", "MA-Rabat", "MD-Chisina", "ME-Podgorica", "MG-Antananarivo", "MK-Skopj", "ML-Bamako", "MM-Mandalay", "MM-Rangoon", "MN-Ulaanbaatar", "MP-Saipan", "MR-Nouakchott", "MS-Plymouth", "MT-Valletta", "MU-Port Loui", "MW-Lilongw", "MX-Cancun", "MX-Guadalajara", "MX-Iztapalapa", "MX-Mazatlan", "MX-Mexico City", "MX-Monterrey", "MX-Puerto Vallarta", "MX-Tijuana", "MY-Kota Bharu", "MY-Kuala Lumpur", "MZ-Maputo", "NA-Windhoek", "NC-Nouméa", "NE-Niamey", "NG-Abuja", "NG-Lagos", "NI-Managua", "NL-Amsterdam", "NO-Oslo", "NP-Kathmandu", "NU-Alofi", "NZ-Auckland", "NZ-Christchurch", "NZ-Wellington", "OM-Musca", "PA-Panama City", "PE-Lima", "PF-Papeete", "PG-Port Moresby", "PH-Manila", "PK-Islamabad", "PK-Karachi", "PL-Warsa", "PR-San Juan", "PT-Lisbon", "PY-Asuncion", "QA-Doh", "RO-Buchares", "RS-Belgrad", "RU-Mosco", "RU-Novosibirsk", "RU-Saint Petersbur", "RU-Yekaterinburg", "RW-Kigal", "SA-Jedda", "SA-Mecc", "SA-Medin", "SA-Riyad", "SB-Honiara", "SC-Victori", "SD-Khartou", "SD-Omdurma", "SE-Stockholm", "SG-Singapore", "SH-Jamestown", "SI-Ljubljana", "SK-Bratislava", "SL-Freetown", "SN-Dakar", "SO-Mogadis", "SR-Paramaribo", "ST-São Tomé", "SV-San Salvador", "SY-Alepp", "SY-Damascu", "SZ-Mbaban", "TC-Cockburn Town", "TD-Ndjamena", "TG-Lomé", "TH-Bangkok", "TJ-Dushanbe", "TM-Ashgaba", "TN-Tunis", "TR-Adan", "TR-Ankar", "TR-Burs", "TR-Istanbu", "TR-Izmi", "TV-Funafuti", "TW-Kaohsiung", "TW-Taipei", "TZ-Dar es Salaa", "TZ-Dodom", "UA-Kharki", "UA-Kie", "UG-Kampal", "US-Atlanta-GA", "US-Austin-TX", "US-Baltimore-MD", "US-Boston-MA", "US-Buffalo-NY", "US-Chicago-IL", "US-Cincinnati-OH", "US-Cleveland-OH", "US-Columbus-OH", "US-Dallas-TX", "US-Denver-CO", "US-Detroit-MI", "US-Hartford-CT", "US-Honolulu-HI", "US-Houston-TX", "US-Lakewood-NJ", "US-Las Vegas-NV", "US-Livingston-NY", "US-Los Angeles-CA", "US-Memphis-TN", "US-Miami-FL", "US-Milwaukee-WI", "US-Monsey-NY", "US-New Haven-CT", "US-New York-NY", "US-Omaha-NE", "US-Orlando-FL", "US-Passaic-NJ", "US-Philadelphia-PA", "US-Phoenix-AZ", "US-Pittsburgh-PA", "US-Portland-OR", "US-Providence-RI", "US-Richmond-VA", "US-Rochester-NY", "US-Saint Louis-MO", "US-Saint Paul-MN", "US-San Diego-CA", "US-San Francisco-CA", "US-Seattle-WA", "US-Silver Spring-MD", "US-Teaneck-NJ", "US-Washington-DC", "US-White Plains-NY", "UY-Montevideo", "UZ-Tashkent", "VC-Kingstown", "VE-Caracas", "VE-Maracaibo", "VE-Maracay", "VE-Valencia", "VG-Road Town", "VN-Hanoi", "VN-Ho Chi Minh City", "WS-Apia", "YE-San", "YT-Mamoudzo", "ZA-Cape Town", "ZA-Durban", "ZA-Johannesbur", "ZA-Pretori", "ZM-Lusak", "ZW-Harar"]
+
 
     const handleCountryChange = (e) => {
         setZip('')
@@ -74,13 +124,15 @@ function Zmanim() {
 
             <Heading>Or: </Heading>
 
-            <Select name="countries"
+            {/* <Select name="countries"
             onChange={handleChange}
             >
             {countryCodes.map(country => 
                 <option value={country} key={country.id}>{country}</option>
                 )}
-            </Select> 
+            </Select>  */}
+
+            <Button onClick={locate}>Get my location</Button>
 
             {!errors ? null : 
             <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
