@@ -208,13 +208,10 @@ function Footer({minimum,
         <Container>
                 <FooterSpace>
             {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
-            {minimum ? <Button onClick={toHome}>Home</Button> : null}
             {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
-            {maximum ? <Button onClick={toHome}>Home</Button> : null}
             {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
-            {reviewingHalachot ? <Button onClick={toHome}>Home</Button> : null}
-            {viewingZmanim ? <Button onClick={toHome}>Home</Button> : null}
+            <Button onClick={toHome}>Home</Button>
             </FooterSpace>
             </Container>
     )
@@ -238,7 +235,7 @@ background-size: cover;`;
 
 const Container = styled.div`
 position: relative;
-min-height: 20vh;
+min-height: 35vh;
 margin-top: 20vh;
 // display: flex;
 // flex-direction: column;
