@@ -12,6 +12,8 @@ function Zmanim() {
     const [errors, setErrors] = useState(false)
     const [latitude, setLatitude] = useState('')
     const [longitude, setLongitude] = useState('')
+    const [haveLocation, setHaveLocation] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const getZmanim = () => {
         setErrors(false)
@@ -44,16 +46,20 @@ function Zmanim() {
 const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     
   function componentDidMount() {
+    setZip('')
+    setLoading(true)
+    setHaveLocation(true)
     navigator.geolocation.getCurrentPosition(function(position) {
         setLatitude(position.coords.latitude)
         setLongitude(position.coords.longitude)
       console.log(position)
+      setLoading(false)
     });
   }
-
+console.log(loading)
   const locate = () => {
     setZip('')
-    componentDidMount()
+    // componentDidMount()
     fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}`, {
 })
 .then((r) => {
@@ -72,6 +78,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
         }
       });
       setHaveTimes(true)
+      setHaveLocation(false)
     } else {
       setErrors(true);
     }
@@ -132,7 +139,8 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
                 )}
             </Select>  */}
 
-            <Button onClick={locate}>Get my location</Button>
+            {!haveLocation ? <Button onClick={componentDidMount}>Get my location</Button>
+            : <Button onClick={locate}>{loading ? `Locating...` : `Show my Zmanim`}</Button>}
 
             {!errors ? null : 
             <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
