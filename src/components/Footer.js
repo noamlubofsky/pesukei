@@ -184,6 +184,7 @@ function Footer({minimum,
             window.scrollTo(0, 0)
       }else{
           navigate('/Ashrei')
+          setUpTo('Ashrei')
           window.scrollTo(0, 0)
       }
       }
