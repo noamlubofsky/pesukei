@@ -208,9 +208,12 @@ function Footer({minimum,
     return(
         <Container>
                 <FooterSpace>
-            {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
-            {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
-            {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
+            {/* {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
+            {minimum ? (upTo === 'Yishtabach' ? null : <Button onClick={minimumClick}>Next</Button>) : null}
+            {/* {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
+            {maximum ? (upTo === 'Yishtabach' ? null : <Button onClick={maximumClick}>Next</Button>) : null}
+            {/* {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null} */}
+            {order ? (upTo === 'Yishtabach' ? null : <Button onClick={orderClick}>Next</Button>) : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
             {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <Button onClick={toHome}>Home</Button>}
             
