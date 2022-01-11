@@ -149,7 +149,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             </Select>  */}
 
             {!haveLocation ? <Button onClick={componentDidMount}>Get my location</Button>
-            : <div>{loading ? <Button>Loading</Button> : 
+            : <div>{loading ? <Button>Locating...</Button> : 
             <ShowButton onClick={locate}>
                 <div>Done Locating</div>
                 <br></br>
