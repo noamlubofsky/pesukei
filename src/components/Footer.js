@@ -263,6 +263,13 @@ const Button = styled.button`
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
 // background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
 background-color: silver;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
   `;
 
 export default Footer;
