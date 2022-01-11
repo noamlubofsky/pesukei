@@ -95,8 +95,7 @@ function App() {
     <div>
       <Router>
       <Header />
-  
-      {window.location.pathname === ('/' || '/Zmanim' || '/Halachot') ? null : <RangeSlider size={size} setSize={setSize} {...sliderProps} classes="additional-css-classes" />}
+      {window.location.pathname === '/' || ('/Zmanim' || '/Halachot') ? null : <RangeSlider size={size} setSize={setSize} {...sliderProps} classes="additional-css-classes" />}
       <Routes>
           <Route path="/" element={<Home
                 setMinimum={setMinimum}
