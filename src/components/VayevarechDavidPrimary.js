@@ -32,7 +32,7 @@ font-family: 'Times New Roman', Georgia, serif;
 const Text = styled.div`
 font-size: ${props => props.fontSize}px;
 text-align: right;
-margin-right: 5vw;
+margin-right: 0vw;
 margin-left: 2vw;
 margin-bottom: 5vh;
 font-family: 'Times New Roman', Georgia, serif;

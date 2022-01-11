@@ -97,6 +97,7 @@ const Container = styled.div`
 const Button = styled.button`
 
   margin-top: 2vh;
+  margin-left: 3vh;
   margin-bottom: 2vh;
   width: 90%;
   height: 16vh;
