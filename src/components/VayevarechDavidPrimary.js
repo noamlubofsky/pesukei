@@ -16,11 +16,13 @@ function VayevarechDavidPrimary() {
 const Heading = styled.h1`
 text-align: right;
 margin-right: 5vw;
+font-family: 'Times New Roman', Georgia, serif;
 `;
 
 const Heading2 = styled.h3`
 text-align: right;
 margin-right: 5vw;
+font-family: 'Times New Roman', Georgia, serif;
 `;
 
 const Text = styled.div`
@@ -29,6 +31,7 @@ text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;
 margin-bottom: 5vh;
+font-family: 'Times New Roman', Georgia, serif;
 `;
 
 export default VayevarechDavidPrimary;

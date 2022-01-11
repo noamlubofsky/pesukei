@@ -32,6 +32,7 @@ background-size: cover;
 `;
 
 const Heading = styled.h1`
+font-family: 'Times New Roman', Georgia, serif;
 // background-image: url(https://w2.chabad.org/media/images/281/vGWn2817694.jpg);
 background-image: url(${scroll});
 background-position: center;

@@ -72,6 +72,7 @@ const Button = styled.button`
 
   margin-top: 2vh;
   margin-bottom: 2vh;
+  font-family: 'Times New Roman', Georgia, serif;
   width: 90vw;
   height: 12vh;
   /* line-height: 50px; */
