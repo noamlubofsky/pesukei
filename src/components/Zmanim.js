@@ -14,6 +14,8 @@ function Zmanim() {
     const [longitude, setLongitude] = useState('')
     const [haveLocation, setHaveLocation] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [usingLocation, setUsingLocation] = useState(false)
+    const [usingZip, setUsingZip] = useState(false)
 
     const getZmanim = () => {
         setErrors(false)
@@ -32,6 +34,8 @@ function Zmanim() {
     const handleSubmit = (e) => {
         e.preventDefault()
         getZmanim()
+        setUsingLocation(false)
+        setUsingZip(true)
     }
 
     // const timezone = (new Date()).getTimezoneOffset()
@@ -49,6 +53,8 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     setZip('')
     setLoading(true)
     setHaveLocation(true)
+    setUsingLocation(false)
+    setUsingZip(false)
     navigator.geolocation.getCurrentPosition(function(position) {
         setLatitude(position.coords.latitude)
         setLongitude(position.coords.longitude)
@@ -62,13 +68,15 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
 
   const locate = () => {
     setZip('')
+    setUsingZip(false)
+    setUsingLocation(true)
     // componentDidMount()
     fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}`, {
 })
 .then((r) => {
     if (r.ok) {
         setErrors(false)
-      r.json().then((data) => {
+        r.json().then((data) => {
         setZmanim(data.times);
         if(data.times.alotHaShachar.includes('+')){
             setEarliest(data.times.alotHaShachar.split('T')[1].split('+')[0]);
@@ -79,9 +87,9 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
         setLatest(data.times.sofZmanTfilla.split('T')[1].split('-')[0]);
         setChatzot(data.times.chatzot.split('T')[1].split('-')[0])
         }
-      });
-      setHaveTimes(true)
-      setHaveLocation(false)
+        });
+        setHaveTimes(true)
+        setHaveLocation(false)
     } else {
       setErrors(true);
     }
@@ -152,7 +160,11 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
             }
 
-            {!haveTimes || errors ? null : 
+            {usingLocation ? <Time>Zmanim for {timezone}</Time> : null}
+            {usingZip ? <Time>Zmanim for {zip}</Time> : null}
+
+
+            {!haveTimes || errors || usingZip === false && usingLocation === false ? null : 
             <div>
                 <Heading>Earliest time to say Pesukei Dezimra:</Heading>
                 <Time> {earliest}</Time>
