@@ -2,13 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
 import scroll from '../scroll.jpeg'
-import { Link } from "react-router-dom";
 
 function Header() {
     return(
         <div>
             <Container>
-            <Heading as={Link} to={`/`}>
+            <Heading>
             סדר פסוקי דזמרא
             </Heading>
             </Container>
@@ -22,7 +21,6 @@ const Container = styled.header`
   justify-content: center;
   align-items: center;
   padding: 2vh;
-  min-height: 10vh;
   height: auto;
   width: 100%;
 //   border-bottom: 4px solid grey;
@@ -43,8 +41,6 @@ background-clip: text;
 -webkit-background-clip: text;
 color: transparent;
 // text-shadow: 2px 2px 4px #000000;
-font-size: 2em;
-font-weight: bold;
 
 `;
 
