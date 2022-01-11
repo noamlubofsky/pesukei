@@ -132,6 +132,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
         <div>
             
             <Container>
+                <Heading>Zmanim for פסוקי דזמרא</Heading>
             <form onSubmit={handleSubmit}>
             <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input>
             <br></br>
@@ -178,6 +179,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
 
             </Container>
 
+            <Header>Halachot</Header>
             <Heading>The time to say Pesukei DeZimrah is from Alot Hashachar (72 minutes before sunrise) until the 4th hour in Shaot Zmaniot.[1]</Heading>
             <Heading>If one missed the time unintentionally or unwillingly one can say pesukei dzimra after 4 hours until Chatzot with shem umalchut.[2]</Heading>
             <Heading>If one missed the time intentionally one can only say Baruch Sh'amar and Yishtabach without Hashem’s name in the bracha.[3]</Heading>
@@ -284,7 +286,14 @@ margin-left: 5vw;
 margin-right: 5vw;
 font-size: 1.5em;
 font-weight: 300;
+`;
 
+const Header = styled.h3`
+margin-left: 5vw;
+margin-right: 5vw;
+font-size: 1.5em;
+font-weight: 45000;
+text-decoration: underline;
 `;
 
 const Time = styled.h1`
