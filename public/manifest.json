@@ -3,19 +3,19 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "square.ico",
-      "sizes": "128x128",
+      "src": "newicon.ico",
+      "sizes": "256x256",
       "type": "image/x-icon"
     },
     {
-      "src": "pesukei.png",
+      "src": "newicon.png",
       "type": "image/png",
-      "sizes": "984X840"
+      "sizes": "1024x1024"
     },
     {
-      "src": "pesukei.png",
+      "src": "newicon.png",
       "type": "image/png",
-      "sizes": "984x840"
+      "sizes": "1024x1024"
     }
   ],
   "start_url": ".",
