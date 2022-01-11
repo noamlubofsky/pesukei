@@ -280,16 +280,21 @@ const Button = styled.button`
   text-decoration: none;
   text-align: center;
   align-items: center;
-  color: rgb(37, 38, 51);
+//   color: rgb(37, 38, 51);
+color: black;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all .35s;
   justify-content: center;
   font-size: 3vh;
+  background-image: url(${scroll});
+  background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
 //   font-color: rgb(37, 38, 51);
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
 // background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
-background-color: silver;
+// background-color: silver;
 -webkit-touch-callout: none; /* iOS Safari */
 -webkit-user-select: none; /* Safari */
  -khtml-user-select: none; /* Konqueror HTML */
