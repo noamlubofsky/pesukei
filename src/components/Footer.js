@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
 import blueleather from '../blueleather.jpeg'
+import scroll from '../scroll.jpeg'
 
 function Footer({minimum, 
     maximum, 
@@ -211,35 +212,58 @@ function Footer({minimum,
             {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null}
             {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null}
             {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
-            {window.location.pathname === '/' ? null : <Button onClick={toHome}>Home</Button>}
+            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <Button onClick={toHome}>Home</Button>}
+            
             </FooterSpace>
             </Container>
     )
 }
 
+const Copyright = styled.p`
+
+background-image: url(${scroll});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+// text-shadow: 2px 2px 4px #000000;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+`
+
 const FooterSpace = styled.div`
-position: absolute;
-min-height: 10vh;
-  bottom: 0;
+// position: absolute;
+// min-height: 10vh;
+//   bottom: 0;
   width: 100%;
   justify-content: center;
   align-items: center;
-//   min-height: 10vh;
+  margin-top: 10px;
   padding: 2vh;
-//   border-top: 4px solid grey;
-//   background-color: rgb(37, 38, 51);
+//   margin-left: 30px;
+//   line-height: 20%;
 background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;`;
 
 const Container = styled.div`
+width: 100%;
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   background-color: rgb(27, 44, 77);
+//   color: white;
+//   border-top: 4px solid #F05A27;
+  float: bottom;
+//   justify-content: center;
+//   align-items: center;
 position: relative;
-min-height: 35vh;
-margin-top: 20vh;
-// display: flex;
-// flex-direction: column;
-bottom: 0px;
 `;
 
 const Button = styled.button`
