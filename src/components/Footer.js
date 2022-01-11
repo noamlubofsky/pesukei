@@ -209,36 +209,18 @@ function Footer({minimum,
         <Container>
                 <FooterSpace>
             {/* {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
-            {minimum ? (upTo === 'Yishtabach' ? null : <Button onClick={minimumClick}><Heading>Next</Heading></Button>) : null}
-            {/* {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : '<Heading>Next</Heading>'}</Button> : null} */}
-            {maximum ? (upTo === 'Yishtabach' ? null : <Button onClick={maximumClick}><Heading>Next</Heading></Button>) : null}
+            {minimum ? (upTo === 'Yishtabach' ? null : <Button onClick={minimumClick}>Next</Button>) : null}
+            {/* {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
+            {maximum ? (upTo === 'Yishtabach' ? null : <Button onClick={maximumClick}>Next</Button>) : null}
             {/* {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null} */}
-            {order ? (upTo === 'Yishtabach' ? null : <Button onClick={orderClick}><Heading>Next</Heading></Button>) : null}
-            {order === true && isRushing === false ? <Button onClick={outOfTime}><Heading>I'm out of time</Heading></Button> : null}
-            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <Button onClick={toHome}><Heading>Home</Heading></Button>}
+            {order ? (upTo === 'Yishtabach' ? null : <Button onClick={orderClick}>Next</Button>) : null}
+            {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
+            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <Button onClick={toHome}>Home</Button>}
             
             </FooterSpace>
             </Container>
     )
 }
-
-const Heading = styled.h3`
-// background-image: url(https://w2.chabad.org/media/images/281/vGWn2817694.jpg);
-background-image: url(${scroll});
-background-position: center;
-background-repeat: no - repeat;
-background-size: cover;background-clip: text;
--webkit-background-clip: text;
-color: transparent;
-// text-shadow: 2px 2px 4px #000000;
--webkit-touch-callout: none; /* iOS Safari */
--webkit-user-select: none; /* Safari */
- -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently
-                              supported by Chrome, Edge, Opera and Firefox */
-`;
 
 const Copyright = styled.p`
 
@@ -308,6 +290,7 @@ const Button = styled.button`
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
 // background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
 background-color: silver;
+// background-color: #3D4244
 -webkit-touch-callout: none; /* iOS Safari */
 -webkit-user-select: none; /* Safari */
  -khtml-user-select: none; /* Konqueror HTML */
