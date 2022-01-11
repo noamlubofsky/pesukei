@@ -1,17 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-function VayevarechDavidPrimary() {
+function VayevarechDavidPrimary({size}) {
     return(
-        <div>
+        <Container>
             <Heading>וַיְבָֽרֶךְ דָּוִיד</Heading>
             <Heading2>(until תִּפְאַרְתֶּֽךָ)</Heading2>
 
-            <Text>
+            <Text fontSize={size}>
             וַיְבָֽרֶךְ דָּוִיד אֶת־יְהֹוָה לְעֵינֵי כָּל־הַקָּהָל וַיֹּֽאמֶר דָּוִיד בָּרוּךְ אַתָּה יְהֹוָה אֱלֹהֵי יִשְׂרָאֵל אָבִֽינוּ, מֵעוֹלָם וְעַד־עוֹלָם: לְךָ יְהֹוָה הַגְּ֒דֻלָּה וְהַגְּ֒בוּרָה וְהַתִּפְאֶֽרֶת וְהַנֵּֽצַח וְהַהוֹד כִּי־כֹל בַּשָּׁמַֽיִם וּבָאָֽרֶץ לְךָ יְהֹוָה הַמַּמְלָכָה וְהַמִּתְנַשֵּׂא לְכֹל לְרֹאשׁ: וְהָעֽשֶׁר וְהַכָּבוֹד מִלְּ֒פָנֶֽיךָ וְאַתָּה מוֹשֵׁל בַּכֹּל, וּבְיָדְ֒ךָ כֹּֽחַ וּגְבוּרָה, וּבְיָדְ֒ךָ לְגַדֵּל וּלְחַזֵּק לַכֹּל: וְעַתָּה אֱלֹהֵֽינוּ מוֹדִים אֲנַֽחְנוּ לָךְ וּמְהַלְלִים לְשֵׁם תִּפְאַרְתֶּֽךָ          </Text>
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+min-height: 50vh;
+`;
 
 const Heading = styled.h1`
 text-align: right;
@@ -26,7 +30,7 @@ font-family: 'Times New Roman', Georgia, serif;
 `;
 
 const Text = styled.div`
-font-size: 30px;
+font-size: ${props => props.fontSize}px;
 text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-function Barchu() {
+function Barchu({size}) {
     return(
         <div>
-            <Text>
+            <Text fontSize={size}>
             בָּרְ֒כוּ אֶת יְהֹוָה הַמְּ֒בֹרָךְ:
             בָּרוּךְ יְהֹוָה הַמְּ֒בֹרָךְ לְעוֹלָם וָעֶד:
 

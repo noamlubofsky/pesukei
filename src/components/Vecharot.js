@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-function Vecharot() {
+function Vecharot({size}) {
     return(
-        <div>
+        <Container>
             <Heading>וְכָרוֹת עִמּוֹ הַבְּ֒רִית</Heading>
 
-            <Text>
+            <Text fontSize={size}>
             וְכָרוֹת עִמּוֹ הַבְּ֒רִית לָתֵת אֶת־אֶרֶץ הַכְּ֒נַֽעֲנִי הַחִתִּי הָֽאֱמֹרִי וְהַפְּ֒רִזִּי וְהַיְבוּסִי וְהַגִּרְגָּשִׁי לָתֵת לְזַרְעוֹ. וַתָּקֶם אֶת־דְּבָרֶיךָ כִּי צַדִּיק אָֽתָּה. וַתֵּרֶא אֶת־עֳנִי אֲבֹתֵינוּ בְּמִצְרָיִם וְאֶת־זַֽעֲקָתָם שָׁמַעְתָּ עַל־יַם־סֽוּף. וַתִּתֵּן אֹתֹת וּמֹֽפְ֒תִים בְּפַרְעֹה וּבְכָל־עֲבָדָיו וּבְכָל־עַם אַרְצוֹ כִּי יָדַעְתָּ כִּי הֵזִידוּ עֲלֵיהֶם. וַתַּֽעַשׂ־לְךָ שֵׁם כְּהַיּוֹם הַזֶּֽה. וְהַיָּם בָּקַעְתָּ לִפְנֵיהֶם וַיַּֽעַבְרוּ בְתוֹךְ־הַיָּם בַּיַּבָּשָׁה. וְֽאֶת־רֹדְ֒פֵיהֶם הִשְׁלַכְתָּ בִמְצוֹלֹת כְּמוֹ־אֶבֶן בְּמַיִם עַזִּֽים            </Text>
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+min-height: 50vh;
+`;
 
 const Heading = styled.h1`
 text-align: right;
@@ -19,7 +23,7 @@ font-family: 'Times New Roman', Georgia, serif;
 `;
 
 const Text = styled.div`
-font-size: 30px;
+font-size: ${props => props.fontSize}px;
 text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;

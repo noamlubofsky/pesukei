@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { BrowserRouter as Router,
   Routes,
   Route,
@@ -32,6 +32,7 @@ import Hallelukahs from './components/Hallelukahs'
 import Extras from './components/Extras'
 import Halachot from './components/Halachot'
 import Zmanim from './components/Zmanim'
+import RangeSlider from './components/RangeSlider'
 
 function App() {
   const [minimum, setMinimum] = useState(false)
@@ -53,6 +54,30 @@ function App() {
   const [saidAzYashir, setSaidAzYashir] = useState(false)
   const [saidAshrei, setSaidAshrei] = useState(false)
   const [isRushing, setIsRushing] = useState(false)
+  const [parentVal, setParentVal] = useState(30);
+  const [size, setSize] = useState(30)
+
+  const sliderValueChanged = useCallback(val => {
+    console.log("NEW VALUE", val);
+    setParentVal(val);
+  });
+
+  // const sliderValueChanged = (e) => {
+  //   setParentVal(e.target.value);
+  //   console.log(parentVal)
+  // }
+
+  const sliderProps = useMemo(
+    () => ({
+      min: 20,
+      max: 80,
+      value: parentVal,
+      step: 2,
+      onChange: e => sliderValueChanged(e),
+    }),
+    [parentVal]
+  );
+
 
   // useEffect(() => {
   //  componentDidMount()
@@ -70,6 +95,8 @@ function App() {
     <div>
       <Router>
       <Header />
+  
+      {window.location.pathname === ('/' || '/Zmanim' || '/Halachot') ? null : <RangeSlider size={size} setSize={setSize} {...sliderProps} classes="additional-css-classes" />}
       <Routes>
           <Route path="/" element={<Home
                 setMinimum={setMinimum}
@@ -80,29 +107,29 @@ function App() {
                 setUpTo={setUpTo}
       setViewingZmanim={setViewingZmanim}
                 />}/>
-          <Route path="/MizmorShir" element={<MizmorShir/>}/>
-          <Route path="/BaruchSheamar" element={<BaruchSheamar/>}/>
-          <Route path="/HoduPrimary" element={<HoduPrimary/>}/>
-          <Route path="/HoduFull" element={<HoduFull/>}/>
-          <Route path="/HoduRest" element={<HoduRest/>}/>
-          <Route path="/MizmorLetodah" element={<MizmorLetodah/>}/>
-          <Route path="/YehiChevod" element={<YehiChevod/>}/>
-          <Route path="/Ashrei" element={<Ashrei/>}/>
-          <Route path="/Hallelukah1" element={<Hallelukah1/>}/>
-          <Route path="/Hallelukah2" element={<Hallelukah2/>}/>
-          <Route path="/Hallelukah3" element={<Hallelukah3/>}/>
-          <Route path="/Hallelukah4" element={<Hallelukah4/>}/>
-          <Route path="/Hallelukah5" element={<Hallelukah5/>}/>
-          <Route path="/BaruchHashemLeolam" element={<BaruchHashemLeolam/>}/>
-          <Route path="/VayevarechDavidPrimary" element={<VayevarechDavidPrimary/>}/>
-          <Route path="/VayevarechDavidFull" element={<VayevarechDavidFull/>}/>
-          <Route path="/VayevarechDavidRest" element={<VayevarechDavidRest/>}/>
-          <Route path="/Vecharot" element={<Vecharot/>}/>
-          <Route path="/AzYashir" element={<AzYashir/>}/>
-          <Route path="/Yishtabach" element={<Yishtabach/>}/>
-          <Route path="/Barchu" element={<Barchu/>}/>
-          <Route path="/Halachot" element={<Halachot/>}/>
-          <Route path="/Zmanim" element={<Zmanim/>}/>
+          <Route path="/MizmorShir" element={<MizmorShir size={size}/>}/>
+          <Route path="/BaruchSheamar" element={<BaruchSheamar size={size}/>}/>
+          <Route path="/HoduPrimary" element={<HoduPrimary size={size}/>}/>
+          <Route path="/HoduFull" element={<HoduFull size={size}/>}/>
+          <Route path="/HoduRest" element={<HoduRest size={size}/>}/>
+          <Route path="/MizmorLetodah" element={<MizmorLetodah size={size}/>}/>
+          <Route path="/YehiChevod" element={<YehiChevod size={size}/>}/>
+          <Route path="/Ashrei" element={<Ashrei size={size}/>}/>
+          <Route path="/Hallelukah1" element={<Hallelukah1 size={size}/>}/>
+          <Route path="/Hallelukah2" element={<Hallelukah2 size={size}/>}/>
+          <Route path="/Hallelukah3" element={<Hallelukah3 size={size}/>}/>
+          <Route path="/Hallelukah4" element={<Hallelukah4 size={size}/>}/>
+          <Route path="/Hallelukah5" element={<Hallelukah5 size={size}/>}/>
+          <Route path="/BaruchHashemLeolam" element={<BaruchHashemLeolam size={size}/>}/>
+          <Route path="/VayevarechDavidPrimary" element={<VayevarechDavidPrimary size={size}/>}/>
+          <Route path="/VayevarechDavidFull" element={<VayevarechDavidFull size={size}/>}/>
+          <Route path="/VayevarechDavidRest" element={<VayevarechDavidRest size={size}/>}/>
+          <Route path="/Vecharot" element={<Vecharot size={size}/>}/>
+          <Route path="/AzYashir" element={<AzYashir size={size}/>}/>
+          <Route path="/Yishtabach" element={<Yishtabach size={size}/>}/>
+          <Route path="/Barchu" element={<Barchu size={size}/>}/>
+          <Route path="/Halachot" element={<Halachot size={size}/>}/>
+          <Route path="/Zmanim" element={<Zmanim size={size}/>}/>
           <Route path="/Hallelukahs" element={<Hallelukahs
           saidHallelukah1={saidHallelukah1}
           setSaidHallelukah1={setSaidHallelukah1}

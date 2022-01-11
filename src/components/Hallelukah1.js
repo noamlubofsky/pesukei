@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-function Hallelukah1() {
+function Hallelukah1({size}) {
     return(
-        <div>
+        <Container>
             <Heading>1 הַלְ֒לוּיָהּ</Heading>
-            <Text>
+            <Text fontSize={size}>
             הַלְ֒לוּיָהּ הַלְ֒לִי נַפְשִׁי אֶת־יְהֹוָה: אֲהַלְלָה יְהֹוָה בְּחַיָּי אֲזַמְּ֒רָה לֵאלֹהַי בְּעוֹדִי: אַל־תִּבְטְחוּ בִנְדִיבִים בְּבֶן־אָדָם שֶׁאֵין לוֹ תְשׁוּעָה: תֵּצֵא רוּחוֹ יָשֻׁב לְאַדְמָתוֹ בַּיּוֹם הַהוּא אָבְ֒דוּ עֶשְׁתֹּנֹתָיו: אַשְׁרֵי שֶׁאֵל יַעֲקֹב בְּעֶזְרוֹ, שִׂבְרוֹ עַל־יְהֹוָה אֱלֹהָיו: עֹשֶׂה שָׁמַֽיִם וָאָֽרֶץ אֶת־הַיָּם וְאֶת־כָּל־אֲשֶׁר־בָּם, הַשֹּׁמֵר אֱמֶת לְעוֹלָם: עֹשֶׂה מִשְׁפָּט לַעֲשׁוּקִים נֹתֵן לֶֽחֶם לָרְ֒עֵבִים יְהֹוָה מַתִּיר אֲסוּרִים: יְהֹוָה פֹּקֵֽחַ עִוְרִים יְהֹוָה זֹקֵף כְּפוּפִים יְהֹוָה אֹהֵב צַדִּיקִים: יְהֹוָה שֹׁמֵר אֶת־גֵּרִים יָתוֹם וְאַלְמָנָה יְעוֹדֵד וְדֶֽרֶךְ רְשָׁעִים יְעַוֵּת: יִמְלֹךְ יְהֹוָה לְעוֹלָם אֱלֹהַֽיִךְ צִיּוֹן לְדֹר וָדֹר הַלְ֒לוּיָהּ        
             </Text>
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+min-height: 50vh;
+`;
 
 const Heading = styled.h1`
 text-align: right;
@@ -19,7 +23,7 @@ font-family: 'Times New Roman', Georgia, serif;
 `;
 
 const Text = styled.div`
-font-size: 30px;
+font-size: ${props => props.fontSize}px;
 text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;
