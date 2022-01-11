@@ -24,6 +24,7 @@ function Zmanim() {
     .then((res) => res.json())
     .then((data) => {
         setZmanim(data.times);
+        console.log(zmanim)
         setEarliest(data.times.alotHaShachar.split('T')[1].split('-')[0]);
         setLatest(data.times.sofZmanTfilla.split('T')[1].split('-')[0]);
         setChatzot(data.times.chatzot.split('T')[1].split('-')[0])
@@ -78,6 +79,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
         setErrors(false)
         r.json().then((data) => {
         setZmanim(data.times);
+        console.log(zmanim)
         if(data.times.alotHaShachar.includes('+')){
             setEarliest(data.times.alotHaShachar.split('T')[1].split('+')[0]);
             setLatest(data.times.sofZmanTfilla.split('T')[1].split('+')[0]);
@@ -165,7 +167,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             {usingZip ? <Time>Zmanim for {zip}</Time> : null}
 
 
-            {!haveTimes || errors || usingZip === false && usingLocation === false ? null : 
+            {!haveTimes || errors || (usingZip === false && usingLocation === false) ? null : 
             <div>
                 <Heading>Earliest time to say Pesukei Dezimra:</Heading>
                 <Time> {earliest}</Time>
@@ -195,22 +197,22 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     )
 }
 
-const Select = styled.select`
+// const Select = styled.select`
     
-    border: none;
-    width: 40vw;
-    height: 5vh;
-    border-bottom: 2px solid #001939;
-font-size: large;
-// margin-top: 2vh;
-margin-left: 1vw;
-outline: none;
-background-color: transparent;
-&:focus {
-    outline: none;
-    border-bottom: 2px solid #B96630;
-}
-`;
+//     border: none;
+//     width: 40vw;
+//     height: 5vh;
+//     border-bottom: 2px solid #001939;
+// font-size: large;
+// // margin-top: 2vh;
+// margin-left: 1vw;
+// outline: none;
+// background-color: transparent;
+// &:focus {
+//     outline: none;
+//     border-bottom: 2px solid #B96630;
+// }
+// `;
 
 const ShowButton = styled.button`
 
