@@ -213,6 +213,7 @@ function Footer({minimum,
     return(
         <Container>
                 <FooterSpace>
+                <Buttons>
             {/* {minimum ? <Button onClick={minimumClick}>{window.location.pathname === '/Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
             {minimum ? (window.location.pathname === '/Yishtabach' ||
             window.location.pathname === '/' || 
@@ -240,8 +241,12 @@ function Footer({minimum,
 
             {window.location.pathname === '/' ? null : <BackButton onClick={goBack}>❮</BackButton>}
 
-            <Buttons>
-            {window.location.pathname === '/' ? null : <HomeButton onClick={toHome}>⌂</HomeButton>}
+            
+            {window.location.pathname === '/' || 
+            window.location.pathname === '/Zmanim' || 
+            window.location.pathname === '/Halachot' 
+            ? null : <HomeButton onClick={toHome}>⌂</HomeButton>}
+
             {order === true && isRushing === false ? <Button onClick={outOfTime}>out of time</Button> : null}
             </Buttons>
 
@@ -272,7 +277,7 @@ color: transparent;
 
 const FooterSpace = styled.div`
 // position: absolute;
-min-height: 10vh;
+min-height: 15vh;
 //   bottom: 0;
   width: 100%;
   justify-content: center;
@@ -305,14 +310,15 @@ position: relative;
 const Buttons = styled.div`
 // width: 100%;
   display: grid;
-  grid-template-columns: 30vw 30vw;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: 10fr 10fr 10fr 10fr;
+//   justify-content: center;
+//   align-items: center;
 
 `;
 
 const Button = styled.button`
 box-shadow: 0 0px 2px #ccc;
+display: inline-block;
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 25vw;
@@ -347,13 +353,14 @@ background-color: silver;
 
   const HomeButton = styled.button`
   box-shadow: 0 0px 2px #ccc;
+  display: inline-block;
   margin-top: 2vh;
   margin-bottom: 2vh;
-  width: 25vw;
+  width: 20vw;
   height: 50px;
   border-radius: 10px;
-//   margin-right: 2vw;
-//   margin-left: 20vw;
+  margin-right: 6.5vw;
+  margin-left: 20vw;
   font-weight: 900;
   text-decoration: none;
   text-align: center;
