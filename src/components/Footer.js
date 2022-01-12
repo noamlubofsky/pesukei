@@ -31,15 +31,15 @@ function Footer({minimum,
     let navigate = useNavigate();
 
     const minimumClick = () => {
-      if(upTo === 'BaruchSheamar'){
+      if(window.location.pathname === '/BaruchSheamar'){
         navigate('/Ashrei')
         setUpTo('Ashrei')
         window.scrollTo(0, 0)
-      }else if(upTo === 'Ashrei'){
+      }else if(window.location.pathname === '/Ashrei'){
         navigate('/Yishtabach')
         setUpTo('Yishtabach')
         window.scrollTo(0, 0)
-      }else if(upTo === 'Yishtabach'){
+      }else if(window.location.pathname === '/Yishtabach'){
         navigate('/')
         setUpTo('start')
         setMinimum(false)
@@ -48,67 +48,67 @@ function Footer({minimum,
     }
 
     const maximumClick = () => {
-        if(upTo === 'MizmorShir'){
+        if(window.location.pathname === '/MizmorShir'){
           navigate('/BaruchSheamar')
           setUpTo('BaruchSheamar')
           window.scrollTo(0, 0)
-        }else if(upTo === 'BaruchSheamar'){
+        }else if(window.location.pathname === '/BaruchSheamar'){
           navigate('/HoduFull')
           setUpTo('HoduFull')
           window.scrollTo(0, 0)
-        }else if(upTo === 'HoduFull'){
+        }else if(window.location.pathname === '/HoduFull'){
             navigate('/MizmorLetodah')
             setUpTo('MizmorLetodah')
             window.scrollTo(0, 0)
-        }else if(upTo === 'MizmorLetodah'){
+        }else if(window.location.pathname === '/MizmorLetodah'){
             navigate('/YehiChevod')
             setUpTo('YehiChevod')
             window.scrollTo(0, 0)
-        }else if(upTo === 'YehiChevod'){
+        }else if(window.location.pathname === '/YehiChevod'){
             navigate('/Ashrei')
             setUpTo('Ashrei')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Ashrei'){
+        }else if(window.location.pathname === '/Ashrei'){
             navigate('/Hallelukah1')
             setUpTo('Hallelukah1')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah1'){
+        }else if(window.location.pathname === '/Hallelukah1'){
             navigate('/Hallelukah2')
             setUpTo('Hallelukah2')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah2'){
+        }else if(window.location.pathname === '/Hallelukah2'){
             navigate('/Hallelukah3')
             setUpTo('Hallelukah3')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah3'){
+        }else if(window.location.pathname === '/Hallelukah3'){
             navigate('/Hallelukah4')
             setUpTo('Hallelukah4')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah4'){
+        }else if(window.location.pathname === '/Hallelukah4'){
             navigate('/Hallelukah5')
             setUpTo('Hallelukah5')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah5'){
+        }else if(window.location.pathname === '/Hallelukah5'){
             navigate('/BaruchHashemLeolam')
             setUpTo('BaruchHashemLeolam')
             window.scrollTo(0, 0)
-        }else if(upTo === 'BaruchHashemLeolam'){
+        }else if(window.location.pathname === '/BaruchHashemLeolam'){
             navigate('/VayevarechDavidFull')
             setUpTo('VayevarechDavidFull')
             window.scrollTo(0, 0)
-        }else if(upTo === 'VayevarechDavidFull'){
+        }else if(window.location.pathname === '/VayevarechDavidFull'){
             navigate('/Vecharot')
             setUpTo('Vecharot')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Vecharot'){
+        }else if(window.location.pathname === '/Vecharot'){
             navigate('/AzYashir')
             setUpTo('AzYashir')
             window.scrollTo(0, 0)
-        }else if(upTo === 'AzYashir'){
+        }else if(window.location.pathname === '/AzYashir'){
             navigate('/Yishtabach')
             setUpTo('Yishtabach')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Yishtabach'){
+        }else if(window.location.pathname === '/Yishtabach'){
             navigate('/')
             setUpTo('start')
             setMaximum(false)
@@ -117,12 +117,12 @@ function Footer({minimum,
       }
 
       const orderClick = () => {
-        if(upTo === 'BaruchSheamar'){
+        if(window.location.pathname === '/BaruchSheamar'){
           navigate('/Ashrei')
           setUpTo('Ashrei')
           setSaidAshrei(true)
           window.scrollTo(0, 0)
-        }else if(upTo === 'Ashrei'){
+        }else if(window.location.pathname === '/Ashrei'){
             if(isRushing === true){
                 navigate('/Yishtabach')
                 setUpTo('Yishtabach')
@@ -131,15 +131,15 @@ function Footer({minimum,
           navigate('/Hallelukah5')
           setUpTo('Hallelukah5')}
           window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah5'){
+        }else if(window.location.pathname === '/Hallelukah5'){
             navigate('/Hallelukah3')
             setUpTo('Hallelukah3')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukah3'){
+        }else if(window.location.pathname === '/Hallelukah3'){
             navigate('/Hallelukahs')
             setUpTo('Hallelukahs')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Hallelukahs'){
+        }else if(window.location.pathname === '/Hallelukahs'){
             navigate('/Hallelukahs')
             setUpTo('Hallelukahs')
             window.scrollTo(0, 0)
@@ -148,26 +148,26 @@ function Footer({minimum,
             //     || saidHallelukah4 === false){
             //         alert(`Say all Hallelukah's before continuing!`)
             //     }
-        }else if(upTo === 'HallelukahsDone'){
+        }else if(window.location.pathname === '/HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
             window.scrollTo(0, 0)
             setSaidHallelukah1(false)
             setSaidHallelukah2(false)
             setSaidHallelukah4(false)
-        }else if(upTo === 'VayevarechDavidPrimary'){
+        }else if(window.location.pathname === '/VayevarechDavidPrimary'){
             navigate('/HoduPrimary')
             setUpTo('HoduPrimary')
             window.scrollTo(0, 0)
-        }else if(upTo === 'HoduPrimary'){
+        }else if(window.location.pathname === '/HoduPrimary'){
             navigate('/Extras')
             setUpTo('Extras')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Extras'){
+        }else if(window.location.pathname === '/Extras'){
             navigate('/Extras')
             setUpTo('Extras')
             window.scrollTo(0, 0)
-        }else if(upTo === 'Yishtabach'){
+        }else if(window.location.pathname === '/Yishtabach'){
             navigate('/')
             setUpTo('start')
             setOrder(false)
@@ -205,17 +205,42 @@ function Footer({minimum,
           setViewingZmanim(false)
       }
 
+      const goBack = () => {
+          navigate(-1)
+          window.scrollTo(0, 0)
+      }
+
     return(
         <Container>
                 <FooterSpace>
-            {/* {minimum ? <Button onClick={minimumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
-            {minimum ? (upTo === 'Yishtabach' ? null : <Button onClick={minimumClick}>Next</Button>) : null}
-            {/* {maximum ? <Button onClick={maximumClick}>{upTo === 'Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
-            {maximum ? (upTo === 'Yishtabach' ? null : <Button onClick={maximumClick}>Next</Button>) : null}
-            {/* {order ? <Button onClick={orderClick}>{upTo === 'Yishtabach' ? 'Done' : 'Keep Going'}</Button> : null} */}
-            {order ? (upTo === 'Yishtabach' ? null : <Button onClick={orderClick}>Next</Button>) : null}
-            {order === true && isRushing === false ? <Button onClick={outOfTime}>I'm out of time</Button> : null}
-            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <Button onClick={toHome}>Home</Button>}
+            {/* {minimum ? <Button onClick={minimumClick}>{window.location.pathname === '/Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
+            {minimum ? (window.location.pathname === '/Yishtabach' ||
+            window.location.pathname === '/' || 
+            window.location.pathname === '/Zmanim' || 
+            window.location.pathname === '/Halachot' ||
+            window.location.pathname === '/Hallelukahs' ||
+            window.location.pathname === '/Extras'
+            ? null : <NextButton onClick={minimumClick}>❯</NextButton>) : null}
+            
+            {maximum ? (window.location.pathname === '/Yishtabach' ||
+            window.location.pathname === '/' || 
+            window.location.pathname === '/Zmanim' || 
+            window.location.pathname === '/Halachot' ||
+            window.location.pathname === '/Hallelukahs' ||
+            window.location.pathname === '/Extras'
+            ? null : <NextButton onClick={maximumClick}>❯</NextButton>) : null}
+            
+            {order ? (window.location.pathname === '/Yishtabach' ||
+            window.location.pathname === '/' || 
+            window.location.pathname === '/Zmanim' || 
+            window.location.pathname === '/Halachot' ||
+            window.location.pathname === '/Hallelukahs' ||
+            window.location.pathname === '/Extras'
+            ? null : <NextButton onClick={orderClick}>❯</NextButton>) : null}
+
+            {order === true && isRushing === false ? <Button onClick={outOfTime}>out of time</Button> : null}
+            {window.location.pathname === '/' ? null : <BackButton onClick={goBack}>❮</BackButton>}
+            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <HomeButton onClick={toHome}>⌂</HomeButton>}
             
             </FooterSpace>
             </Container>
@@ -254,12 +279,15 @@ const FooterSpace = styled.div`
 background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
-background-size: cover;`;
+background-size: cover;
+display: grid;
+grid-template-columns: 13ch auto;
+`;
 
 const Container = styled.div`
 width: 100%;
 //   display: grid;
-//   grid-template-columns: 1fr;
+//   grid-template-columns: 10px 10px 10px 10px;
 //   background-color: rgb(27, 44, 77);
 //   color: white;
 //   border-top: 4px solid #F05A27;
@@ -270,11 +298,46 @@ position: relative;
 `;
 
 const Button = styled.button`
-
   margin-top: 2vh;
   margin-bottom: 2vh;
-  width: 90vw;
-  height: 12vh;
+  width: 30vw;
+  height: 50px;
+  border-radius: 10px;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: rgb(37, 38, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .35s;
+  justify-content: center;
+  font-size: 1em;
+//   font-color: rgb(37, 38, 51);
+//   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+// background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
+background-color: silver;
+// background-color: #3D4244
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+  `;
+
+  const NextButton = styled.button`
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  float: right;
+  margin-right: 5vw;
   /* line-height: 50px; */
   font-weight: bold;
   text-decoration: none;
@@ -300,4 +363,72 @@ background-color: silver;
                               supported by Chrome, Edge, Opera and Firefox */
   `;
 
+  const BackButton = styled.button`
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: left;
+  position: absolute;
+  left: 0;
+  margin-left: 5vw;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: rgb(37, 38, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .35s;
+  justify-content: center;
+  font-size: 3vh;
+//   font-color: rgb(37, 38, 51);
+//   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+// background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
+background-color: silver;
+// background-color: #3D4244
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+  `;
+
+  const HomeButton = styled.button`
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+//   float: left;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  /* line-height: 50px; */
+  font-weight: 900;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: rgb(37, 38, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .35s;
+  justify-content: center;
+  font-size: 3vh;
+//   font-color: rgb(37, 38, 51);
+//   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+// background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
+background-color: silver;
+// background-color: #3D4244
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+  `;
 export default Footer;
