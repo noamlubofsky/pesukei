@@ -120,6 +120,9 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
+&:hover {
+    cursor: pointer;
+  }
   `;
 
 export default Home;

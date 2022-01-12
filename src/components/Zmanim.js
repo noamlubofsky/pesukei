@@ -239,6 +239,9 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
+&:hover {
+    cursor: pointer;
+  }
   `;
 
 const Button = styled.button`
@@ -266,6 +269,9 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
+&:hover {
+    cursor: pointer;
+  }
   `;
 
 const Input = styled.input`

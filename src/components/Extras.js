@@ -129,6 +129,9 @@ const Button = styled.button`
   background-position: center;
   background-repeat: no - repeat;
   background-size: cover;
+  &:hover {
+    cursor: pointer;
+  }
   `;
 
 export default Extras;

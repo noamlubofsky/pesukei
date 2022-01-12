@@ -314,7 +314,7 @@ const Buttons = styled.div`
   grid-template-columns: 10fr 10fr 10fr 10fr;
 //   justify-content: center;
 //   align-items: center;
-margin-bottom: 10vh;
+margin-bottom: 5vh;
 
 `;
 
@@ -351,6 +351,9 @@ background-color: silver;
     -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                               supported by Chrome, Edge, Opera and Firefox */
+                              &:hover {
+                                cursor: pointer;
+                              }
   `;
 
   const HomeButton = styled.button`
@@ -386,6 +389,9 @@ background-color: silver;
     -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                               supported by Chrome, Edge, Opera and Firefox */
+                              &:hover {
+                                cursor: pointer;
+                              }
   `;
 
   const NextButton = styled.button`
@@ -422,6 +428,9 @@ background-color: silver;
     -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                               supported by Chrome, Edge, Opera and Firefox */
+                              &:hover {
+                                cursor: pointer;
+                              }
   `;
 
   const BackButton = styled.button`
@@ -458,6 +467,9 @@ background-color: silver;
     -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                               supported by Chrome, Edge, Opera and Firefox */
+                              &:hover {
+                                cursor: pointer;
+                              }
   `;
 
   
