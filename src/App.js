@@ -95,7 +95,12 @@ function App() {
     <div>
       <Router>
       <Header />
-      {window.location.pathname === '/' || window.location.pathname === '/Zmanim' || window.location.pathname === '/Halachot' ? null : 
+      {window.location.pathname === '/' || 
+      window.location.pathname === '/Zmanim' || 
+      window.location.pathname === '/Halachot' ||
+      window.location.pathname === '/Hallelukahs' ||
+      window.location.pathname === '/Extras'
+      ? null : 
       <RangeSlider size={size} setSize={setSize} 
       // {...sliderProps} 
       // classes="additional-css-classes" 

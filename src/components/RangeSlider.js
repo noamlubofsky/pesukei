@@ -3,7 +3,7 @@ import React, {
     // useState,
     // useEffect,
   } from "react";
-  // import styled from "styled-components";
+  import styled from "styled-components";
 
   
   function RangeSlider({size, setSize}) {
@@ -46,9 +46,9 @@ import React, {
     }
   ;
   
-//   const Input = styled.input`
+  const Input = styled.input`
 
-// `;
+`;
 
   export default RangeSlider;
   
