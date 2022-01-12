@@ -12,7 +12,7 @@ function Vayosha({size}) {
 }
 
 const Container = styled.div`
-min-height: 50vh;
+min-height: 64vh;
 `;
 
 const Text = styled.div`

@@ -14,7 +14,7 @@ function Yishtabach({size}) {
 }
 
 const Container = styled.div`
-min-height: 72vh;
+min-height: 64vh;
 `;
 
 const Heading = styled.h1`

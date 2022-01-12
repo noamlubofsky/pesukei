@@ -238,9 +238,14 @@ function Footer({minimum,
             window.location.pathname === '/Extras'
             ? null : <NextButton onClick={orderClick}>❯</NextButton>) : null}
 
-            {order === true && isRushing === false ? <Button onClick={outOfTime}>out of time</Button> : null}
             {window.location.pathname === '/' ? null : <BackButton onClick={goBack}>❮</BackButton>}
-            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : <HomeButton onClick={toHome}>⌂</HomeButton>}
+
+            <Buttons>
+            {window.location.pathname === '/' ? null : <HomeButton onClick={toHome}>⌂</HomeButton>}
+            {order === true && isRushing === false ? <Button onClick={outOfTime}>out of time</Button> : null}
+            </Buttons>
+
+            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : null}
             
             </FooterSpace>
             </Container>
@@ -267,7 +272,7 @@ color: transparent;
 
 const FooterSpace = styled.div`
 // position: absolute;
-// min-height: 10vh;
+min-height: 10vh;
 //   bottom: 0;
   width: 100%;
   justify-content: center;
@@ -280,8 +285,8 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
-display: grid;
-grid-template-columns: 13ch auto;
+// display: grid;
+// grid-template-columns: 13ch auto;
 `;
 
 const Container = styled.div`
@@ -297,11 +302,22 @@ width: 100%;
 position: relative;
 `;
 
+const Buttons = styled.div`
+// width: 100%;
+  display: grid;
+  grid-template-columns: 30vw 30vw;
+  justify-content: center;
+  align-items: center;
+
+`;
+
 const Button = styled.button`
   margin-top: 2vh;
   margin-bottom: 2vh;
-  width: 30vw;
+  width: 25vw;
   height: 50px;
+//   float: right;
+//   margin-right: 25vw;
   border-radius: 10px;
   /* line-height: 50px; */
   font-weight: bold;
@@ -314,6 +330,38 @@ const Button = styled.button`
   transition: all .35s;
   justify-content: center;
   font-size: 1em;
+//   font-color: rgb(37, 38, 51);
+//   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
+// background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
+background-color: silver;
+// background-color: #3D4244
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+  `;
+
+  const HomeButton = styled.button`
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 25vw;
+  height: 50px;
+  border-radius: 10px;
+//   margin-right: 2vw;
+//   margin-left: 20vw;
+  font-weight: 900;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  color: rgb(37, 38, 51);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .35s;
+  justify-content: center;
+  font-size: 2.5em;
 //   font-color: rgb(37, 38, 51);
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
 // background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
@@ -398,37 +446,5 @@ background-color: silver;
                               supported by Chrome, Edge, Opera and Firefox */
   `;
 
-  const HomeButton = styled.button`
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-//   float: left;
-  margin-right: 2vw;
-  margin-left: 2vw;
-  /* line-height: 50px; */
-  font-weight: 900;
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
-  color: rgb(37, 38, 51);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all .35s;
-  justify-content: center;
-  font-size: 3vh;
-//   font-color: rgb(37, 38, 51);
-//   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
-// background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
-background-color: silver;
-// background-color: #3D4244
--webkit-touch-callout: none; /* iOS Safari */
--webkit-user-select: none; /* Safari */
- -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently
-                              supported by Chrome, Edge, Opera and Firefox */
-  `;
+  
 export default Footer;

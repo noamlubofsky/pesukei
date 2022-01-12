@@ -16,7 +16,7 @@ function Ashrei({size}) {
 
 
 const Container = styled.div`
-min-height: 50vh;
+min-height: 64vh;
 `;
 
 const Heading = styled.h1`

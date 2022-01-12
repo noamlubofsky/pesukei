@@ -36,9 +36,9 @@ input[type="range"] {
   /* margin-right: 15px; */
   width: 40vw;
   height: 10px;
-  background: rgba(255, 255, 255, 0.6);
+  background: #3D4244;
   border-radius: 5px;
-  background-image: url(scroll.jpeg);
+  /* background-image: url(scroll.jpeg); */
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
