@@ -312,6 +312,7 @@ const Buttons = styled.div`
 `;
 
 const Button = styled.button`
+box-shadow: 0 0px 2px #ccc;
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 25vw;
@@ -329,7 +330,7 @@ const Button = styled.button`
   letter-spacing: 1px;
   transition: all .35s;
   justify-content: center;
-  font-size: 1em;
+  font-size: .5em;
 //   font-color: rgb(37, 38, 51);
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
 // background-image: url(https://t3.ftcdn.net/jpg/00/73/64/02/360_F_73640259_rnu9DOczKMEimRvZm19KGkP94Vw17zSo.jpg);
@@ -345,6 +346,7 @@ background-color: silver;
   `;
 
   const HomeButton = styled.button`
+  box-shadow: 0 0px 2px #ccc;
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 25vw;
@@ -361,6 +363,7 @@ background-color: silver;
   letter-spacing: 1px;
   transition: all .35s;
   justify-content: center;
+  vertical-align: middle;
   font-size: 2.5em;
 //   font-color: rgb(37, 38, 51);
 //   background-image: url(https://cdn.wallpapersafari.com/92/94/3grNzW.jpg);
@@ -377,6 +380,7 @@ background-color: silver;
   `;
 
   const NextButton = styled.button`
+  box-shadow: 0 0px 2px #ccc;
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 50px;
@@ -412,6 +416,7 @@ background-color: silver;
   `;
 
   const BackButton = styled.button`
+  box-shadow: 0 0px 2px #ccc;
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 50px;
