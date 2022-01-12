@@ -22,7 +22,7 @@ function Halachot() {
 
 < p>Selecting the minimum requirement of פסוקי דזמרה from the menu will take you through these תפילות. </ p>
 
-< p>Selecting “פסוקי דזמרא in order of importance” will take you through פסוקי דזמרה in the Halachic order of importance. When the ציבור reaches ישתבח you can select “I’m out of time” which will take you straight to ישתבח (or אשרי if not yet said, then ישתבח). 
+< p>Selecting “פסוקי דזמרא in order of importance” will take you through פסוקי דזמרה in the Halachic order of importance. When the ציבור reaches ישתבח you can select “Out of time” which will take you straight to ישתבח (or אשרי if not yet said, then ישתבח). 
 </ p>
 
             </Container>

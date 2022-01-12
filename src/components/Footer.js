@@ -213,6 +213,7 @@ function Footer({minimum,
     return(
         <Container>
                 <FooterSpace>
+                {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> :
                 <Buttons>
             {/* {minimum ? <Button onClick={minimumClick}>{window.location.pathname === '/Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
             {minimum ? (window.location.pathname === '/Yishtabach' ||
@@ -250,7 +251,7 @@ function Footer({minimum,
             {order === true && isRushing === false ? <Button onClick={outOfTime}>out of time</Button> : null}
             </Buttons>
 
-            {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> : null}
+             }
             
             </FooterSpace>
             </Container>
@@ -277,7 +278,7 @@ color: transparent;
 
 const FooterSpace = styled.div`
 // position: absolute;
-min-height: 15vh;
+// min-height: 15vh;
 //   bottom: 0;
   width: 100%;
   justify-content: center;
@@ -313,13 +314,14 @@ const Buttons = styled.div`
   grid-template-columns: 10fr 10fr 10fr 10fr;
 //   justify-content: center;
 //   align-items: center;
+margin-bottom: 10vh;
 
 `;
 
 const Button = styled.button`
 box-shadow: 0 0px 2px #ccc;
 display: inline-block;
-  margin-top: 2vh;
+//   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 25vw;
   height: 50px;
@@ -354,7 +356,7 @@ background-color: silver;
   const HomeButton = styled.button`
   box-shadow: 0 0px 2px #ccc;
   display: inline-block;
-  margin-top: 2vh;
+//   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 20vw;
   height: 50px;
@@ -388,7 +390,7 @@ background-color: silver;
 
   const NextButton = styled.button`
   box-shadow: 0 0px 2px #ccc;
-  margin-top: 2vh;
+//   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 50px;
   height: 50px;
@@ -424,7 +426,7 @@ background-color: silver;
 
   const BackButton = styled.button`
   box-shadow: 0 0px 2px #ccc;
-  margin-top: 2vh;
+//   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 50px;
   height: 50px;
