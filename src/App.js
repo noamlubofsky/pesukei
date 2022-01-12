@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router,
   Routes,
   Route,
@@ -54,29 +54,29 @@ function App() {
   const [saidAzYashir, setSaidAzYashir] = useState(false)
   const [saidAshrei, setSaidAshrei] = useState(false)
   const [isRushing, setIsRushing] = useState(false)
-  const [parentVal, setParentVal] = useState(30);
+  // const [parentVal, setParentVal] = useState(30);
   const [size, setSize] = useState(30)
 
-  const sliderValueChanged = useCallback(val => {
-    console.log("NEW VALUE", val);
-    setParentVal(val);
-  });
+  // const sliderValueChanged = useCallback(val => {
+  //   console.log("NEW VALUE", val);
+  //   setParentVal(val);
+  // });
 
   // const sliderValueChanged = (e) => {
   //   setParentVal(e.target.value);
   //   console.log(parentVal)
   // }
 
-  const sliderProps = useMemo(
-    () => ({
-      min: 20,
-      max: 80,
-      value: parentVal,
-      step: 2,
-      onChange: e => sliderValueChanged(e),
-    }),
-    [parentVal]
-  );
+  // const sliderProps = useMemo(
+  //   () => ({
+  //     min: 20,
+  //     max: 80,
+  //     value: size,
+  //     step: 2,
+  //     // onChange: e => sliderValueChanged(e),
+  //   }),
+  //   // [parentVal]
+  // );
 
 
   // useEffect(() => {
@@ -96,8 +96,9 @@ function App() {
       <Router>
       <Header />
       {window.location.pathname === '/' || window.location.pathname === '/Zmanim' || window.location.pathname === '/Halachot' ? null : 
-      <RangeSlider size={size} setSize={setSize} {...sliderProps} 
-      classes="additional-css-classes" 
+      <RangeSlider size={size} setSize={setSize} 
+      // {...sliderProps} 
+      // classes="additional-css-classes" 
       />}
       <Routes>
           <Route path="/" element={<Home
