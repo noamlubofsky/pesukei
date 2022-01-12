@@ -26,6 +26,14 @@ function Footer({minimum,
     setReviewingHalachot,
     viewingZmanim,
     setViewingZmanim
+    ,setSaidMizmorShir
+,setSaidFullHodu
+,setSaidMizmorLetodah
+,setSaidYehiChevod
+,setSaidBaruchHashemLeolam
+,setSaidFullVayevarechDavid
+,setSaidVecharot
+,setSaidAzYashir
 }) {
 
     let navigate = useNavigate();
@@ -160,7 +168,13 @@ function Footer({minimum,
             // setSaidHallelukah1(false)
             // setSaidHallelukah2(false)
             // setSaidHallelukah4(false)
-        }else if(window.location.pathname === '/VayevarechDavidPrimary'){
+        }
+        else if(saidHallelukah1 && saidHallelukah2 && saidHallelukah4 && window.location.pathname === '/Hallelukahs'){
+            navigate('/VayevarechDavidPrimary')
+            setUpTo('VayevarechDavidPrimary')
+            window.scrollTo(0, 0)
+        }
+        else if(window.location.pathname === '/VayevarechDavidPrimary'){
             navigate('/HoduPrimary')
             setUpTo('HoduPrimary')
             window.scrollTo(0, 0)
@@ -208,6 +222,14 @@ function Footer({minimum,
           setSaidHallelukah2(false)
           setSaidHallelukah4(false)
           setViewingZmanim(false)
+          setSaidMizmorShir(false)
+          setSaidMizmorLetodah(false)
+          setSaidFullHodu(false)
+          setSaidBaruchHashemLeolam(false)
+          setSaidYehiChevod(false)
+          setSaidVecharot(false)
+          setSaidFullVayevarechDavid(false)
+          setSaidAzYashir(false)
       }
 
       const goBack = () => {
@@ -248,7 +270,7 @@ function Footer({minimum,
             window.location.pathname === '/Halachot' 
             ? null : <HomeButton onClick={toHome}>⌂</HomeButton>}
 
-            {order === true && isRushing === false ? <Button onClick={outOfTime}>out of time</Button> : null}
+            {order === true && isRushing === false && window.location.pathname !== '/Yishtabach' ? <Button onClick={outOfTime}>out of time</Button> : null}
             </Buttons>
 
              }

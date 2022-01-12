@@ -190,6 +190,14 @@ function App() {
       setSaidHallelukah4={setSaidHallelukah4}
       viewingZmanim={viewingZmanim}
       setViewingZmanim={setViewingZmanim}
+      setSaidMizmorShir={setSaidMizmorShir}
+      setSaidFullHodu={setSaidFullHodu}
+      setSaidMizmorLetodah={setSaidMizmorLetodah}
+      setSaidYehiChevod={setSaidYehiChevod}
+      setSaidBaruchHashemLeolam={setSaidBaruchHashemLeolam}
+      setSaidFullVayevarechDavid={setSaidFullVayevarechDavid}
+      setSaidVecharot={setSaidVecharot}
+      setSaidAzYashir={setSaidAzYashir}
       />
       </Router>
     </div>

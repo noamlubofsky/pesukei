@@ -16,8 +16,7 @@ saidHallelukah1
 
     const sayHallelukah1 = () => {
         navigate('/Hallelukah1')
-        setSaidHallelukah1(true)
-        console.log(saidHallelukah1)   
+        setSaidHallelukah1(true) 
         if (saidHallelukah2 === true 
         && saidHallelukah4 === true)(
         setUpTo('HallelukahsDone'))
