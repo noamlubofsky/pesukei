@@ -148,7 +148,7 @@ function Footer({minimum,
             //     || saidHallelukah4 === false){
             //         alert(`Say all Hallelukah's before continuing!`)
             //     }
-        }else if(window.location.pathname === '/HallelukahsDone'){
+        }else if(upTo === 'HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
             window.scrollTo(0, 0)
