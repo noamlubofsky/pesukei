@@ -34,7 +34,7 @@ import React, {
             type="range"
             value={size}
             min={20}
-            max={80}
+            max={75}
             className="slider"
             id="myRange"
             onChange={changeCallback}

@@ -268,7 +268,7 @@ function Footer({minimum,
             {window.location.pathname === '/' || 
             window.location.pathname === '/Zmanim' || 
             window.location.pathname === '/Halachot' 
-            ? null : <HomeButton onClick={toHome}>⌂</HomeButton>}
+            ? null : <HomeButton onClick={toHome}>⌂</HomeButton>} 
 
             {order === true && isRushing === false && window.location.pathname !== '/Yishtabach' ? <Button onClick={outOfTime}>out of time</Button> : null}
             </Buttons>

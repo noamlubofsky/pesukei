@@ -38,6 +38,13 @@ saidHallelukah1
             setUpTo('HallelukahsDone'))
     }
 
+    const reset = () => {
+        setSaidHallelukah1(false)
+        setSaidHallelukah2(false)
+        setSaidHallelukah4(false)
+        setUpTo('Hallelukahs')
+    }
+
 
     return(
         <div>
@@ -46,7 +53,13 @@ saidHallelukah1
                 saidHallelukah1 === true 
                 && saidHallelukah2 === true
                 && saidHallelukah4 === true
-                ? <h3>You said all 5 Hallelukah's</h3>
+                ? 
+                <div>
+                <h3>You said all 5 Hallelukah's</h3>
+                <h3>Missed one?</h3>
+                <Button onClick={reset}>Reset Hallelukah's</Button>
+                </div>
+
                 : <h3>Hallelukah's 1, 2 and 4 are of equal importance. Pick whichever you like and say however many you can.</h3>
             }
             {saidHallelukah1 ? null : <Button onClick={sayHallelukah1}>1 הַלְ֒לוּיָהּ</Button>}
