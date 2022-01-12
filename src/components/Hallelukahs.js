@@ -16,7 +16,8 @@ saidHallelukah1
 
     const sayHallelukah1 = () => {
         navigate('/Hallelukah1')
-        setSaidHallelukah1(true)     
+        setSaidHallelukah1(true)
+        console.log(saidHallelukah1)   
         if (saidHallelukah2 === true 
         && saidHallelukah4 === true)(
         setUpTo('HallelukahsDone'))
@@ -46,7 +47,7 @@ saidHallelukah1
                 saidHallelukah1 === true 
                 && saidHallelukah2 === true
                 && saidHallelukah4 === true
-                ? <h1>done</h1>
+                ? <h3>You said all 5 Hallelukah's</h3>
                 : <h3>Hallelukah's 1, 2 and 4 are of equal importance. Pick whichever you like and say however many you can.</h3>
             }
             {saidHallelukah1 ? null : <Button onClick={sayHallelukah1}>1 הַלְ֒לוּיָהּ</Button>}
@@ -63,7 +64,7 @@ const Container = styled.header`
   align-items: center;
   padding: 2vh;
   width: 100%;
-  min-height: 30vh;
+  min-height: 40vh;
   margin-bottom: 25vh;
 
 `;

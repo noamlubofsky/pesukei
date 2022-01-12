@@ -103,7 +103,7 @@ const Container = styled.header`
   align-items: center;
   padding: 2vh;
   width: 100%;
-  min-height: 30vh;
+  min-height: 64vh;
 `;
 
 const Button = styled.button`

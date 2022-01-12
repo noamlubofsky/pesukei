@@ -13,7 +13,7 @@ function Hallelukah5({size}) {
 }
 
 const Container = styled.div`
-min-height: 55vh;
+min-height: 62vh;
 `;
 
 const Heading = styled.h1`

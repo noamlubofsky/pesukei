@@ -139,22 +139,27 @@ function Footer({minimum,
             navigate('/Hallelukahs')
             setUpTo('Hallelukahs')
             window.scrollTo(0, 0)
-        }else if(window.location.pathname === '/Hallelukahs'){
-            navigate('/Hallelukahs')
-            setUpTo('Hallelukahs')
+        }
+        // else if(window.location.pathname === '/Hallelukahs'){
+        //     navigate('/Hallelukahs')
+        //     setUpTo('Hallelukahs')
+        //     window.scrollTo(0, 0)
+        // }
+        else if(window.location.pathname === '/Hallelukah1' || window.location.pathname === '/Hallelukah2' || window.location.pathname === '/Hallelukah4')
+        {{!saidHallelukah1 || !saidHallelukah2 || !saidHallelukah4 ? navigate('/Hallelukahs') : 
+        navigate('/VayevarechDavidPrimary')}
+        setUpTo('VayevarechDavidPrimary')
             window.scrollTo(0, 0)
-            // if(saidHallelukah1 === false
-            //     || saidHallelukah2 === false
-            //     || saidHallelukah4 === false){
-            //         alert(`Say all Hallelukah's before continuing!`)
-            //     }
+            // setSaidHallelukah1(false)
+            // setSaidHallelukah2(false)
+            // setSaidHallelukah4(false)
         }else if(upTo === 'HallelukahsDone'){
             navigate('/VayevarechDavidPrimary')
             setUpTo('VayevarechDavidPrimary')
             window.scrollTo(0, 0)
-            setSaidHallelukah1(false)
-            setSaidHallelukah2(false)
-            setSaidHallelukah4(false)
+            // setSaidHallelukah1(false)
+            // setSaidHallelukah2(false)
+            // setSaidHallelukah4(false)
         }else if(window.location.pathname === '/VayevarechDavidPrimary'){
             navigate('/HoduPrimary')
             setUpTo('HoduPrimary')
@@ -163,7 +168,7 @@ function Footer({minimum,
             navigate('/Extras')
             setUpTo('Extras')
             window.scrollTo(0, 0)
-        }else if(window.location.pathname === '/Extras'){
+        }else if(upTo === 'Extras'){
             navigate('/Extras')
             setUpTo('Extras')
             window.scrollTo(0, 0)
@@ -219,24 +224,19 @@ function Footer({minimum,
             {minimum ? (window.location.pathname === '/Yishtabach' ||
             window.location.pathname === '/' || 
             window.location.pathname === '/Zmanim' || 
-            window.location.pathname === '/Halachot' ||
-            window.location.pathname === '/Hallelukahs' ||
-            window.location.pathname === '/Extras'
+            window.location.pathname === '/Halachot'
             ? null : <NextButton onClick={minimumClick}>❯</NextButton>) : null}
             
             {maximum ? (window.location.pathname === '/Yishtabach' ||
             window.location.pathname === '/' || 
             window.location.pathname === '/Zmanim' || 
-            window.location.pathname === '/Halachot' ||
-            window.location.pathname === '/Hallelukahs' ||
-            window.location.pathname === '/Extras'
+            window.location.pathname === '/Halachot'
             ? null : <NextButton onClick={maximumClick}>❯</NextButton>) : null}
             
             {order ? (window.location.pathname === '/Yishtabach' ||
             window.location.pathname === '/' || 
             window.location.pathname === '/Zmanim' || 
             window.location.pathname === '/Halachot' ||
-            window.location.pathname === '/Hallelukahs' ||
             window.location.pathname === '/Extras'
             ? null : <NextButton onClick={orderClick}>❯</NextButton>) : null}
 
