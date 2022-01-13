@@ -300,7 +300,7 @@ color: transparent;
 
 const FooterSpace = styled.div`
 // position: absolute;
-// min-height: 15vh;
+min-height: 8vh;
 //   bottom: 0;
   width: 100%;
   justify-content: center;

@@ -124,6 +124,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     setZip('')
     setUsingZip(false)
     setUsingLocation(true)
+    setShowZip(false)
     // componentDidMount()
     fetch(
         (!usingDate ?
@@ -286,7 +287,9 @@ const Buttons = styled.div`
 //   grid-template-columns: 10fr 10fr;
 //   justify-content: center;
 //   align-items: center;
-margin-bottom: 20vh;
+margin-bottom: 25vh;
+// display: flex;
+// flex-direction: row;
 width: 100%;
   justify-content: center;
   align-items: center;
@@ -294,23 +297,26 @@ width: 100%;
 `;
 
 const Locator = styled.div`
-// right: 0;
+right: 0;
 // position: relative;
 // position: absolute;
 display: inline-block;
 padding: 1vw;
 float: right;
 margin-bottom: 5vh;
+margin-top: .6vh;
 `;
 
 const Form = styled.form`
 left: 0;
+
 // position: relative;
 // position: absolute;
 display: inline-block;
 padding: 1vh;
 float: left;
 margin-bottom: 5vh;
+
 `;
 
 // const Select = styled.select`
@@ -468,7 +474,7 @@ const TimeHeader = styled.h2`
 margin-right: 5vw;
 margin-left: 5vw;
 font-weight: 600;
-margin-top: 25vh;
+margin-top: 5vh;
 `;
 
 const P = styled.p`
