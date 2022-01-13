@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Calendar from 'react-calendar';
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
 
@@ -16,10 +17,68 @@ function Zmanim() {
     const [loading, setLoading] = useState(false)
     const [usingLocation, setUsingLocation] = useState(false)
     const [usingZip, setUsingZip] = useState(false)
+    const [showCalendar, setShowCalendar] = useState(false)
+    const [usingDate, setUsingDate] = useState(false)
+    const [monthNum, setMonthNum] = useState(0)
+    const [year, setYear] = useState('')
+    const [month, setMonth] = useState('')
+    const [day, setDay] = useState('')
+    const [parts, setParts] = useState([])
+    const [dateString, setDateString] = useState('')
+    	
+const [date, setDate] = useState(new Date());
+
+const onDateChange = (newDate) => {
+    setDate(newDate);
+    setDateString(newDate.toString())
+    console.log(dateString);
+    setUsingDate(true)
+    let string = date.toString()
+    let parts = string.split(' ')
+    setYear(parts[3])
+    setMonth(parts[1])
+    setDay(parts[2])
+    console.log(day)
+    console.log(month)
+    console.log(year)
+    setShowCalendar(false)
+            if(month === 'Jan'){
+                setMonthNum(1)
+            }else if(month === 'Feb'){
+                setMonthNum(2)
+            }else if(month === 'Mar'){
+                setMonthNum(3)
+            }else if(month === 'Apr'){
+                setMonthNum(4)
+            }else if(month === 'May'){
+                setMonthNum(5)
+            }else if(month === 'Jun'){
+                setMonthNum(6)
+            }else if(month === 'Jul'){
+                setMonthNum(7)
+            }else if(month === 'Aug'){
+                setMonthNum(8)
+            }else if(month === 'Sep'){
+                setMonthNum(9)
+            }else if(month === 'Oct'){
+                setMonthNum(10)
+            }else if(month === 'Nov'){
+                setMonthNum(11)
+            }else if(month === 'Dec'){
+                setMonthNum(12)
+            }
+}
+
+console.log(monthNum)
 
     const getZmanim = () => {
         setErrors(false)
-        fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=${zip}`, {
+        fetch(
+            (!usingDate ?
+            `https://www.hebcal.com/zmanim?cfg=json&zip=${zip}`
+            : `https://www.hebcal.com/zmanim?cfg=json&zip=${zip}&date=${year}-${monthNum.length === 2 ? monthNum : `0` + monthNum}-${day.length === 2 ? day : `0` + day}` )
+
+            , {
     })
     .then((res) => res.json())
     .then((data) => {
@@ -72,7 +131,11 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     setUsingZip(false)
     setUsingLocation(true)
     // componentDidMount()
-    fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}`, {
+    fetch(
+        (!usingDate ?
+            `https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}`
+            : `https://www.hebcal.com/zmanim?cfg=json&latitude=${latitude}&longitude=${longitude}&tzid=${timezone}&date=${year}-${monthNum.length === 2 ? monthNum : `0` + monthNum}-${day.length === 2 ? day : `0` + day}` )
+       , {
 })
 .then((r) => {
     if (r.ok) {
@@ -97,6 +160,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     }
   });
   }
+
 
     // const handleCountryChange = (e) => {
     //     setZip('')
@@ -135,6 +199,20 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             
             <Container>
                 <Heading>Zmanim for פסוקי דזמרא</Heading>
+
+            <CalendarButton onClick={() => setShowCalendar(!showCalendar)}>{!showCalendar ? `🗓` : `X`}</CalendarButton>
+
+            {!showCalendar ? null : 
+            <Calendar
+            onChange={onDateChange}
+            value={date}
+            showNeighboringMonth={false}
+            locale={"en-US"}
+         />
+            }
+
+            {usingDate ? <h3>{dateString.split(' ')[0]+ ' ' + dateString.split(' ')[1] + ' ' + dateString.split(' ')[2]+ ', ' + dateString.split(' ')[3]}</h3> : null}
+
             <form onSubmit={handleSubmit}>
             <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input>
             <br></br>
@@ -239,6 +317,21 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
+&:hover {
+    cursor: pointer;
+  }
+  `;
+
+  const CalendarButton = styled.h1`
+
+ 
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+justify-content: center;
+font-size: 5vh;
+
 &:hover {
     cursor: pointer;
   }
