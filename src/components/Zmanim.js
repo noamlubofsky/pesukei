@@ -25,8 +25,8 @@ function Zmanim() {
     const [day, setDay] = useState('')
     const [parts, setParts] = useState([])
     const [dateString, setDateString] = useState('')
-    	
-const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
+    const [showZip, setShowZip] = useState(false)
 
 const onDateChange = (newDate) => {
     setDate(newDate);
@@ -96,6 +96,7 @@ console.log(monthNum)
         getZmanim()
         setUsingLocation(false)
         setUsingZip(true)
+        setShowZip(!showZip)
     }
 
     // const timezone = (new Date()).getTimezoneOffset()
@@ -211,15 +212,17 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
          />
             }
 
-            {usingDate ? <h3>{dateString.split(' ')[0]+ ' ' + dateString.split(' ')[1] + ' ' + dateString.split(' ')[2]+ ', ' + dateString.split(' ')[3]}</h3> : null}
+            <h3>{date.toString().split(' ')[0]+ ' ' + date.toString().split(' ')[1] + ' ' + date.toString().split(' ')[2]+ ', ' + date.toString().split(' ')[3]}</h3>
 
-            <form onSubmit={handleSubmit}>
-            <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input>
+            <Buttons>
+                <div>
+            <Form onSubmit={handleSubmit}>
+            <Button type="submit">{showZip ? 'Get Zmanim' : 'use zip code'} </Button>
             <br></br>
-            <Button type="submit">Get my Zmanim</Button>
-            </form>
+            {showZip ? <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input> : null}
+            </Form>
 
-            <Heading>Or: </Heading>
+            {/* <Heading>Or: </Heading> */}
 
             {/* <Select name="countries"
             onChange={handleChange}
@@ -228,8 +231,8 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
                 <option value={country} key={country.id}>{country}</option>
                 )}
             </Select>  */}
-
-            {!haveLocation ? <Button onClick={componentDidMount}>Get my location</Button>
+            <Locator>
+            {!haveLocation ? <Button onClick={componentDidMount}>Use my location</Button>
             : <div>{loading ? <Button>Locating...</Button> : 
             <ShowButton onClick={locate}>
                 <div>Done Locating</div>
@@ -237,6 +240,10 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
                 <div>Show my Zmanim</div>
                 </ShowButton>}
             </div>  }
+            </Locator>
+            </div>
+            </Buttons>
+
             {!errors ? null : 
             <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
             }
@@ -275,6 +282,33 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     )
 }
 
+const Buttons = styled.div`
+// width: 100%;
+//   display: grid;
+//   grid-template-columns: 10fr 10fr;
+//   justify-content: center;
+//   align-items: center;
+margin-bottom: 5vh;
+width: 100%;
+  justify-content: center;
+  align-items: center;
+
+`;
+
+const Locator = styled.div`
+right: 0;
+position: relative;
+display: inline-block;
+padding: 1vw;
+`;
+
+const Form = styled.form`
+left: 0;
+position: relative;
+display: inline-block;
+padding: 1vh;
+`;
+
 // const Select = styled.select`
     
 //     border: none;
@@ -296,7 +330,7 @@ const ShowButton = styled.button`
 
   margin-top: 2vh;
 //   margin-bottom: 2vh;
-  width: 60%;
+  width: 35vw;
   height: 12vh;
   /* line-height: 50px; */
   font-weight: bold;
@@ -317,6 +351,14 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+                            
 &:hover {
     cursor: pointer;
   }
@@ -331,6 +373,13 @@ background-size: cover;
   align-items: center;
 justify-content: center;
 font-size: 5vh;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
 
 &:hover {
     cursor: pointer;
@@ -340,8 +389,9 @@ font-size: 5vh;
 const Button = styled.button`
 
   margin-top: 2vh;
+  display: inline-block;
 //   margin-bottom: 2vh;
-  width: 60%;
+  width: 35vw;
   height: 8vh;
   /* line-height: 50px; */
   font-weight: bold;
@@ -362,13 +412,20 @@ background-image: url(${blueleather});
 background-position: center;
 background-repeat: no - repeat;
 background-size: cover;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
 &:hover {
     cursor: pointer;
   }
   `;
 
 const Input = styled.input`
-    width: 40vw;
+    width: 35vw;
     height: 5vh;
     border: none;
     border-bottom: 2px solid #001939;
