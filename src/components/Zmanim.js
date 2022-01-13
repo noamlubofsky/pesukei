@@ -31,16 +31,12 @@ function Zmanim() {
 const onDateChange = (newDate) => {
     setDate(newDate);
     setDateString(newDate.toString())
-    console.log(dateString);
     setUsingDate(true)
     let string = date.toString()
     let parts = string.split(' ')
     setYear(parts[3])
     setMonth(parts[1])
     setDay(parts[2])
-    console.log(day)
-    console.log(month)
-    console.log(year)
     setShowCalendar(false)
             if(month === 'Jan'){
                 setMonthNum(1)
@@ -68,8 +64,6 @@ const onDateChange = (newDate) => {
                 setMonthNum(12)
             }
 }
-
-console.log(monthNum)
 
     const getZmanim = () => {
         setErrors(false)
@@ -119,7 +113,6 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     navigator.geolocation.getCurrentPosition(function(position) {
         setLatitude(position.coords.latitude)
         setLongitude(position.coords.longitude)
-      console.log(position)
       setTimeout(() => {
           setLoading(false)
       }, 2000)
@@ -162,6 +155,11 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
   });
   }
 
+  const displayZipInput = (e) => {
+      e.preventDefault()
+      setShowZip(true)
+  }
+
 
     // const handleCountryChange = (e) => {
     //     setZip('')
@@ -201,7 +199,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <Container>
                 <Heading>Zmanim for פסוקי דזמרא</Heading>
 
-            <CalendarButton onClick={() => setShowCalendar(!showCalendar)}>{!showCalendar ? `🗓` : `X`}</CalendarButton>
+            <CalendarButton onClick={() => setShowCalendar(!showCalendar)}>{!showCalendar ? `🗓` : null}</CalendarButton>
 
             {!showCalendar ? null : 
             <Calendar
@@ -216,7 +214,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
 
             <Buttons>
                 <div>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={showZip ? handleSubmit : displayZipInput}>
             <Button type="submit">{showZip ? 'Get Zmanim' : 'use zip code'} </Button>
             <br></br>
             {showZip ? <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input> : null}
@@ -248,8 +246,8 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
             }
 
-            {usingLocation ? <Time>Zmanim for {timezone}</Time> : null}
-            {usingZip ? <Time>Zmanim for {zip}</Time> : null}
+            {usingLocation ? <TimeHeader>Zmanim for {timezone}</TimeHeader> : null}
+            {usingZip ? <TimeHeader>Zmanim for {zip}</TimeHeader> : null}
 
 
             {!haveTimes || errors || (usingZip === false && usingLocation === false) ? null : 
@@ -288,7 +286,7 @@ const Buttons = styled.div`
 //   grid-template-columns: 10fr 10fr;
 //   justify-content: center;
 //   align-items: center;
-margin-bottom: 5vh;
+margin-bottom: 20vh;
 width: 100%;
   justify-content: center;
   align-items: center;
@@ -296,17 +294,23 @@ width: 100%;
 `;
 
 const Locator = styled.div`
-right: 0;
-position: relative;
+// right: 0;
+// position: relative;
+// position: absolute;
 display: inline-block;
 padding: 1vw;
+float: right;
+margin-bottom: 5vh;
 `;
 
 const Form = styled.form`
 left: 0;
-position: relative;
+// position: relative;
+// position: absolute;
 display: inline-block;
 padding: 1vh;
+float: left;
+margin-bottom: 5vh;
 `;
 
 // const Select = styled.select`
@@ -331,7 +335,7 @@ const ShowButton = styled.button`
   margin-top: 2vh;
 //   margin-bottom: 2vh;
   width: 35vw;
-  height: 12vh;
+  height: 13vh;
   /* line-height: 50px; */
   font-weight: bold;
   text-decoration: none;
@@ -458,6 +462,13 @@ const Time = styled.h1`
 margin-right: 5vw;
 margin-left: 5vw;
 font-weight: 600;
+`;
+
+const TimeHeader = styled.h2`
+margin-right: 5vw;
+margin-left: 5vw;
+font-weight: 600;
+margin-top: 25vh;
 `;
 
 const P = styled.p`
