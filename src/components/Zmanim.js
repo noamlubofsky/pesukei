@@ -159,6 +159,8 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
   const displayZipInput = (e) => {
       e.preventDefault()
       setShowZip(true)
+      setUsingLocation(false)
+    setUsingZip(false)
   }
 
 

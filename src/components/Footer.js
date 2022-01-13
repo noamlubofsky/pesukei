@@ -233,8 +233,13 @@ function Footer({minimum,
       }
 
       const goBack = () => {
-          navigate(-1)
-          window.scrollTo(0, 0)
+          {window.location.pathname === '/Zmanim' || window.location.pathname === '/Halachot' ? 
+        navigate('/')
+        :
+        navigate(-1)
+        window.scrollTo(0, 0)
+        }
+
       }
 
     return(
