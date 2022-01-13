@@ -32,6 +32,7 @@ const onDateChange = (newDate) => {
     setDate(newDate);
     setDateString(newDate.toString())
     setUsingDate(true)
+    setHaveTimes(false)
     let string = date.toString()
     let parts = string.split(' ')
     setYear(parts[3])
