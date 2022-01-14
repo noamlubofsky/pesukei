@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Calendar from 'react-calendar';
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
@@ -19,16 +19,70 @@ function Zmanim() {
     const [usingZip, setUsingZip] = useState(false)
     const [showCalendar, setShowCalendar] = useState(false)
     const [usingDate, setUsingDate] = useState(false)
-    const [monthNum, setMonthNum] = useState(0)
-    const [year, setYear] = useState('')
-    const [month, setMonth] = useState('')
-    const [day, setDay] = useState('')
+    const [monthNum, setMonthNum] = useState(new Date().getMonth() + 1)
+    const [year, setYear] = useState(new Date().getFullYear())
+    const [month, setMonth] = useState(new Date().getMonth())
+    const [day, setDay] = useState(new Date().getDate())
     const [parts, setParts] = useState([])
     const [dateString, setDateString] = useState('')
     const [date, setDate] = useState(new Date());
     const [showZip, setShowZip] = useState(false)
+    const [hebDate, setHebDate] = useState()
+    const [sunset, setSunset] = useState('')
+    const [hour, setHour] = useState(new Date().getHours())
+    const [minutes, setMinutes] = useState(new Date().getMinutes())
+    const [currentTime, setCurrentTime] = useState(new Date().getHours() + ':' + new Date().getMinutes() + ':00')
+
+    useEffect(() => {  
+        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
+            sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
+        day + 1 : day
+        }&g2h=1`)
+        .then(response => response.json())
+        .then(data => setHebDate(data.hebrew))
+    },[])
+
+    const testFunction = () => {
+        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
+            sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
+        day + 1 : day
+        }&g2h=1`)
+        .then(response => response.json())
+        .then(data => setHebDate(data.hebrew))
+    }
+    // setSunset(data.times.sunset.split('T')[1].split('-')[0])
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            let loadLatitude = position.coords.latitude
+            let loadLongitude = position.coords.longitude
+            fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${loadLatitude}&longitude=${loadLongitude}&tzid=${timezone}`)
+            .then(response => response.json())
+            .then((data) => {
+                fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
+                    // hour >= data.times.sunset.split('T')[1].split('-')[0].split(':')[0] &&
+                    // (hour === data.times.sunset.split('T')[1].split('-')[0].split(':')[0] ?
+                    // minutes >= data.times.sunset.split('T')[1].split('-')[0].split(':')[1] : null )
+                    currentTime > data.times.sunset.split('T')[1].split('-')[0]
+                    ? day + 1 : day
+        }&g2h=1`)
+        .then(response => response.json())
+        .then(data => setHebDate(data.hebrew))
+            })
+        });
+    },[])
+
+    const getHebrewDate = () => {
+        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${date.getFullYear()}&gm=${date.getMonth() + 1}&gd=${date.getDate()}&g2h=1`, {
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        setHebDate(data.hebrew)
+    });
+    }
 
 const onDateChange = (newDate) => {
+    getHebrewDate()
     setDate(newDate);
     setDateString(newDate.toString())
     setUsingDate(true)
@@ -37,35 +91,37 @@ const onDateChange = (newDate) => {
     setUsingLocation(false)
     let string = date.toString()
     let parts = string.split(' ')
-    setYear(parts[3])
-    setMonth(parts[1])
-    setDay(parts[2])
+    setYear(date.getFullYear())
+    setMonth(date.getMonth())
+    setDay(date.getDate())
+    setMonthNum(date.getMonth() + 1)
     setShowCalendar(false)
-            if(month === 'Jan'){
-                setMonthNum(1)
-            }else if(month === 'Feb'){
-                setMonthNum(2)
-            }else if(month === 'Mar'){
-                setMonthNum(3)
-            }else if(month === 'Apr'){
-                setMonthNum(4)
-            }else if(month === 'May'){
-                setMonthNum(5)
-            }else if(month === 'Jun'){
-                setMonthNum(6)
-            }else if(month === 'Jul'){
-                setMonthNum(7)
-            }else if(month === 'Aug'){
-                setMonthNum(8)
-            }else if(month === 'Sep'){
-                setMonthNum(9)
-            }else if(month === 'Oct'){
-                setMonthNum(10)
-            }else if(month === 'Nov'){
-                setMonthNum(11)
-            }else if(month === 'Dec'){
-                setMonthNum(12)
-            }
+
+            // if(month === 'Jan'){
+            //     setMonthNum(1)
+            // }else if(month === 'Feb'){
+            //     setMonthNum(2)
+            // }else if(month === 'Mar'){
+            //     setMonthNum(3)
+            // }else if(month === 'Apr'){
+            //     setMonthNum(4)
+            // }else if(month === 'May'){
+            //     setMonthNum(5)
+            // }else if(month === 'Jun'){
+            //     setMonthNum(6)
+            // }else if(month === 'Jul'){
+            //     setMonthNum(7)
+            // }else if(month === 'Aug'){
+            //     setMonthNum(8)
+            // }else if(month === 'Sep'){
+            //     setMonthNum(9)
+            // }else if(month === 'Oct'){
+            //     setMonthNum(10)
+            // }else if(month === 'Nov'){
+            //     setMonthNum(11)
+            // }else if(month === 'Dec'){
+            //     setMonthNum(12)
+            // }
 }
 
     const getZmanim = () => {
@@ -217,6 +273,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             }
 
             <h3>{date.toString().split(' ')[0]+ ' ' + date.toString().split(' ')[1] + ' ' + date.toString().split(' ')[2]+ ', ' + date.toString().split(' ')[3]}</h3>
+            <h3>{hebDate}</h3>
 
             <Buttons>
                 <div>
