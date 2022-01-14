@@ -111,6 +111,8 @@ function App() {
         <Button onClick={() => setLanguage('english')}>A</Button>
         <Button onClick={() => setLanguage('both')}>A/א</Button>
         <Button onClick={() => setLanguage('hebrew')}>א</Button>
+        <Button onClick={() => setLanguage('linear')}>linear</Button>
+
       </Buttons>
       </Top>}
       <Routes>
@@ -136,7 +138,7 @@ function App() {
           <Route path="/Hallelukah3" element={<Hallelukah3 size={size}/>}/>
           <Route path="/Hallelukah4" element={<Hallelukah4 size={size}/>}/>
           <Route path="/Hallelukah5" element={<Hallelukah5 size={size}/>}/>
-          <Route path="/BaruchHashemLeolam" element={<BaruchHashemLeolam size={size}/>}/>
+          <Route path="/BaruchHashemLeolam" element={<BaruchHashemLeolam size={size} language={language}/>}/>
           <Route path="/VayevarechDavidPrimary" element={<VayevarechDavidPrimary size={size}/>}/>
           <Route path="/VayevarechDavidFull" element={<VayevarechDavidFull size={size}/>}/>
           <Route path="/VayevarechDavidRest" element={<VayevarechDavidRest size={size}/>}/>
