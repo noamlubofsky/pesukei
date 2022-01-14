@@ -4,6 +4,7 @@ import { BrowserRouter as Router,
   Routes,
   Route,
   } from "react-router-dom";
+import styled from "styled-components";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
@@ -33,6 +34,7 @@ import Extras from './components/Extras'
 import Halachot from './components/Halachot'
 import Zmanim from './components/Zmanim'
 import RangeSlider from './components/RangeSlider'
+import blueleather from './blueleather.jpeg'
 
 function App() {
   const [minimum, setMinimum] = useState(false)
@@ -56,6 +58,7 @@ function App() {
   const [isRushing, setIsRushing] = useState(false)
   const [size, setSize] = useState(30)
   const [date, setDate] = useState(new Date());
+  const [language, setLanguage] = useState('hebrew')
 
 
   // const sliderValueChanged = useCallback(val => {
@@ -102,10 +105,14 @@ function App() {
       window.location.pathname === '/Hallelukahs' ||
       window.location.pathname === '/Extras'
       ? null : 
-      <RangeSlider size={size} setSize={setSize} 
-      // {...sliderProps} 
-      // classes="additional-css-classes" 
-      />}
+      <Top>
+      <RangeSlider size={size} setSize={setSize}/>
+      <Buttons>
+        <Button onClick={() => setLanguage('english')}>A</Button>
+        <Button onClick={() => setLanguage('both')}>A/א</Button>
+        <Button onClick={() => setLanguage('hebrew')}>א</Button>
+      </Buttons>
+      </Top>}
       <Routes>
           <Route path="/" element={<Home
                 setMinimum={setMinimum}
@@ -117,7 +124,7 @@ function App() {
       setViewingZmanim={setViewingZmanim}
                 />}/>
           <Route path="/MizmorShir" element={<MizmorShir size={size}/>}/>
-          <Route path="/BaruchSheamar" element={<BaruchSheamar size={size}/>}/>
+          <Route path="/BaruchSheamar" element={<BaruchSheamar size={size} language={language}/>}/>
           <Route path="/HoduPrimary" element={<HoduPrimary size={size}/>}/>
           <Route path="/HoduFull" element={<HoduFull size={size}/>}/>
           <Route path="/HoduRest" element={<HoduRest size={size}/>}/>
@@ -204,5 +211,70 @@ function App() {
     </div>
   );
 }
+
+const Top = styled.div`
+
+  margin-bottom: 12vh;
+
+`;
+
+const Buttons = styled.div`
+// width: 100%;
+//   display: grid;
+//   grid-template-columns: 10fr 10fr;
+//   justify-content: center;
+//   align-items: center;
+// display: flex;
+// flex-direction: row;
+// width: 100%;
+//   justify-content: center;
+//   align-items: center;
+  float: right;
+  right: 0;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+
+`;
+
+const Button = styled.button`
+
+  margin-top: 2vh;
+  color: silver;
+  display: inline-block;
+//   margin-bottom: 2vh;
+  width: 10vw;
+  height: 5vh;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+//   color: rgb(37, 38, 51);
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all .35s;
+justify-content: center;
+font-size: 2vh;
+// border: 2px solid #F5C983;
+
+//   background-image: url(https://media.istockphoto.com/photos/genuine-leather-texture-background-picture-id885433636?b=1&k=20&m=885433636&s=170667a&w=0&h=f0Mw8HS7Lm3ZZ7CvbSmdBO5Imn7YjPboaNaDZrFIaiQ=);
+color: silver;
+background-image: url(${blueleather});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
+font-family: 'Times New Roman', Georgia, serif;
+
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
+&:hover {
+    cursor: pointer;
+  }
+  `;
 
 export default App;
