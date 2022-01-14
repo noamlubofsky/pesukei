@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
 
-function Zmanim() {
+function Zmanim({date, setDate}) {
     const [zip, setZip] = useState('')
     const [zmanim, setZmanim] = useState([])
     const [haveTimes, setHaveTimes] = useState(false)
@@ -24,7 +24,7 @@ function Zmanim() {
     const [month, setMonth] = useState(new Date().getMonth())
     const [day, setDay] = useState(new Date().getDate())
     const [dateString, setDateString] = useState('')
-    const [date, setDate] = useState(new Date());
+    // const [date, setDate] = useState(new Date());
     const [showZip, setShowZip] = useState(false)
     const [hebDate, setHebDate] = useState()
     const [sunset, setSunset] = useState('')
@@ -32,7 +32,7 @@ function Zmanim() {
     const [minutes, setMinutes] = useState(new Date().getMinutes())
     const [currentTime, setCurrentTime] = useState(new Date().getHours() + ':' + new Date().getMinutes() + ':00')
     const [monthDays, setMonthDays] = useState(new Date(date.getFullYear(), date.getMonth() + 1, 0))
-console.log(monthDays.toString().split(' ')[2])
+
     useEffect(() => {  
         fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
             sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
@@ -42,14 +42,14 @@ console.log(monthDays.toString().split(' ')[2])
         .then(data => setHebDate(data.hebrew))
     },[])
 
-    const testFunction = () => {
-        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
-            sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
-        day + 1 : day
-        }&g2h=1`)
-        .then(response => response.json())
-        .then(data => setHebDate(data.hebrew))
-    }
+    // const testFunction = () => {
+    //     fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
+    //         sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
+    //     day + 1 : day
+    //     }&g2h=1`)
+    //     .then(response => response.json())
+    //     .then(data => setHebDate(data.hebrew))
+    // }
 
     const whatDay = () => {
         let thisMonthDays = monthDays.toString().split(' ')[2]
@@ -59,10 +59,6 @@ console.log(monthDays.toString().split(' ')[2])
             }else{return day + 1}
         }else{return day}
     }
-
-    // console.log(whatDay())
-    // console.log(monthDays.toString().split(' ')[2])
-    // console.log(day)
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -79,8 +75,8 @@ console.log(monthDays.toString().split(' ')[2])
                     
                     // currentTime > data.times.sunset.split('T')[1].split('-')[0]
                     // ? {thisMonthDays === day ? 1 : day + 1} : day
-                    whatDay()
-        }&g2h=1`)
+                    // whatDay()
+        day}&g2h=1${currentTime > sunset ? `gs=on` : null}`)
         .then(response => response.json())
         .then(data => setHebDate(data.hebrew))
             })
@@ -97,15 +93,14 @@ console.log(monthDays.toString().split(' ')[2])
     }
 
 const onDateChange = (newDate) => {
-    getHebrewDate()
+    // getHebrewDate()
+    showCal()    
     setDate(newDate);
     setDateString(newDate.toString())
     setUsingDate(true)
     setHaveTimes(false)
     setUsingZip(false)
     setUsingLocation(false)
-    let string = date.toString()
-    let parts = string.split(' ')
     setYear(date.getFullYear())
     setMonth(date.getMonth())
     setDay(date.getDate())
@@ -237,6 +232,12 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     setUsingZip(false)
   }
 
+  const showCal = () => {
+      setShowCalendar(!showCalendar)
+      getHebrewDate()
+
+  }
+
 
     // const handleCountryChange = (e) => {
     //     setZip('')
@@ -276,7 +277,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <Container>
                 <Heading>Zmanim for פסוקי דזמרא</Heading>
 
-            <CalendarButton onClick={() => setShowCalendar(!showCalendar)}>{!showCalendar ? `🗓` : null}</CalendarButton>
+            <CalendarButton onClick={showCal}>{!showCalendar ? `🗓` : null}</CalendarButton>
 
             {!showCalendar ? null : 
             <Calendar

@@ -54,8 +54,9 @@ function App() {
   const [saidAzYashir, setSaidAzYashir] = useState(false)
   const [saidAshrei, setSaidAshrei] = useState(false)
   const [isRushing, setIsRushing] = useState(false)
-  // const [parentVal, setParentVal] = useState(30);
   const [size, setSize] = useState(30)
+  const [date, setDate] = useState(new Date());
+
 
   // const sliderValueChanged = useCallback(val => {
   //   console.log("NEW VALUE", val);
@@ -137,7 +138,7 @@ function App() {
           <Route path="/Yishtabach" element={<Yishtabach size={size}/>}/>
           <Route path="/Barchu" element={<Barchu size={size}/>}/>
           <Route path="/Halachot" element={<Halachot size={size}/>}/>
-          <Route path="/Zmanim" element={<Zmanim size={size}/>}/>
+          <Route path="/Zmanim" element={<Zmanim size={size} date={date} setDate={setDate}/>}/>
           <Route path="/Hallelukahs" element={<Hallelukahs
           saidHallelukah1={saidHallelukah1}
           setSaidHallelukah1={setSaidHallelukah1}
