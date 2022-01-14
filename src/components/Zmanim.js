@@ -23,7 +23,6 @@ function Zmanim() {
     const [year, setYear] = useState(new Date().getFullYear())
     const [month, setMonth] = useState(new Date().getMonth())
     const [day, setDay] = useState(new Date().getDate())
-    const [parts, setParts] = useState([])
     const [dateString, setDateString] = useState('')
     const [date, setDate] = useState(new Date());
     const [showZip, setShowZip] = useState(false)
@@ -32,7 +31,8 @@ function Zmanim() {
     const [hour, setHour] = useState(new Date().getHours())
     const [minutes, setMinutes] = useState(new Date().getMinutes())
     const [currentTime, setCurrentTime] = useState(new Date().getHours() + ':' + new Date().getMinutes() + ':00')
-
+    const [monthDays, setMonthDays] = useState(new Date(date.getFullYear(), date.getMonth() + 1, 0))
+console.log(monthDays.toString().split(' ')[2])
     useEffect(() => {  
         fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
             sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
@@ -50,7 +50,19 @@ function Zmanim() {
         .then(response => response.json())
         .then(data => setHebDate(data.hebrew))
     }
-    // setSunset(data.times.sunset.split('T')[1].split('-')[0])
+
+    const whatDay = () => {
+        let thisMonthDays = monthDays.toString().split(' ')[2]
+        if(currentTime > sunset){
+            if(thisMonthDays === day){
+                return 1
+            }else{return day + 1}
+        }else{return day}
+    }
+
+    // console.log(whatDay())
+    // console.log(monthDays.toString().split(' ')[2])
+    // console.log(day)
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -59,12 +71,15 @@ function Zmanim() {
             fetch(`https://www.hebcal.com/zmanim?cfg=json&latitude=${loadLatitude}&longitude=${loadLongitude}&tzid=${timezone}`)
             .then(response => response.json())
             .then((data) => {
+                setSunset(data.times.sunset.split('T')[1].split('-')[0])
                 fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
                     // hour >= data.times.sunset.split('T')[1].split('-')[0].split(':')[0] &&
                     // (hour === data.times.sunset.split('T')[1].split('-')[0].split(':')[0] ?
                     // minutes >= data.times.sunset.split('T')[1].split('-')[0].split(':')[1] : null )
-                    currentTime > data.times.sunset.split('T')[1].split('-')[0]
-                    ? day + 1 : day
+                    
+                    // currentTime > data.times.sunset.split('T')[1].split('-')[0]
+                    // ? {thisMonthDays === day ? 1 : day + 1} : day
+                    whatDay()
         }&g2h=1`)
         .then(response => response.json())
         .then(data => setHebDate(data.hebrew))
