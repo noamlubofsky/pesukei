@@ -95,6 +95,16 @@ function App() {
   //   });
   // }
 
+// var array1 = [1, 2, 3, 4, 5];
+// var array2 = ['a', 'b', 'c', 'd', 'e'];
+
+// var result = array1.reduce(function(arr, v, i) {
+//   return arr.concat(v, array2[i]); 
+// }, []);
+
+// console.log(result);
+
+
   return (
     <div>
       <Router>
@@ -108,10 +118,34 @@ function App() {
       <Top>
       <RangeSlider size={size} setSize={setSize}/>
       <Buttons>
-        <Button onClick={() => setLanguage('english')}>A</Button>
-        <Button onClick={() => setLanguage('both')}>A/א</Button>
-        <Button onClick={() => setLanguage('hebrew')}>א</Button>
-        <Button onClick={() => setLanguage('linear')}>linear</Button>
+        <Button onClick={() => setLanguage('english')}>
+          <Letters>
+          <TLetter>---</TLetter>
+          <Letter>A</Letter>
+          <TLetter> ---</TLetter>
+          </Letters>
+          </Button>
+        <Button onClick={() => setLanguage('both')}>
+          <Letters>
+        <TLetter>-----</TLetter>
+          <Letter>A/א</Letter>
+          <TLetter>-----</TLetter>
+          </Letters>
+          </Button>
+        <Button onClick={() => setLanguage('hebrew')}>
+          <Letters>
+        <TLetter>---</TLetter>
+          <Letter>א</Letter>
+          <TLetter>---</TLetter>
+          </Letters>
+          </Button>
+        <Button onClick={() => setLanguage('linear')}>
+          <Letters>
+          <Letter>א</Letter>
+          <Letter>──</Letter>
+          <Letter>A</Letter>
+          </Letters>
+        </Button>
 
       </Buttons>
       </Top>}
@@ -125,28 +159,28 @@ function App() {
                 setUpTo={setUpTo}
       setViewingZmanim={setViewingZmanim}
                 />}/>
-          <Route path="/MizmorShir" element={<MizmorShir size={size}/>}/>
+          <Route path="/MizmorShir" element={<MizmorShir size={size} language={language}/>}/>
           <Route path="/BaruchSheamar" element={<BaruchSheamar size={size} language={language}/>}/>
-          <Route path="/HoduPrimary" element={<HoduPrimary size={size}/>}/>
-          <Route path="/HoduFull" element={<HoduFull size={size}/>}/>
-          <Route path="/HoduRest" element={<HoduRest size={size}/>}/>
-          <Route path="/MizmorLetodah" element={<MizmorLetodah size={size}/>}/>
-          <Route path="/YehiChevod" element={<YehiChevod size={size}/>}/>
-          <Route path="/Ashrei" element={<Ashrei size={size}/>}/>
-          <Route path="/Hallelukah1" element={<Hallelukah1 size={size}/>}/>
-          <Route path="/Hallelukah2" element={<Hallelukah2 size={size}/>}/>
-          <Route path="/Hallelukah3" element={<Hallelukah3 size={size}/>}/>
-          <Route path="/Hallelukah4" element={<Hallelukah4 size={size}/>}/>
-          <Route path="/Hallelukah5" element={<Hallelukah5 size={size}/>}/>
+          <Route path="/HoduPrimary" element={<HoduPrimary size={size} language={language}/>}/>
+          <Route path="/HoduFull" element={<HoduFull size={size} language={language}/>}/>
+          <Route path="/HoduRest" element={<HoduRest size={size} language={language}/>}/>
+          <Route path="/MizmorLetodah" element={<MizmorLetodah size={size} language={language}/>}/>
+          <Route path="/YehiChevod" element={<YehiChevod size={size} language={language}/>}/>
+          <Route path="/Ashrei" element={<Ashrei size={size} language={language}/>}/>
+          <Route path="/Hallelukah1" element={<Hallelukah1 size={size} language={language}/>}/>
+          <Route path="/Hallelukah2" element={<Hallelukah2 size={size} language={language}/>}/>
+          <Route path="/Hallelukah3" element={<Hallelukah3 size={size} language={language}/>}/>
+          <Route path="/Hallelukah4" element={<Hallelukah4 size={size} language={language}/>}/>
+          <Route path="/Hallelukah5" element={<Hallelukah5 size={size} language={language}/>}/>
           <Route path="/BaruchHashemLeolam" element={<BaruchHashemLeolam size={size} language={language}/>}/>
-          <Route path="/VayevarechDavidPrimary" element={<VayevarechDavidPrimary size={size}/>}/>
-          <Route path="/VayevarechDavidFull" element={<VayevarechDavidFull size={size}/>}/>
-          <Route path="/VayevarechDavidRest" element={<VayevarechDavidRest size={size}/>}/>
-          <Route path="/Vecharot" element={<Vecharot size={size}/>}/>
-          <Route path="/AzYashir" element={<AzYashir size={size}/>}/>
-          <Route path="/Yishtabach" element={<Yishtabach size={size}/>}/>
-          <Route path="/Barchu" element={<Barchu size={size}/>}/>
-          <Route path="/Halachot" element={<Halachot size={size}/>}/>
+          <Route path="/VayevarechDavidPrimary" element={<VayevarechDavidPrimary size={size} language={language}/>}/>
+          <Route path="/VayevarechDavidFull" element={<VayevarechDavidFull size={size} language={language}/>}/>
+          <Route path="/VayevarechDavidRest" element={<VayevarechDavidRest size={size} language={language}/>}/>
+          <Route path="/Vecharot" element={<Vecharot size={size} language={language}/>}/>
+          <Route path="/AzYashir" element={<AzYashir size={size} language={language}/>}/>
+          <Route path="/Yishtabach" element={<Yishtabach size={size} language={language}/>}/>
+          <Route path="/Barchu" element={<Barchu size={size} language={language}/>}/>
+          <Route path="/Halachot" element={<Halachot size={size} language={language}/>}/>
           <Route path="/Zmanim" element={<Zmanim size={size} date={date} setDate={setDate}/>}/>
           <Route path="/Hallelukahs" element={<Hallelukahs
           saidHallelukah1={saidHallelukah1}
@@ -216,8 +250,25 @@ function App() {
 
 const Top = styled.div`
 
-  margin-bottom: 12vh;
+  margin-bottom: 13vh;
 
+`;
+
+const Letters = styled.div`
+
+line-height: 10px;
+
+`;
+
+const Letter = styled.div`
+
+line-height: -15px;
+
+`;
+
+const TLetter = styled.div`
+
+color: transparent;
 `;
 
 const Buttons = styled.div`
@@ -240,26 +291,22 @@ const Buttons = styled.div`
 
 const Button = styled.button`
 
-  margin-top: 2vh;
+  // margin-top: 2vh;
   color: silver;
   display: inline-block;
 //   margin-bottom: 2vh;
-  width: 10vw;
-  height: 5vh;
-  /* line-height: 50px; */
+  width: 12vw;
+  height: 6vh;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   align-items: center;
 //   color: rgb(37, 38, 51);
 text-transform: uppercase;
-letter-spacing: 1px;
+// letter-spacing: 1px;
 transition: all .35s;
 justify-content: center;
 font-size: 2vh;
-// border: 2px solid #F5C983;
-
-//   background-image: url(https://media.istockphoto.com/photos/genuine-leather-texture-background-picture-id885433636?b=1&k=20&m=885433636&s=170667a&w=0&h=f0Mw8HS7Lm3ZZ7CvbSmdBO5Imn7YjPboaNaDZrFIaiQ=);
 color: silver;
 background-image: url(${blueleather});
 background-position: center;

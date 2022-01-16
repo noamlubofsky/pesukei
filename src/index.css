@@ -33,6 +33,7 @@ code {
 
 input[type="range"] {
   -webkit-appearance: none;
+  /* position: fixed; */
   /* margin-right: 15px; */
   width: 40vw;
   height: 10px;

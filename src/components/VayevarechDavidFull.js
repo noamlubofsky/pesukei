@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function VayevarechDavidFull({size}) {
+function VayevarechDavidFull({size, language}) {
     return(
         <Container>
             <Heading>וַיְבָֽרֶךְ דָּוִיד</Heading>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Hallelukah2({size}) {
+function Hallelukah2({size, language}) {
     return(
         <Container>
                         <Heading>2 הַלְ֒לוּיָהּ</Heading>

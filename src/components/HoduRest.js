@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function HoduRest({size}) {
+function HoduRest({size, language}) {
     return(
         <Container>
             <Heading>Rest of הוֹדוּ</Heading>

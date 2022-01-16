@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function HoduFull({size}) {
+function HoduFull({size, language}) {
     return(
         <Container>
             <Heading>הוֹדוּ</Heading>

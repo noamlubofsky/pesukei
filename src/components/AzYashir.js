@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function AzYashir({size}) {
+function AzYashir({size, language}) {
     return(
         <Container>
             <Heading>אָז יָשִׁיר</Heading>

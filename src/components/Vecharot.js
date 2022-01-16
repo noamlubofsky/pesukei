@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Vecharot({size}) {
+function Vecharot({size, language}) {
     return(
         <Container>
             <Heading>וְכָרוֹת עִמּוֹ הַבְּ֒רִית</Heading>

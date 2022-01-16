@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Vayosha({size}) {
+function Vayosha({size, language}) {
     return(
         <Container>
             <Text fontSize={size}>

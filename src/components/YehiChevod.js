@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function YehiChevod({size}) {
+function YehiChevod({size, language}) {
     return(
         <Container>
             <Heading>יְהִי כְבוֹד</Heading>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Ashrei({size}) {
+function Ashrei({size, language}) {
     return(
         <Container>
             {/* <Container> */}

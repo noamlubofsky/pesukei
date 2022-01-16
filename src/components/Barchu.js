@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Barchu({size}) {
+function Barchu({size, language}) {
     return(
         <div>
             <Text fontSize={size}>

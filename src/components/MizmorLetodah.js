@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function MizmorLetodah({size}) {
+function MizmorLetodah({size, language}) {
     return(
         <Container>
             <Heading>מִזְמוֹר לְתוֹדָה</Heading>

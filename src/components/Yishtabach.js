@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Yishtabach({size}) {
+function Yishtabach({size, language}) {
     return(
         <Container>
             <Heading>יִשְׁתַּבַּח</Heading>
