@@ -120,20 +120,22 @@ function App() {
       <Buttons>
         <Button onClick={() => setLanguage('english')}>
           <Letters>
+          <TLetter>─</TLetter>
           <Letter>A</Letter>
-          <TLetter>---</TLetter>
+        <TLetter>א</TLetter>
           </Letters>
           </Button>
         <Button onClick={() => setLanguage('both')}>
           <Letters>
           <Letter>A/א</Letter>          
-        <TLetter>---</TLetter>
+        <TLetter>-</TLetter>
           </Letters>
           </Button>
         <Button onClick={() => setLanguage('hebrew')}>
           <Letters>
+        <TLetter>─</TLetter>
           <Letter>א</Letter>
-        <TLetter>---</TLetter>
+        <TLetter>A</TLetter>
           </Letters>
           </Button>
         <Button onClick={() => setLanguage('linear')}>
