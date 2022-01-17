@@ -76,7 +76,7 @@ function Zmanim({date, setDate}) {
                     // currentTime > data.times.sunset.split('T')[1].split('-')[0]
                     // ? {thisMonthDays === day ? 1 : day + 1} : day
                     // whatDay()
-        day}&g2h=1${currentTime >= sunset ? `gs=on` : null}`)
+        day}&g2h=1${currentTime >= sunset ? `&gs=on` : null}`)
         .then(response => response.json())
         .then(data => setHebDate(data.hebrew))
             })

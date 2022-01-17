@@ -3,7 +3,25 @@ import styled from "styled-components";
 
 function BaruchHashemLeolam({size, language}) {
 
-    const linearArray = ["בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן:", "Blessed is Adonoy forever, Amein and Amein!", "בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ:", "Blessed is Adonoy from Zion, Who dwells in Jerusalem. Praise God.", "בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ:", "Blessed is Adonoy, God, God of Israel Who alone performs wonders.", "וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן:", "And blessed is the Name of His glory forever, and may His glory fill the whole earth. Amein and Amein!"]
+    const hebrew = ``
+    const english = ``
+    const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
+    const engArray = splitMulti(english, ['.', ',', ':', ';'])
+
+    var linearArray = hebArray.reduce(function(arr, v, i) {
+        return arr.concat(v, engArray[i]); 
+      }, []);
+
+      function splitMulti(str, tokens){
+        var tempChar = tokens[0]; // We can use the first token as a temporary join character
+        for(var i = 1; i < tokens.length; i++){
+            str = str.split(tokens[i]).join(tempChar);
+        }
+        str = str.split(tempChar);
+        return str;
+        }
+
+    // const linearArray = ["בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן:", "Blessed is Adonoy forever, Amein and Amein!", "בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ:", "Blessed is Adonoy from Zion, Who dwells in Jerusalem. Praise God.", "בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ:", "Blessed is Adonoy, God, God of Israel Who alone performs wonders.", "וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן:", "And blessed is the Name of His glory forever, and may His glory fill the whole earth. Amein and Amein!"]
     
     return(
         <Container>

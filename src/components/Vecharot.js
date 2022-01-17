@@ -2,6 +2,25 @@ import React from "react";
 import styled from "styled-components";
 
 function Vecharot({size, language}) {
+
+    const hebrew = ``
+    const english = ``
+    const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
+    const engArray = splitMulti(english, ['.', ',', ':', ';'])
+
+    var linearArray = hebArray.reduce(function(arr, v, i) {
+        return arr.concat(v, engArray[i]); 
+      }, []);
+
+      function splitMulti(str, tokens){
+        var tempChar = tokens[0]; // We can use the first token as a temporary join character
+        for(var i = 1; i < tokens.length; i++){
+            str = str.split(tokens[i]).join(tempChar);
+        }
+        str = str.split(tempChar);
+        return str;
+        }
+        
     return(
         <Container>
             <Heading>וְכָרוֹת עִמּוֹ הַבְּ֒רִית</Heading>

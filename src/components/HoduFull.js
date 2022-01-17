@@ -2,6 +2,25 @@ import React from "react";
 import styled from "styled-components";
 
 function HoduFull({size, language}) {
+
+    const hebrew = ``
+    const english = ``
+    const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
+    const engArray = splitMulti(english, ['.', ',', ':', ';'])
+
+    var linearArray = hebArray.reduce(function(arr, v, i) {
+        return arr.concat(v, engArray[i]); 
+      }, []);
+
+      function splitMulti(str, tokens){
+        var tempChar = tokens[0]; // We can use the first token as a temporary join character
+        for(var i = 1; i < tokens.length; i++){
+            str = str.split(tokens[i]).join(tempChar);
+        }
+        str = str.split(tempChar);
+        return str;
+        }
+        
     return(
         <Container>
             <Heading>הוֹדוּ</Heading>
@@ -17,6 +36,10 @@ function HoduFull({size, language}) {
             </Text>
             <Text fontSize={size}>
             הוֹשִֽׁיעָה אֶת־עַמֶּֽךָ וּבָרֵךְ אֶת־נַחֲלָתֶֽךָ וּרְעֵם וְנַשְּׂ֒אֵם עַד־הָעוֹלָם: נַפְשֵֽׁנוּ חִכְּ֒תָה לַיהוָֹה עֶזְרֵֽנוּ וּמָגִנֵּֽנוּ הוּא: כִּי־בוֹ יִשְׂמַח לִבֵּֽנוּ כִּי בְשֵׁם קָדְשׁוֹ בָטָֽחְנוּ: יְהִי־חַסְדְּ֒ךָ יְהֹוָה עָלֵֽינוּ כַּאֲשֶׁר יִחַֽלְנוּ לָךְ: הַרְאֵֽנוּ יְהֹוָה חַסְדֶּֽךָ וְיֶשְׁעֲךָ תִּֽתֶּן־לָֽנוּ: קֽוּמָה עֶזְרָֽתָה לָּנוּ וּפְדֵֽנוּ לְמַֽעַן חַסְדֶּֽךָ: אָנֹכִי יְהֹוָה אֱלֹהֶֽיךָ הַמַּעַלְךָ מֵאֶֽרֶץ מִצְרָֽיִם הַרְחֶב־פִּֽיךָ וַאֲמַלְאֵֽהוּ: אַשְׁרֵי הָעָם שֶׁכָּֽכָה לּוֹ אַשְׁרֵי הָעָם שֶׁיְהֹוָה אֱלֹהָיו: וַאֲנִי בְּחַסְדְּ֒ךָ בָטַֽחְתִּי יָגֵל לִבִּי בִּישׁוּעָתֶֽךָ אָשִֽׁירָה לַיהוָֹה כִּי גָמַל עָלָי
+            </Text>
+
+            <Text>
+            Give thanks to Adonoy, proclaim His Name; make His deeds known among the nations. Sing to Him, compose songs to Him, speak of all His wonders. Take pride in [uttering] His holy Name, let the heart rejoice of those who seek Adonoy. Search for Adonoy and His might, seek His presence continually. Remember the wonders He has performed, His miracles, and the laws from His mouth. [You,] the seed of Israel His servant, children of Jacob, His chosen ones. He is Adonoy our God; the entire earth is governed by His laws. Remember His covenant forever— the word He commanded to a thousand generations— which He made as a treaty with Abraham, and [which was] His oath to Isaac. He established it for Jacob as a statute, for Israel as an everlasting covenant. Saying, To you I will give the Land of Canaan, the portion of your inheritance. When you were only few in number— very few, and strangers in it. They wandered from nation to nation, and from one kingdom to another people. He permitted no one to oppress them, and admonished kings for their sakes. Do not touch My anointed ones,8 and do not harm My prophets.” Sing to Adonoy all the earth, proclaim His deliverance from day to day.10 Recount His glory among the nations, His wonders among all the peoples. For Adonoy is great and most extolled; Awesome is He above all gods. For all the gods of the peoples are idols, whereas Adonoy made the heavens.
             </Text>
         </Container>
     )
