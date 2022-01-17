@@ -127,6 +127,7 @@ function App() {
           </Button>
         <Button onClick={() => setLanguage('both')}>
           <Letters>
+          <TLetter>-</TLetter>
           <Letter>A/א</Letter>          
         <TLetter>-</TLetter>
           </Letters>
