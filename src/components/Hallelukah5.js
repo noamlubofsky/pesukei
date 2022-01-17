@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 function Hallelukah5({size, language}) {
 
-    const hebrew = ``
-    const english = ``
+    const hebrew = `            הַלְ֒לוּיָהּ הַֽלְ֒לוּ־אֵל בְּקָדְשׁוֹ הַלְ֒לֽוּהוּ בִּרְקִֽיעַ עֻזּוֹ: הַלְ֒לֽוּהוּ בִּגְבוּרֹתָיו הַלְ֒לֽוּהוּ כְּרֹב גֻּדְלוֹ: הַלְ֒לֽוּהוּ בְּתֵֽקַע שׁוֹפָר הַלְ֒לֽוּהוּ בְּנֵֽבֶל וְכִנּוֹר: הַלְ֒לֽוּהוּ בְּתֹף וּמָחוֹל הַלְ֒לֽוּהוּ בְּמִנִּים וְעֻגָב: הַלְ֒לֽוּהוּ בְצִלְצְלֵי־שָֽׁמַע הַלְ֒לֽוּהוּ בְּצִלְצְלֵי תְרוּעָה: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ        </Text>
+    `
+    const english = `Praise God. Praise the Almighty in His Sanctuary33 Praise God in the firmament of His might34 Praise Him for His mighty deeds; Praise Him according to the abundance of His greatness. Praise Him with the blowing of the shofar;35 praise Him with lyre and harp.36 Praise Him with drum and dance.37 Praise Him with stringed instruments and flute.38 Praise Him with resounding cymbals.39 Praise Him with clanging cymbals. Let every soul praise God. Praise God. Let every soul praise God. Praise God.40`
     const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
     const engArray = splitMulti(english, ['.', ',', ':', ';'])
 
@@ -20,13 +21,36 @@ function Hallelukah5({size, language}) {
         str = str.split(tempChar);
         return str;
         }
-        
+
     return(
         <Container>
-                        <Heading>5 הַלְ֒לוּיָהּ</Heading>
+            <Heading>5 הַלְ֒לוּיָהּ</Heading>
 
+            {/* <Text fontSize={size}>
+            הַלְ֒לוּיָהּ הַֽלְ֒לוּ־אֵל בְּקָדְשׁוֹ הַלְ֒לֽוּהוּ בִּרְקִֽיעַ עֻזּוֹ: הַלְ֒לֽוּהוּ בִּגְבוּרֹתָיו הַלְ֒לֽוּהוּ כְּרֹב גֻּדְלוֹ: הַלְ֒לֽוּהוּ בְּתֵֽקַע שׁוֹפָר הַלְ֒לֽוּהוּ בְּנֵֽבֶל וְכִנּוֹר: הַלְ֒לֽוּהוּ בְּתֹף וּמָחוֹל הַלְ֒לֽוּהוּ בְּמִנִּים וְעֻגָב: הַלְ֒לֽוּהוּ בְצִלְצְלֵי־שָֽׁמַע הַלְ֒לֽוּהוּ בְּצִלְצְלֵי תְרוּעָה: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ        
+            </Text> */}
+
+{language === 'hebrew' || language === 'both' ?
             <Text fontSize={size}>
-            הַלְ֒לוּיָהּ הַֽלְ֒לוּ־אֵל בְּקָדְשׁוֹ הַלְ֒לֽוּהוּ בִּרְקִֽיעַ עֻזּוֹ: הַלְ֒לֽוּהוּ בִּגְבוּרֹתָיו הַלְ֒לֽוּהוּ כְּרֹב גֻּדְלוֹ: הַלְ֒לֽוּהוּ בְּתֵֽקַע שׁוֹפָר הַלְ֒לֽוּהוּ בְּנֵֽבֶל וְכִנּוֹר: הַלְ֒לֽוּהוּ בְּתֹף וּמָחוֹל הַלְ֒לֽוּהוּ בְּמִנִּים וְעֻגָב: הַלְ֒לֽוּהוּ בְצִלְצְלֵי־שָֽׁמַע הַלְ֒לֽוּהוּ בְּצִלְצְלֵי תְרוּעָה: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ        </Text>
+            {hebrew}
+            </Text>
+            : null}
+
+            {language === 'english' || language === 'both' ?
+            <Text fontSize={size}>
+            {english}
+            </Text>
+            : null}
+
+            {language === 'linear' ? 
+            linearArray.map(line => {
+                return(
+                <LinearText fontSize={size}>{line}</LinearText>
+                )
+            })
+        : null}
+
+            <p>*Texts and translations courtesy of Sefaria</p>
         </Container>
     )
 }
@@ -47,6 +71,15 @@ text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;
 margin-bottom: 5vh;
+font-family: 'Times New Roman', Georgia, serif;
+`;
+
+const LinearText = styled.div`
+font-size: ${props => props.fontSize}px;
+text-align: right;
+margin-right: 5vw;
+margin-left: 2vw;
+margin-bottom: 2vh;
 font-family: 'Times New Roman', Georgia, serif;
 `;
 

@@ -78,4 +78,5 @@ margin-bottom: 2vh;
 font-family: 'Times New Roman', Georgia, serif;
 `;
 
+
 export default BaruchSheamar;

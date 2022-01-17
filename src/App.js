@@ -258,7 +258,6 @@ line-height: 10px;
 `;
 
 const Letter = styled.div`
-padding: auto;
 `;
 
 const TLetter = styled.div`

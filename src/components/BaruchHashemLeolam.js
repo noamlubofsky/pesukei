@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 function BaruchHashemLeolam({size, language}) {
 
-    const hebrew = ``
-    const english = ``
+    const hebrew = `            בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן: בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ: בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ: וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן      
+    `
+    const english = `Blessed is Adonoy forever, Amein and Amein!41 Blessed is Adonoy from Zion, Who dwells in Jerusalem. Praise God.42 Blessed is Adonoy, God, God of Israel Who alone performs wonders.43 And blessed is the Name of His glory forever, and may His glory fill the whole earth. Amein and Amein!44`
     const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
     const engArray = splitMulti(english, ['.', ',', ':', ';'])
 
@@ -77,5 +78,6 @@ margin-left: 2vw;
 margin-bottom: 2vh;
 font-family: 'Times New Roman', Georgia, serif;
 `;
+
 
 export default BaruchHashemLeolam;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 function MizmorLetodah({size, language}) {
 
-    const hebrew = ``
-    const english = ``
+    const hebrew = `מִזְמוֹר לְתוֹדָה הָרִֽיעוּ לַיהוָֹה כָּל־הָאָֽרֶץ: עִבְדוּ אֶת יְהֹוָה בְּשִׂמְחָה בֹּֽאוּ לְפָנָיו בִּרְנָנָה: דְּעוּ כִּי־יְהֹוָה הוּא אֱלֹהִים הוּא עָשָֽׂנוּ וְלוֹ (וְלֹא) אֲנַֽחְנוּ עַמּוֹ וְצֹאן מַרְעִיתוֹ: בֹּֽאוּ שְׁעָרָיו בְּתוֹדָה חֲצֵרֹתָיו בִּתְהִלָּה הֽוֹדוּ לוֹ בָּרְ֒כוּ שְׁמוֹ: כִּי־טוֹב יְהֹוָה לְעוֹלָם חַסְדּוֹ וְעַד־דֹּר וָדֹר אֱמוּנָתוֹ`
+    const english = `A psalm of thanksgiving: Shout for joy to Adonoy, everyone on earth. Serve Adony with joy,1 come before Him with exultation. Know that Adonoy is God, He has made us, and we are His,2 His people and the sheep of His pasturing. Enter His gates3 with thanksgiving, His courtyards4 with praise. Give thanks to Him, bless His Name for Adonoy is good, His loving kindness is eternal, and to every generation His faithfulness [extends.]`
     const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
     const engArray = splitMulti(english, ['.', ',', ':', ';'])
 
@@ -20,13 +20,36 @@ function MizmorLetodah({size, language}) {
         str = str.split(tempChar);
         return str;
         }
-        
+
     return(
         <Container>
             <Heading>מִזְמוֹר לְתוֹדָה</Heading>
 
+            {/* <Text fontSize={size}>
+            מִזְמוֹר לְתוֹדָה הָרִֽיעוּ לַיהוָֹה כָּל־הָאָֽרֶץ: עִבְדוּ אֶת יְהֹוָה בְּשִׂמְחָה בֹּֽאוּ לְפָנָיו בִּרְנָנָה: דְּעוּ כִּי־יְהֹוָה הוּא אֱלֹהִים הוּא עָשָֽׂנוּ וְלוֹ (וְלֹא) אֲנַֽחְנוּ עַמּוֹ וְצֹאן מַרְעִיתוֹ: בֹּֽאוּ שְׁעָרָיו בְּתוֹדָה חֲצֵרֹתָיו בִּתְהִלָּה הֽוֹדוּ לוֹ בָּרְ֒כוּ שְׁמוֹ: כִּי־טוֹב יְהֹוָה לְעוֹלָם חַסְדּוֹ וְעַד־דֹּר וָדֹר אֱמוּנָתוֹ          
+            </Text> */}
+
+{language === 'hebrew' || language === 'both' ?
             <Text fontSize={size}>
-            מִזְמוֹר לְתוֹדָה הָרִֽיעוּ לַיהוָֹה כָּל־הָאָֽרֶץ: עִבְדוּ אֶת יְהֹוָה בְּשִׂמְחָה בֹּֽאוּ לְפָנָיו בִּרְנָנָה: דְּעוּ כִּי־יְהֹוָה הוּא אֱלֹהִים הוּא עָשָֽׂנוּ וְלוֹ (וְלֹא) אֲנַֽחְנוּ עַמּוֹ וְצֹאן מַרְעִיתוֹ: בֹּֽאוּ שְׁעָרָיו בְּתוֹדָה חֲצֵרֹתָיו בִּתְהִלָּה הֽוֹדוּ לוֹ בָּרְ֒כוּ שְׁמוֹ: כִּי־טוֹב יְהֹוָה לְעוֹלָם חַסְדּוֹ וְעַד־דֹּר וָדֹר אֱמוּנָתוֹ          </Text>
+            {hebrew}
+            </Text>
+            : null}
+
+            {language === 'english' || language === 'both' ?
+            <Text fontSize={size}>
+            {english}
+            </Text>
+            : null}
+
+            {language === 'linear' ? 
+            linearArray.map(line => {
+                return(
+                <LinearText fontSize={size}>{line}</LinearText>
+                )
+            })
+        : null}
+
+            <p>*Texts and translations courtesy of Sefaria</p>
         </Container>
     )
 }
@@ -47,6 +70,15 @@ text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;
 margin-bottom: 5vh;
+font-family: 'Times New Roman', Georgia, serif;
+`;
+
+const LinearText = styled.div`
+font-size: ${props => props.fontSize}px;
+text-align: right;
+margin-right: 5vw;
+margin-left: 2vw;
+margin-bottom: 2vh;
 font-family: 'Times New Roman', Georgia, serif;
 `;
 
