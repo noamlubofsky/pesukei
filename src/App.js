@@ -120,23 +120,26 @@ function App() {
       <Buttons>
         <Button onClick={() => setLanguage('english')}>
           <Letters>
+          <TLetter>---</TLetter>
           <Letter>A</Letter>
           </Letters>
           </Button>
         <Button onClick={() => setLanguage('both')}>
           <Letters>
-          <Letter>A/א</Letter>
+        <TLetter>-----</TLetter>
+          <Letter>A/א</Letter>          
           </Letters>
           </Button>
         <Button onClick={() => setLanguage('hebrew')}>
           <Letters>
+        <TLetter>---</TLetter>
           <Letter>א</Letter>
           </Letters>
           </Button>
         <Button onClick={() => setLanguage('linear')}>
           <Letters>
           <Letter>א</Letter>
-          <Letter>──</Letter>
+          <Letter>─</Letter>
           <Letter>A</Letter>
           </Letters>
         </Button>
@@ -255,7 +258,7 @@ line-height: 10px;
 `;
 
 const Letter = styled.div`
-
+padding: auto;
 `;
 
 const TLetter = styled.div`
