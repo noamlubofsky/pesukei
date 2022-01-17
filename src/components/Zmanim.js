@@ -33,32 +33,14 @@ function Zmanim({date, setDate}) {
     const [currentTime, setCurrentTime] = useState(new Date().getHours() + ':' + new Date().getMinutes() + ':00')
     const [monthDays, setMonthDays] = useState(new Date(date.getFullYear(), date.getMonth() + 1, 0))
 
-    useEffect(() => {  
-        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
-            sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
-        day + 1 : day
-        }&g2h=1`)
-        .then(response => response.json())
-        .then(data => setHebDate(data.hebrew))
-    },[])
-
-    // const testFunction = () => {
+    // useEffect(() => {  
     //     fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
     //         sunset.split(':')[0] >= hour && sunset.split(':')[1] >= minutes ?
     //     day + 1 : day
     //     }&g2h=1`)
     //     .then(response => response.json())
     //     .then(data => setHebDate(data.hebrew))
-    // }
-
-    const whatDay = () => {
-        let thisMonthDays = monthDays.toString().split(' ')[2]
-        if(currentTime > sunset){
-            if(thisMonthDays === day){
-                return 1
-            }else{return day + 1}
-        }else{return day}
-    }
+    // },[])
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -76,7 +58,7 @@ function Zmanim({date, setDate}) {
                     // currentTime > data.times.sunset.split('T')[1].split('-')[0]
                     // ? {thisMonthDays === day ? 1 : day + 1} : day
                     // whatDay()
-        day}&g2h=1${currentTime >= sunset ? `&gs=on` : null}`)
+        day}&g2h=1${currentTime >= data.times.sunset.split('T')[1].split('-')[0] ? `&gs=on` : `&gs=off`}`)
         .then(response => response.json())
         .then(data => setHebDate(data.hebrew))
             })
