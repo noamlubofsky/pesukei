@@ -33,8 +33,11 @@ import Hallelukahs from './components/Hallelukahs'
 import Extras from './components/Extras'
 import Halachot from './components/Halachot'
 import Zmanim from './components/Zmanim'
+import CompassPage from './components/CompassPage'
 import RangeSlider from './components/RangeSlider'
 import blueleather from './blueleather.jpeg'
+// import Compass from 'react-Compass'
+// import 'react-compass/dist/react-compass.css';
 
 function App() {
   const [minimum, setMinimum] = useState(false)
@@ -113,7 +116,8 @@ function App() {
       window.location.pathname === '/Zmanim' || 
       window.location.pathname === '/Halachot' ||
       window.location.pathname === '/Hallelukahs' ||
-      window.location.pathname === '/Extras'
+      window.location.pathname === '/Extras' || 
+      window.location.pathname === '/CompassPage'
       ? null : 
       <Top>
       <RangeSlider size={size} setSize={setSize}/>
@@ -182,6 +186,7 @@ function App() {
           <Route path="/Barchu" element={<Barchu size={size} language={language}/>}/>
           <Route path="/Halachot" element={<Halachot size={size} language={language}/>}/>
           <Route path="/Zmanim" element={<Zmanim size={size} date={date} setDate={setDate}/>}/>
+          <Route path="/CompassPage" element={<CompassPage/>}/>
           <Route path="/Hallelukahs" element={<Hallelukahs
           saidHallelukah1={saidHallelukah1}
           setSaidHallelukah1={setSaidHallelukah1}

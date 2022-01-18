@@ -239,12 +239,20 @@ function Footer({minimum,
         navigate(-1)
         window.scrollTo(0, 0)
         }
+      }
 
+      const toCompass = () => {
+          navigate('/CompassPage')
+          window.scrollTo(0, 0)
       }
 
     return(
         <Container>
                 <FooterSpace>
+                {window.location.pathname === '/' || 
+            window.location.pathname === '/Zmanim' || 
+            window.location.pathname === '/Halachot' 
+            ? <CompassButton onClick={toCompass}>🧭</CompassButton> : null} 
                 {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> :
                 <Buttons>
             {/* {minimum ? <Button onClick={minimumClick}>{window.location.pathname === '/Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
@@ -284,6 +292,27 @@ function Footer({minimum,
             </Container>
     )
 }
+
+const CompassButton = styled.div`
+float: right;
+margin-right: 10vw;
+text-decoration: none;
+text-align: center;
+align-items: center;
+justify-content: center;
+font-size: 5vh;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+ -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Edge, Opera and Firefox */
+
+&:hover {
+  cursor: pointer;
+}
+`;
 
 const Copyright = styled.p`
 
