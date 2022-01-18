@@ -5,7 +5,14 @@ import blueleather from '../blueleather.jpeg'
 function CompassPage() {
 
         useEffect(() => {  
-            navigator.geolocation.getCurrentPosition(locationHandler);
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const { latitude, longitude } = position.coords;
+                pointDegree = calcDegreeToPoint(latitude, longitude);
+              
+                if (pointDegree < 0) {
+                  pointDegree = pointDegree + 360;
+                }
+            });;
     },[])
 
     const compassCircle = document.querySelector(".compass-circle");
@@ -59,14 +66,14 @@ function handler(e) {
 
       let pointDegree;
 
-function locationHandler(position) {
-  const { latitude, longitude } = position.coords;
-  pointDegree = calcDegreeToPoint(latitude, longitude);
+// function locationHandler(position) {
+//   const { latitude, longitude } = position.coords;
+//   pointDegree = calcDegreeToPoint(latitude, longitude);
 
-  if (pointDegree < 0) {
-    pointDegree = pointDegree + 360;
-  }
-}
+//   if (pointDegree < 0) {
+//     pointDegree = pointDegree + 360;
+//   }
+// }
 
 function calcDegreeToPoint(latitude, longitude) {
   // Qibla geolocation
