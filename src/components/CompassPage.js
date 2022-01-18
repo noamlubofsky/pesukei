@@ -73,6 +73,7 @@ function calcDegreeToPoint(latitude, longitude) {
 }
 
 function init() {
+    startCompass()
     navigator.geolocation.getCurrentPosition(locationHandler);
   }
   
