@@ -108,7 +108,7 @@ function CompassPage() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-          <Button className="start-btn" onClick={startCompass}>Start Compass</Button>
+          <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
           </Container>
         </div>
       );
