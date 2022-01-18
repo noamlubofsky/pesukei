@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
 
 function CompassPage() {
+
+        useEffect(() => {  
+            navigator.geolocation.getCurrentPosition(locationHandler);
+    },[])
 
     const compassCircle = document.querySelector(".compass-circle");
     const startBtn = document.querySelector(".start-btn");
@@ -13,10 +17,10 @@ function CompassPage() {
       navigator.userAgent.match(/AppleWebKit/)
     );
 
-    function init() {
-        startBtn.addEventListener("click", startCompass);
-        navigator.geolocation.getCurrentPosition(locationHandler);
-      }
+    // function init() {
+    //     startBtn.addEventListener("click", startCompass);
+    //     navigator.geolocation.getCurrentPosition(locationHandler);
+    //   }
       
       function startCompass() {
         if (isIOS) {
@@ -51,7 +55,7 @@ function handler(e) {
     }
   }
       
-      init();
+    //   init();
 
       let pointDegree;
 
@@ -92,7 +96,7 @@ function calcDegreeToPoint(latitude, longitude) {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-<button class="start-btn">Start compass</button>
+<button class="start-btn" onClick={startCompass}>Start compass</button>
         </div>
     )
 }
