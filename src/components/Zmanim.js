@@ -72,14 +72,14 @@ function Zmanim({date, setDate}) {
         });
     },[])
 
-    const getHebrewDate = () => {
-        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${date.getFullYear()}&gm=${date.getMonth() + 1}&gd=${date.getDate()}&g2h=1`, {
-    })
-    .then((res) => res.json())
-    .then((data) => {
-        setHebDate(data.hebrew)
-    });
-    }
+    // const getHebrewDate = () => {
+    //     fetch(`https://www.hebcal.com/converter?cfg=json&gy=${date.getFullYear()}&gm=${date.getMonth() + 1}&gd=${date.getDate()}&g2h=1`, {
+    // })
+    // .then((res) => res.json())
+    // .then((data) => {
+    //     setHebDate(data.hebrew)
+    // });
+    // }
 
     const onDateChange = (newDate) => {
         fetch(`https://www.hebcal.com/converter?cfg=json&gy=${newDate.getFullYear()}&gm=${newDate.getMonth() + 1}&gd=${newDate.getDate()}&g2h=1`, {
