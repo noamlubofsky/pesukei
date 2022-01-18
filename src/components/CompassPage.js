@@ -4,7 +4,7 @@ import blueleather from '../blueleather.jpeg'
 
 function CompassPage() {
 
-const compassCircle = document.querySelector(".compass-circle");
+    const compassCircle = document.querySelector(".compass-circle");
 const startBtn = document.querySelector(".start-btn");
 const myPoint = document.querySelector(".my-point");
 let compass;
@@ -12,9 +12,12 @@ const isIOS = !(
   navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
   navigator.userAgent.match(/AppleWebKit/)
 );
+
+// function init() {
+//     startBtn.addEventListener("click", startCompass);
+//   }
   
   function startCompass() {
-    navigator.geolocation.getCurrentPosition(locationHandler);
     if (isIOS) {
       DeviceOrientationEvent.requestPermission()
         .then((response) => {
@@ -69,10 +72,10 @@ function calcDegreeToPoint(latitude, longitude) {
   return Math.round(psi);
 }
 
-// function init() {
-//     startCompass()
-//     navigator.geolocation.getCurrentPosition(locationHandler);
-//   }
+function init() {
+    startCompass()
+    navigator.geolocation.getCurrentPosition(locationHandler);
+  }
   
   function handler(e) {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
@@ -98,7 +101,7 @@ function calcDegreeToPoint(latitude, longitude) {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-<Button onClick={startCompass()}>Start Compass</Button>
+<Button onClick={init}>Start Compass</Button>
 </Container>
         </div>
     )
@@ -128,6 +131,13 @@ const Button = styled.button`
   background-position: center;
   background-repeat: no - repeat;
   background-size: cover;
+  -webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
   &:hover {
     cursor: pointer;
   }
