@@ -21,7 +21,7 @@ function CompassPage() {
 
   const compassCircle = document.querySelector(".compass-circle");
   const myPoint = document.querySelector(".my-point");
-  const startBtn = document.querySelector(".start-btn");
+  // const startBtn = document.querySelector(".start-btn");
   const isIOS =
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
@@ -120,7 +120,7 @@ min-height: 60vh;
 
 const Button = styled.button`
 
-  margin-top: 5vh;
+  margin-top: 8vh;
   margin-bottom: 2vh;
   margin-left: 5vw;
   font-family: 'Times New Roman', Georgia, serif;
@@ -132,11 +132,12 @@ const Button = styled.button`
   text-align: center;
   align-items: center;
 //   color: rgb(37, 38, 51);
+text-transform: uppercase;
   letter-spacing: 1px;
   /* border: 3px solid #2E6268; */
   transition: all .35s;
   justify-content: center;
-  font-size: 3vh;
+  font-size: 1.3em;
   color: silver;
   background-image: url(${blueleather});
   background-position: center;
