@@ -35,6 +35,8 @@ import Halachot from './components/Halachot'
 import Zmanim from './components/Zmanim'
 import RangeSlider from './components/RangeSlider'
 import blueleather from './blueleather.jpeg'
+import Compass from 'react-Compass';
+import 'react-compass/dist/react-compass.css';
 
 function App() {
   const [minimum, setMinimum] = useState(false)
@@ -117,6 +119,7 @@ function App() {
       ? null : 
       <Top>
       <RangeSlider size={size} setSize={setSize}/>
+      <Compass />
       <Buttons>
         <Button onClick={() => setLanguage('english')}>
           <Letters>

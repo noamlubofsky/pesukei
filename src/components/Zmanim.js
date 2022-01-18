@@ -30,7 +30,7 @@ function Zmanim({date, setDate}) {
     const [sunset, setSunset] = useState('')
     const [hour, setHour] = useState(new Date().getHours())
     const [minutes, setMinutes] = useState(new Date().getMinutes())
-    const [currentTime, setCurrentTime] = useState(new Date().getHours() + ':' + new Date().getMinutes() + ':00')
+    const [currentTime, setCurrentTime] = useState(('0'+new Date().getHours()).substr(-2) + ':' + ('0'+new Date().getMinutes()).substr(-2) + ':00')
     const [monthDays, setMonthDays] = useState(new Date(date.getFullYear(), date.getMonth() + 1, 0))
 
     // useEffect(() => {  
@@ -50,14 +50,21 @@ function Zmanim({date, setDate}) {
             .then(response => response.json())
             .then((data) => {
                 setSunset(data.times.sunset.split('T')[1].split('-')[0])
+                setZmanim(data.times);
+        console.log(zmanim)
+        if(data.times.alotHaShachar.includes('+')){
+            setEarliest(data.times.alotHaShachar.split('T')[1].split('+')[0]);
+            setLatest(data.times.sofZmanTfilla.split('T')[1].split('+')[0]);
+            setChatzot(data.times.chatzot.split('T')[1].split('+')[0])
+        }else{
+        setEarliest(data.times.alotHaShachar.split('T')[1].split('-')[0]);
+        setLatest(data.times.sofZmanTfilla.split('T')[1].split('-')[0]);
+        setChatzot(data.times.chatzot.split('T')[1].split('-')[0])
+        }
+        setHaveTimes(true)
+        setUsingLocation(true)
+        setHaveLocation(false)
                 fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${monthNum}&gd=${
-                    // hour >= data.times.sunset.split('T')[1].split('-')[0].split(':')[0] &&
-                    // (hour === data.times.sunset.split('T')[1].split('-')[0].split(':')[0] ?
-                    // minutes >= data.times.sunset.split('T')[1].split('-')[0].split(':')[1] : null )
-                    
-                    // currentTime > data.times.sunset.split('T')[1].split('-')[0]
-                    // ? {thisMonthDays === day ? 1 : day + 1} : day
-                    // whatDay()
         day}&g2h=1${currentTime >= data.times.sunset.split('T')[1].split('-')[0] ? `&gs=on` : `&gs=off`}`)
         .then(response => response.json())
         .then(data => setHebDate(data.hebrew))
@@ -74,8 +81,13 @@ function Zmanim({date, setDate}) {
     });
     }
 
-const onDateChange = (newDate) => {
-    getHebrewDate(newDate)
+    const onDateChange = (newDate) => {
+        fetch(`https://www.hebcal.com/converter?cfg=json&gy=${newDate.getFullYear()}&gm=${newDate.getMonth() + 1}&gd=${newDate.getDate()}&g2h=1`, {
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            setHebDate(data.hebrew)
+        });
     showCal()    
     setDate(newDate);
     setDateString(newDate.toString())
@@ -88,33 +100,7 @@ const onDateChange = (newDate) => {
     setDay(date.getDate())
     setMonthNum(date.getMonth() + 1)
     setShowCalendar(false)
-
-            // if(month === 'Jan'){
-            //     setMonthNum(1)
-            // }else if(month === 'Feb'){
-            //     setMonthNum(2)
-            // }else if(month === 'Mar'){
-            //     setMonthNum(3)
-            // }else if(month === 'Apr'){
-            //     setMonthNum(4)
-            // }else if(month === 'May'){
-            //     setMonthNum(5)
-            // }else if(month === 'Jun'){
-            //     setMonthNum(6)
-            // }else if(month === 'Jul'){
-            //     setMonthNum(7)
-            // }else if(month === 'Aug'){
-            //     setMonthNum(8)
-            // }else if(month === 'Sep'){
-            //     setMonthNum(9)
-            // }else if(month === 'Oct'){
-            //     setMonthNum(10)
-            // }else if(month === 'Nov'){
-            //     setMonthNum(11)
-            // }else if(month === 'Dec'){
-            //     setMonthNum(12)
-            // }
-}
+    }
 
     const getZmanim = () => {
         setErrors(false)
