@@ -72,10 +72,9 @@ function calcDegreeToPoint(latitude, longitude) {
   return Math.round(psi);
 }
 
-// function init() {
-//     startBtn.addEventListener("click", startCompass);
-//     navigator.geolocation.getCurrentPosition(locationHandler);
-//   }
+function init() {
+    navigator.geolocation.getCurrentPosition(locationHandler);
+  }
   
   function handler(e) {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
@@ -101,7 +100,7 @@ function calcDegreeToPoint(latitude, longitude) {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-<Button class="start-btn">Start Compass</Button>
+<Button onClick={init}>Start Compass</Button>
 </Container>
         </div>
     )
