@@ -1,11 +1,12 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
-
- function CompassPage() {
-
+function CompassPage() {
+  const [latitude, setLatitude] = useState('')
+  const [longitude, setLongitude] = useState('')
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
-      const { latitude, longitude } = position.coords;
+      setLatitude(position.coords.latitude)
+      setLongitude(position.coords.longitude)      
       pointDegree = calcDegreeToPoint(latitude, longitude);
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
