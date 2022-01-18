@@ -13,9 +13,9 @@ const isIOS = !(
   navigator.userAgent.match(/AppleWebKit/)
 );
 
-function init() {
-    startBtn.addEventListener("click", startCompass);
-  }
+// function init() {
+//     startBtn.addEventListener("click", startCompass);
+//   }
   
   function startCompass() {
     if (isIOS) {
@@ -38,7 +38,7 @@ function init() {
     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
   }
   
-  init();
+//   init();
 
   let pointDegree;
 
@@ -72,10 +72,10 @@ function calcDegreeToPoint(latitude, longitude) {
   return Math.round(psi);
 }
 
-function init() {
-    startBtn.addEventListener("click", startCompass);
-    navigator.geolocation.getCurrentPosition(locationHandler);
-  }
+// function init() {
+//     startBtn.addEventListener("click", startCompass);
+//     navigator.geolocation.getCurrentPosition(locationHandler);
+//   }
   
   function handler(e) {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
@@ -101,47 +101,43 @@ function init() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-<button class="start-btn">Start Compass</button>
+<Button class="start-btn">Start Compass</Button>
 </Container>
         </div>
     )
 }
 
-const Container = styled.div`
-min-height: 70vh;
-align-items: center;
-justify-content: center;
-`;
-
 const Button = styled.button`
 
-  margin-top: 2vh;
-//   margin-left: 3vh;
+  margin-top: 5vh;
   margin-bottom: 2vh;
-  width: 90%;
-  height: 16vh;
+  margin-left: 4vw;
+  font-family: 'Times New Roman', Georgia, serif;
+  width: 90vw;
+  height: 6vh;
   /* line-height: 50px; */
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   align-items: center;
 //   color: rgb(37, 38, 51);
-text-transform: uppercase;
-letter-spacing: 1px;
-transition: all .35s;
-justify-content: center;
-font-size: 2vh;
-// border: 2px solid #F5C983;
-
-//   background-image: url(https://media.istockphoto.com/photos/genuine-leather-texture-background-picture-id885433636?b=1&k=20&m=885433636&s=170667a&w=0&h=f0Mw8HS7Lm3ZZ7CvbSmdBO5Imn7YjPboaNaDZrFIaiQ=);
-color: silver;
-background-image: url(${blueleather});
-background-position: center;
-background-repeat: no - repeat;
-background-size: cover;
-&:hover {
+  letter-spacing: 1px;
+  /* border: 3px solid #2E6268; */
+  transition: all .35s;
+  justify-content: center;
+  font-size: 3vh;
+  color: silver;
+  background-image: url(${blueleather});
+  background-position: center;
+  background-repeat: no - repeat;
+  background-size: cover;
+  &:hover {
     cursor: pointer;
   }
   `;
+
+const Container = styled.div`
+min-height: 60vh;
+`;
 
 export default CompassPage
