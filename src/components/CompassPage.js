@@ -4,7 +4,7 @@ import blueleather from '../blueleather.jpeg'
 
 function CompassPage() {
 
-    const compassCircle = document.querySelector(".compass-circle");
+const compassCircle = document.querySelector(".compass-circle");
 const startBtn = document.querySelector(".start-btn");
 const myPoint = document.querySelector(".my-point");
 let compass;
@@ -12,12 +12,9 @@ const isIOS = !(
   navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
   navigator.userAgent.match(/AppleWebKit/)
 );
-
-// function init() {
-//     startBtn.addEventListener("click", startCompass);
-//   }
   
   function startCompass() {
+    navigator.geolocation.getCurrentPosition(locationHandler);
     if (isIOS) {
       DeviceOrientationEvent.requestPermission()
         .then((response) => {
@@ -33,10 +30,10 @@ const isIOS = !(
     }
   }
   
-  function handler(e) {
-    compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-    compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-  }
+//   function handler(e) {
+//     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
+//     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
+//   }
   
 //   init();
 
@@ -72,10 +69,10 @@ function calcDegreeToPoint(latitude, longitude) {
   return Math.round(psi);
 }
 
-function init() {
-    startCompass()
-    navigator.geolocation.getCurrentPosition(locationHandler);
-  }
+// function init() {
+//     startCompass()
+//     navigator.geolocation.getCurrentPosition(locationHandler);
+//   }
   
   function handler(e) {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
@@ -101,7 +98,7 @@ function init() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-<Button onClick={init}>Start Compass</Button>
+<Button onClick={startCompass()}>Start Compass</Button>
 </Container>
         </div>
     )
