@@ -5,42 +5,55 @@ import blueleather from '../blueleather.jpeg'
 function CompassPage() {
 
     const compassCircle = document.querySelector(".compass-circle");
-const startBtn = document.querySelector(".start-btn");
-const myPoint = document.querySelector(".my-point");
-let compass;
-const isIOS = !(
-  navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
-  navigator.userAgent.match(/AppleWebKit/)
-);
+    const startBtn = document.querySelector(".start-btn");
+    const myPoint = document.querySelector(".my-point");
+    let compass;
+    const isIOS = !(
+      navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
+      navigator.userAgent.match(/AppleWebKit/)
+    );
 
-// function init() {
-//     startBtn.addEventListener("click", startCompass);
-//   }
+    function init() {
+        startBtn.addEventListener("click", startCompass);
+        navigator.geolocation.getCurrentPosition(locationHandler);
+      }
+      
+      function startCompass() {
+        if (isIOS) {
+          DeviceOrientationEvent.requestPermission()
+            .then((response) => {
+              if (response === "granted") {
+                window.addEventListener("deviceorientation", handler, true);
+              } else {
+                alert("has to be allowed!");
+              }
+            })
+            .catch(() => alert("not supported"));
+        } else {
+          window.addEventListener("deviceorientationabsolute", handler, true);
+        }
+      }
+      
+     
+function handler(e) {
+    compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
+    compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
   
-  function startCompass() {
-    if (isIOS) {
-      DeviceOrientationEvent.requestPermission()
-        .then((response) => {
-          if (response === "granted") {
-            window.addEventListener("deviceorientation", handler, true);
-          } else {
-            alert("has to be allowed!");
-          }
-        })
-        .catch(() => alert("not supported"));
-    } else {
-      window.addEventListener("deviceorientationabsolute", handler, true);
+    // ±15 degree
+    if (
+      (pointDegree < Math.abs(compass) && pointDegree + 15 > Math.abs(compass)) ||
+      pointDegree > Math.abs(compass + 15) ||
+      pointDegree < Math.abs(compass)
+    ) {
+      myPoint.style.opacity = 0;
+    } else if (pointDegree) {
+      myPoint.style.opacity = 1;
     }
   }
-  
-//   function handler(e) {
-//     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-//     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-//   }
-  
-//   init();
+      
+      init();
 
-  let pointDegree;
+      let pointDegree;
 
 function locationHandler(position) {
   const { latitude, longitude } = position.coords;
@@ -72,37 +85,14 @@ function calcDegreeToPoint(latitude, longitude) {
   return Math.round(psi);
 }
 
-function init() {
-    startCompass()
-    navigator.geolocation.getCurrentPosition(locationHandler);
-  }
-  
-  function handler(e) {
-    compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-    compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-  
-    // ±15 degree
-    if (
-      (pointDegree < Math.abs(compass) && pointDegree + 15 > Math.abs(compass)) ||
-      pointDegree > Math.abs(compass + 15) ||
-      pointDegree < Math.abs(compass)
-    ) {
-      myPoint.style.opacity = 0;
-    } else if (pointDegree) {
-      myPoint.style.opacity = 1;
-    }
-  }
-
     return(
         <div>
-            <Container>
-            <div class="compass">
+        <div class="compass">
   <div class="arrow"></div>
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-<Button onClick={init}>Start Compass</Button>
-</Container>
+<button class="start-btn">Start compass</button>
         </div>
     )
 }
