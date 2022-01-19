@@ -9,7 +9,6 @@ function CompassPage() {
   const [compass, setCompass] = useState(0)
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
-      startCompass()
       setLatitude(position.coords.latitude)
       setLongitude(position.coords.longitude)      
       setPointDegree(calcDegreeToPoint(latitude, longitude))
@@ -20,6 +19,7 @@ function CompassPage() {
         setPointDegree(pointDegree + 360)
       }
     });
+    startCompass()
 },[])
 
   const compassCircle = document.querySelector(".compass-circle");
