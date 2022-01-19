@@ -6,14 +6,15 @@ function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
   const [pointDegree, setPointDegree] = useState(0)
+  const [compass, setCompass] = useState(0)
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
+      startCompass()
       setLatitude(position.coords.latitude)
       setLongitude(position.coords.longitude)      
       setPointDegree(calcDegreeToPoint(latitude, longitude))
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
-        startCompass()
       }
       if (pointDegree < 0) {
         setPointDegree(pointDegree + 360)
@@ -54,7 +55,7 @@ function CompassPage() {
   }
 
   function handler(e) {
-    compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
+    setCompass(e.webkitCompassHeading || Math.abs(e.alpha - 360))
     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
 
     // ±15 degree
@@ -112,8 +113,8 @@ function CompassPage() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-          <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
-          <h1>{pointDegree}</h1>
+          {/* <Button className="start-btn" onClick={startCompass}>Point me Home</Button> */}
+          <h1>{compass}</h1>
           </Container>
         </div>
       );
