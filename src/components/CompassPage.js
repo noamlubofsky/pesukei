@@ -112,7 +112,7 @@ function CompassPage() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-          {/* <Button className="start-btn" onClick={startCompass}>Point me Home</Button> */}
+          <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
           <h1>{pointDegree}</h1>
           </Container>
         </div>
