@@ -28,7 +28,7 @@ function CompassPage() {
   const isIOS =
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
-    let compass;
+    // let compass;
 
 
   // function init() {
