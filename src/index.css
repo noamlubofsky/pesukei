@@ -72,7 +72,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); */
   margin-top: 10vh;
   margin-left: 7vw;
 }
@@ -93,13 +93,13 @@ input[type=range]::-webkit-slider-runnable-track  {
 .compass > .compass-circle,
 .compass > .my-point {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease-out;
-  background: url(moderncompass.png) center
+  background: url(test.png) center
     no-repeat;
   background-size: contain;
 }
