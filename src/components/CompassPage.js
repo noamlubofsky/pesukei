@@ -113,7 +113,7 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
           <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
-          <h1></h1>
+          {east ? <h1>true</h1> : <h1>false</h1>}
           </Container>
         </div>
       );
