@@ -56,7 +56,7 @@ function CompassPage() {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
 
-    if(compass >= 85 && compass <= 95) {
+    if(compass >= 80 && compass <= 100) {
       setEast(true)
     }else{setEast(false)}
     // ±15 degree
@@ -105,23 +105,20 @@ function CompassPage() {
   }
 
       return (
-        <div>
           <Container east={east}>
-          <div class="compass">
+          <div class={!east? "compass" : 'compasshighlight'}>
   <div class="arrow"></div>
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
           <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
-          {east ? <h1>true</h1> : <h1>false</h1>}
           </Container>
-        </div>
       );
     }
 
     const Container = styled.div`
 min-height: 60vh;
-background-color: ${props => props.east ? `green` : null}px;
+// background-color: ${props => props.east ? `#00ff0180` : null};
 
 `;
 
