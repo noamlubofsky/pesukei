@@ -112,7 +112,7 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
           <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
-          <Button className="start-btn" onClick={() => setEast(!east)}>test</Button>
+          {/* <Button className="start-btn" onClick={() => setEast(!east)}>test</Button> */}
 
           </Container>
       );
