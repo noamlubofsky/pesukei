@@ -5,7 +5,7 @@ import blueleather from '../blueleather.jpeg'
 function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
-  const [compass, setCompass] = useState(0)
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       setLatitude(position.coords.latitude)
@@ -26,7 +26,7 @@ function CompassPage() {
   const isIOS =
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
-    // let compass;
+    let compass;
 
 
   // function init() {
@@ -53,7 +53,7 @@ function CompassPage() {
   }
 
   function handler(e) {
-    setCompass(e.webkitCompassHeading || Math.abs(e.alpha - 360))
+    compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
 
     // ±15 degree
@@ -110,7 +110,6 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
           <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
-          <h1>{compass}</h1>
           </Container>
         </div>
       );
