@@ -259,7 +259,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <h3>{hebDate}</h3>
 
             <Buttons>
-                <div>
+            <div>
             <Form onSubmit={showZip ? handleSubmit : displayZipInput}>
             <Button type="submit">{showZip ? 'Get Zmanim' : 'use zip code'} </Button>
             <br></br>
@@ -488,7 +488,7 @@ font-size: large;
 outline: none;
 background-color: transparent;
 border-radius: none;
-transition: all 5s ease-in;
+// transition: height 0.25s linear;
 
 &:focus {
     outline: none;
