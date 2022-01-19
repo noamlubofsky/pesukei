@@ -5,18 +5,17 @@ import blueleather from '../blueleather.jpeg'
 function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
-  const [pointDegree, setPointDegree] = useState(0)
   const [compass, setCompass] = useState(0)
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       setLatitude(position.coords.latitude)
       setLongitude(position.coords.longitude)      
-      setPointDegree(calcDegreeToPoint(latitude, longitude))
+      pointDegree = calcDegreeToPoint(latitude, longitude);
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
       }
       if (pointDegree < 0) {
-        setPointDegree(pointDegree + 360)
+        pointDegree = pointDegree + 360;
       }
     });
 },[])
@@ -70,7 +69,7 @@ function CompassPage() {
     }
   }
 
-  // let pointDegree;
+  let pointDegree;
 
   // function locationHandler(position) {
   //   const { latitude, longitude } = position.coords;
@@ -102,8 +101,6 @@ function CompassPage() {
     return Math.round(psi);
   }
 
-  console.log(pointDegree)
-
       return (
         <div>
           <Container>
@@ -114,8 +111,6 @@ function CompassPage() {
 </div>
           <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
           <h1>{compass}</h1>
-          <h1>{pointDegree}</h1>
-
           </Container>
         </div>
       );
