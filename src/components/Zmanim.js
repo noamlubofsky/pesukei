@@ -488,6 +488,8 @@ font-size: large;
 outline: none;
 background-color: transparent;
 border-radius: none;
+transition: all 5s ease-in;
+
 &:focus {
     outline: none;
     border-bottom: 2px solid #B96630;
