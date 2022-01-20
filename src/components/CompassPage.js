@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
-import scroll from '../scroll.jpeg'
+import kotel from '../kotel.jpg'
 
 function CompassPage() {
   const [latitude, setLatitude] = useState('')
@@ -128,13 +128,18 @@ function CompassPage() {
 
     const DegNum = styled.h1`
     ${props => props.degree >= 80 && props.degree <= 100 ? `
-    background-image: url(${scroll});
-background-position: center;
+    background-image: url(${kotel});
+    // background-position: center;
 background-repeat: no - repeat;
 background-size: cover;background-clip: text;
 -webkit-background-clip: text;
 color: transparent;
 -webkit-text-stroke: 1.8px rgb(37, 38, 51);
+text-shadow: 0 0 30px rgb(255, 196, 0);
+// text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+
+
+
     ` 
     : 'color: rgb(37, 38, 51)'};
     align-items: center;
