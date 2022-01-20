@@ -7,6 +7,7 @@ function CompassPage() {
   const [longitude, setLongitude] = useState('')
   const [east, setEast] = useState(false)
   const [pointing, setPointing] = useState(false)
+  const [degree, setDegree] = useState(0)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -58,7 +59,7 @@ function CompassPage() {
   function handler(e) {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-
+    setDegree(compass)
     if(compass >= 80 && compass <= 100) {
       setEast(true)
     }else{setEast(false)}
@@ -115,7 +116,7 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<h1>{compass}</h1>
+<h1>{!degree >= 80 && compass <= 100 ? degree + '°' : '!ירושלים'}</h1>
 }
           {/* <Button className="start-btn" onClick={() => setEast(!east)}>test</Button> */}
 
