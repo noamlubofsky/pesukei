@@ -7,7 +7,7 @@ function CompassPage() {
   const [longitude, setLongitude] = useState('')
   const [east, setEast] = useState(false)
   const [pointing, setPointing] = useState(false)
-  const [degree, setDegree] = useState(0)
+  const [degree, setDegree] = useState('')
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -116,17 +116,23 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<h1>{degree >= 80 && degree <= 100 ? '!ירושלים' : degree + '°'}</h1>
+<DegNum degree={degree}>{degree >= 80 && degree <= 100 ? '!ירושלים' : degree.split('.')[0] + '°'}</DegNum>
 }
-          {/* <Button className="start-btn" onClick={() => setEast(!east)}>test</Button> */}
-
           </Container>
       );
     }
 
+    const DegNum = styled.h1`
+    color: ${degree => props.degree >= 80 && degree <= 100 ? `rgb(255, 196, 0)` : navy};
+    align-items: center;
+    justify-content: center;
+    `;
+
     const Container = styled.div`
 min-height: 60vh;
 // background-color: ${props => props.east ? `#00ff0180` : null};
+align-items: center;
+justify-content: center;
 
 `;
 
