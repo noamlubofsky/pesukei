@@ -28,7 +28,7 @@ function CompassPage() {
             alert("has to be allowed!");
           }
         })
-        .catch(() => alert("not supported"));
+        // .catch(() => alert("not supported"));
     }
 },[])
 
