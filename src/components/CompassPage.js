@@ -116,7 +116,7 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<h1>{!degree >= 80 && compass <= 100 ? degree + '°' : '!ירושלים'}</h1>
+<h1>{degree >= 80 && degree <= 100 ? '!ירושלים' : degree + '°'}</h1>
 }
           {/* <Button className="start-btn" onClick={() => setEast(!east)}>test</Button> */}
 
