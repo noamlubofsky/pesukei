@@ -116,7 +116,7 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<DegNum degree={degree}>{degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree.split('.')[0]} + '°'`}</DegNum>
+<DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree.split('.')[0]}°`) : null}</DegNum>
 }
           </Container>
       );
