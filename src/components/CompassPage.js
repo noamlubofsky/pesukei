@@ -8,7 +8,7 @@ function CompassPage() {
   const [longitude, setLongitude] = useState('')
   const [east, setEast] = useState(false)
   const [pointing, setPointing] = useState(false)
-  const [degree, setDegree] = useState('345')
+  const [degree, setDegree] = useState('')
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -120,6 +120,7 @@ function CompassPage() {
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
 <DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree}°`) : null}</DegNum>
 }
+
 </Bottom>
           </Container>
       );
@@ -133,6 +134,7 @@ background-repeat: no - repeat;
 background-size: cover;background-clip: text;
 -webkit-background-clip: text;
 color: transparent;
+-webkit-text-stroke: 1.8px rgb(37, 38, 51);
     ` 
     : 'color: rgb(37, 38, 51)'};
     align-items: center;
