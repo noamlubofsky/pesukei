@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import blueleather from '../blueleather.jpeg'
+import scroll from '../scroll.jpeg'
 
 function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
   const [east, setEast] = useState(false)
   const [pointing, setPointing] = useState(false)
-  const [degree, setDegree] = useState('')
+  const [degree, setDegree] = useState('345')
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -115,18 +116,38 @@ function CompassPage() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
+<Bottom>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree}`) : null}</DegNum>
+<DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree}°`) : null}</DegNum>
 }
+</Bottom>
           </Container>
       );
     }
 
     const DegNum = styled.h1`
-    color: ${props => props.degree >= 80 && props.degree <= 100 ? `rgb(255, 196, 0)` : 'navy'};
+    ${props => props.degree >= 80 && props.degree <= 100 ? `
+    background-image: url(${scroll});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+    ` 
+    : 'color: rgb(37, 38, 51)'};
     align-items: center;
     justify-content: center;
     font-family: 'Times New Roman', Georgia, serif;
+    font-size: 4em;
+    `;
+
+    const Bottom = styled.div`
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
     `;
 
     const Container = styled.div`
@@ -141,7 +162,7 @@ const Button = styled.button`
 
   margin-top: 8vh;
   margin-bottom: 2vh;
-  margin-left: 5vw;
+  // margin-left: 5vw;
   font-family: 'Times New Roman', Georgia, serif;
   width: 90vw;
   height: 6vh;
