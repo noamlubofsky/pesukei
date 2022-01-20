@@ -59,7 +59,7 @@ function CompassPage() {
   function handler(e) {
     compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
     compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-    setDegree(compass)
+    setDegree(compass.toString().split('.')[0])
     if(compass >= 80 && compass <= 100) {
       setEast(true)
     }else{setEast(false)}
@@ -116,7 +116,7 @@ function CompassPage() {
   <div class="my-point"></div>
 </div>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree.split('.')[0]}°`) : null}</DegNum>
+<DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!ירושלים' : `${degree}`) : null}</DegNum>
 }
           </Container>
       );
