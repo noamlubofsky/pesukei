@@ -126,6 +126,7 @@ function CompassPage() {
     color: ${degree => props.degree >= 80 && degree <= 100 ? `rgb(255, 196, 0)` : navy};
     align-items: center;
     justify-content: center;
+    font-family: 'Times New Roman', Georgia, serif;
     `;
 
     const Container = styled.div`
