@@ -6,6 +6,7 @@ function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
   const [east, setEast] = useState(false)
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       setLatitude(position.coords.latitude)
@@ -18,6 +19,17 @@ function CompassPage() {
         pointDegree = pointDegree + 360;
       }
     });
+    if (isIOS) {
+      DeviceOrientationEvent.requestPermission()
+        .then((response) => {
+          if (response === "granted") {
+            window.addEventListener("deviceorientation", handler, true);
+          } else {
+            alert("has to be allowed!");
+          }
+        })
+        .catch(() => alert("not supported"));
+    }
 },[])
 
   const compassCircle = document.querySelector(".compass-circle");
@@ -111,7 +123,7 @@ function CompassPage() {
   <div class="compass-circle"></div>
   <div class="my-point"></div>
 </div>
-          <Button className="start-btn" onClick={startCompass}>Point me Home</Button>
+          {/* <Button className="start-btn" onClick={startCompass}>Point me Home</Button> */}
           {/* <Button className="start-btn" onClick={() => setEast(!east)}>test</Button> */}
 
           </Container>
