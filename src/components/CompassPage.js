@@ -6,7 +6,7 @@ import scroll from '../scroll.jpeg'
 function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
-  const [east, setEast] = useState(true)
+  const [east, setEast] = useState(false)
   const [pointing, setPointing] = useState(false)
   const [degree, setDegree] = useState('')
 
@@ -127,27 +127,32 @@ function CompassPage() {
       );
     }
 
-    const DegNum = styled.h1`
-    ${props => props.degree >= 80 && props.degree <= 100 ? `
-    background-image: url(${scroll});
-    // background-position: center;
-background-repeat: no - repeat;
-background-size: cover;background-clip: text;
--webkit-background-clip: text;
-color: transparent;
--webkit-text-stroke: 1.8px rgb(37, 38, 51);
-// text-shadow: 0 0 30px rgb(255, 196, 0);
-// text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+//     const DegNum = styled.h1`
+//     ${props => props.degree >= 80 && props.degree <= 100 ? `
+//     background-image: url(${scroll});
+//     // background-position: center;
+// background-repeat: no - repeat;
+// background-size: cover;background-clip: text;
+// -webkit-background-clip: text;
+// color: transparent;
+// -webkit-text-stroke: 1.8px rgb(37, 38, 51);
+// // text-shadow: 0 0 30px rgb(255, 196, 0);
+// // text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+//     ` 
+//     : 'color: rgb(37, 38, 51)'};
+//     align-items: center;
+//     justify-content: center;
+//     font-family: 'Times New Roman', Georgia, serif;
+//     font-size: 4em;
+//     `;
 
-
-
-    ` 
-    : 'color: rgb(37, 38, 51)'};
-    align-items: center;
-    justify-content: center;
-    font-family: 'Times New Roman', Georgia, serif;
-    font-size: 4em;
-    `;
+const DegNum = styled.h1`
+color: rgb(37, 38, 51);
+align-items: center;
+justify-content: center;
+font-family: 'Times New Roman', Georgia, serif;
+font-size: 4em;
+`;
 
     const Bottom = styled.div`
     width: 100%;
