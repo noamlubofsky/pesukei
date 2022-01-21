@@ -6,7 +6,7 @@ import scroll from '../scroll.jpeg'
 function CompassPage() {
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
-  const [east, setEast] = useState(false)
+  const [east, setEast] = useState(true)
   const [pointing, setPointing] = useState(false)
   const [degree, setDegree] = useState('')
 
@@ -118,7 +118,8 @@ function CompassPage() {
 </div>
 <Bottom>
 {!pointing ? <Button className="start-btn" onClick={startCompass}>Point me Home</Button> : 
-<DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!יְרוּשָׁלַיִם' : `${degree}°`) : null}</DegNum>
+<DegNum degree={degree}>{degree ? `${degree}°` : null}</DegNum>
+// {/* <DegNum degree={degree}>{degree ? (degree >= 80 && degree <= 100 ? '!יְרוּשָׁלַיִם' : `${degree}°`) : null}</DegNum> */}
 }
 
 </Bottom>
