@@ -294,13 +294,14 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             </div>
             </Buttons>
 
+              <HeaderContainer>
             {!errors ? null : 
             <ErrorMessage>Please enter a valid Zip code</ErrorMessage>
             }
 
             {usingLocation && !errors ? <TimeHeader>Zmanim for {timezone}</TimeHeader> : null}
             {usingZip && !errors ? <TimeHeader>Zmanim for {zip}</TimeHeader> : null}
-
+            </HeaderContainer>
 
             {!haveTimes || errors || (usingZip === false && usingLocation === false) ? null : 
             <div>
@@ -544,8 +545,14 @@ color: red;
 `;
 
 const Container = styled.div`
-// padding: 3vh;
+padding: 3vh;
 font-size: 2vh;
+align-items: center;
+justify-content: center;
+text-align: center;
+`;
+
+const HeaderContainer = styled.div`
 align-items: center;
 justify-content: center;
 text-align: center;
