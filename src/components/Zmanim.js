@@ -123,12 +123,17 @@ function Zmanim({date, setDate}) {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        getZmanim()
-        setUsingLocation(false)
-        setUsingZip(true)
-        setShowZip(!showZip)
-    }
+      e.preventDefault()
+      if(zip.length === 5){
+      getZmanim()
+      setUsingLocation(false)
+      setUsingZip(true)
+      setShowZip(!showZip)
+      }else{
+        // alert('Please enter a valid Zip code')
+        setErrors(true)
+      }
+  }
 
     // const timezone = (new Date()).getTimezoneOffset()
     // console.log(timezone)
@@ -147,6 +152,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
     setHaveLocation(true)
     setUsingLocation(false)
     setUsingZip(false)
+    setErrors(false)
     navigator.geolocation.getCurrentPosition(function(position) {
         setLatitude(position.coords.latitude)
         setLongitude(position.coords.longitude)
@@ -289,7 +295,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             </Buttons>
 
             {!errors ? null : 
-            <ErrorMessage>Sorry, unable to find Zmanim for the selected location.</ErrorMessage>
+            <ErrorMessage>Please enter a valid Zip code</ErrorMessage>
             }
 
             {usingLocation ? <TimeHeader>Zmanim for {timezone}</TimeHeader> : null}
