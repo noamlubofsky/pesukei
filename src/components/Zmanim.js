@@ -269,7 +269,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <Form onSubmit={showZip ? handleSubmit : displayZipInput}>
             <Button type="submit">{showZip ? 'Get Zmanim' : 'use zip code'} </Button>
             <br></br>
-            {showZip ? <Input required type="text" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input> : null}
+            {showZip ? <Input required type="number" value={zip} onChange={(e) => setZip(e.target.value)}placeholder="Enter Zip Code"></Input> : null}
             </Form>
 
             {/* <Heading>Or: </Heading> */}
@@ -298,8 +298,8 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             <ErrorMessage>Please enter a valid Zip code</ErrorMessage>
             }
 
-            {usingLocation ? <TimeHeader>Zmanim for {timezone}</TimeHeader> : null}
-            {usingZip ? <TimeHeader>Zmanim for {zip}</TimeHeader> : null}
+            {usingLocation && !errors ? <TimeHeader>Zmanim for {timezone}</TimeHeader> : null}
+            {usingZip && !errors ? <TimeHeader>Zmanim for {zip}</TimeHeader> : null}
 
 
             {!haveTimes || errors || (usingZip === false && usingLocation === false) ? null : 
@@ -537,8 +537,8 @@ font-size: 1em;
 `;
 
 const ErrorMessage = styled.p`
-margin-right: 5vw;
-margin-left: 5vw;
+// margin-right: 5vw;
+// margin-left: 5vw;
 font-size: 1em;
 color: red;
 `;
