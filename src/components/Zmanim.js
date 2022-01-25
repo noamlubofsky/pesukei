@@ -281,6 +281,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
                 <option value={country} key={country.id}>{country}</option>
                 )}
             </Select>  */}
+
             <Locator>
             {!haveLocation ? <Button onClick={componentDidMount}>Use my location</Button>
             : <div>{loading ? <Button>Locating...</Button> : 
@@ -293,7 +294,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             </Locator>
             </div>
             </Buttons>
-
+              <br></br>
               <HeaderContainer>
             {!errors ? null : 
             <ErrorMessage>Please enter a valid Zip code</ErrorMessage>
