@@ -37,6 +37,7 @@ function VayevarechDavidRest({size, language}) {
         }
 
     return(
+        <div>
         <Container>
             <Heading>Rest of וַיְבָֽרֶךְ דָּוִיד</Heading>
 
@@ -64,12 +65,17 @@ function VayevarechDavidRest({size, language}) {
             })
         : null}
 
-            <p>*Texts and translations courtesy of Sefaria</p>
 
 
         </Container>
+                    <Credit>*Texts and translations courtesy of Sefaria</Credit>
+                    </div>
     )
 }
+
+const Credit = styled.p`
+color: #424242;
+`;
 
 const Container = styled.div`
 min-height: 64vh;

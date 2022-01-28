@@ -25,6 +25,7 @@ function BaruchHashemLeolam({size, language}) {
     // const linearArray = ["בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן:", "Blessed is Adonoy forever, Amein and Amein!", "בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ:", "Blessed is Adonoy from Zion, Who dwells in Jerusalem. Praise God.", "בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ:", "Blessed is Adonoy, God, God of Israel Who alone performs wonders.", "וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן:", "And blessed is the Name of His glory forever, and may His glory fill the whole earth. Amein and Amein!"]
     
     return(
+        <div>
         <Container>
             <Heading>בָּרוּךְ ה' לְעוֹלָם</Heading>
 
@@ -55,9 +56,16 @@ and may His glory fill the whole earth. Amein and Amein!
             })
         : null}
 
+
         </Container>
+        <Credit>*Texts and translations courtesy of Sefaria</Credit>
+            </div>
     )
 }
+
+const Credit = styled.p`
+color: #424242;
+`;
 
 const Container = styled.div`
 min-height: 64vh;

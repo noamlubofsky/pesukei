@@ -30,6 +30,7 @@ function HoduFull({size, language}) {
         }
 
     return(
+        <div>
         <Container>
             <Heading>הוֹדוּ</Heading>
 
@@ -212,11 +213,16 @@ I will sing to Adonoy, for He dealt kindly with me.
             })
         : null}
 
-            <p>*Texts and translations courtesy of Sefaria</p>
 
         </Container>
+                    <Credit>*Texts and translations courtesy of Sefaria</Credit>
+                    </div>
     )
 }
+
+const Credit = styled.p`
+color: #424242;
+`;
 
 const Container = styled.div`
 min-height: 64vh;

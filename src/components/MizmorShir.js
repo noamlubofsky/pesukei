@@ -24,6 +24,7 @@ function MizmorShir({size, language}) {
     //   const linearArray = [, ":מִזְמוֹר שִׁיר־חֲנֻכַּת הַבַּֽיִת לְדָוִד", "Psalm, a song for the inauguration of the Temple, by David.", "אֲרוֹמִמְךָ יְהֹוָה כִּי דִלִּיתָֽנִי", "I will exalt You, Adonoy, for You have upheld me,", ":וְלֹא־שִׂמַּֽחְתָּ אֹיְ֒בַי לִי", "and not let my foes rejoice over me.", ":יְהֹוָה אֱלֹהָי שִׁוַּעְתִּי אֵלֶֽיךָ וַתִּרְפָּאֵֽנִי", "Adonoy, my God, I cried out to You, and You healed me.", "יְהֹוָה הֶעֱלִֽיתָ מִן־שְׁאוֹל נַפְשִׁי", "Adonoy, You have raised my soul from the lower world.", ":חִיִּיתַֽנִי מִיָּרְ֒דִי־בוֹר", "You have kept me alive, lest I descend to the Pit.", ":זַמְּ֒רוּ לַיהוָֹה חֲסִידָיו וְהוֹדוּ לְזֵֽכֶר קָדְשׁוֹ", "Sing to Adonoy, [you,] His pious ones, and give thanks to His holy Name.", "כִּי רֶֽגַע בְּאַפּוֹ", "For His anger lasts only a moment,", "חַיִּים בִּרְצוֹנוֹ", "but there is [long] life, in His conciliation.", "בָּעֶֽרֶב יָלִין בֶּֽכִי", "In the evening, one retires weeping,", ":וְלַבֹּֽקֶר רִנָּה", "but in the morning there is [a cry of] joy!", ":וַאֲנִי אָמַֽרְתִּי בְשַׁלְוִי בַּל־אֶמּוֹט לְעוֹלָם", "I said, in my serenity, I would never be moved.", "יְהֹוָה בִּרְצוֹנְ֒ךָ הֶעֱמַֽדְתָּה לְהַרְרִי עֹז", "But,] Adonoy, it was Your will [alone] that established my mountain as a stronghold.", ":הִסְתַּֽרְתָּ פָנֶֽיךָ הָיִֽיתִי נִבְהָל", "When You concealed Your Presence, I was terrified.", ":אֵלֶֽיךָ יְהֹוָה אֶקְרָא וְאֶל־אֲדֹנָי אֶתְחַנָּן", "To You, Adonoy, I called, and my Master I beseeched.", "מַה־בֶּֽצַע בְּדָמִי", "What gain is there in [the shedding of] my blood?", "בְּרִדְתִּי אֶל שָֽׁחַת", "In my going down to destruction?", ":הֲיוֹדְ֒ךָ עָפָר הֲיַגִּיד אֲמִתֶּֽךָ", "Will the dust acknowledge You? Will it proclaim Your truth?", ":שְׁמַע יְהֹוָה וְחָנֵּֽנִי יְהֹוָה הֱיֵה־עֹזֵר לִי", "Hear [me] Adonoy, and be gracious to me, Adonoy, be a help to me.", "הָפַֽכְתָּ מִסְפְּדִי לְמָחוֹל לִי", "You have turned my mourning into dancing,", ":פִּתַּחְתָּ שַׂקִּי וַתְּ֒אַזְּ֒רֵֽנִי שִׂמְחָה", "You have loosened my sackcloth and supported me with joy.", "לְמַֽעַן יְזַמֶּרְךָ כָבוֹד וְלֹא יִדֹּם", "In order that my soul might sing to You and not be stilled,", ":ֿיְהֹוָה אֱלֹהַי לְעוֹלָם אוֹדֶֽךָּ", "Adonoy, my God, forever will I thank You."]
 
     return(
+        <div>
         <Container>
             <Heading>מִזְמוֹר שִׁיר</Heading>
 
@@ -67,11 +68,16 @@ Adonoy, my God, forever will I thank You.
             })
         : null}
         
-        <p>*Texts and translations courtesy of Sefaria</p>
 
         </Container>
+                    <Credit>*Texts and translations courtesy of Sefaria</Credit>
+                    </div>
     )
 }
+
+const Credit = styled.p`
+color: #424242;
+`;
 
 const Container = styled.div`
 min-height: 64vh;

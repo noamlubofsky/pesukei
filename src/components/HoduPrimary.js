@@ -26,6 +26,7 @@ const english = `Give thanks to Adonoy, proclaim His Name; make His deeds1 known
         }
 
     return(
+        <div>
         <Container>
             <Heading>הוֹדוּ</Heading>
             <Heading2>(until רוֹמְ֒מוּ)</Heading2>
@@ -139,11 +140,16 @@ for Adonoy our God is holy.
             })
         : null}
 
-            <p>*Texts and translations courtesy of Sefaria</p>
 
         </Container>
+                    <Credit>*Texts and translations courtesy of Sefaria</Credit>
+                    </div>
     )
 }
+
+const Credit = styled.p`
+color: #424242;
+`;
 
 const Container = styled.div`
 min-height: 64vh;
