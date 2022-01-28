@@ -36,7 +36,15 @@ function BaruchHashemLeolam({size, language}) {
 
             {language === 'english' || language === 'both' ?
             <Text fontSize={size}>
-Blessed is Adonoy forever, Amein and Amein!41 Blessed is Adonoy from Zion, Who dwells in Jerusalem. Praise God.42 Blessed is Adonoy, God, God of Israel Who alone performs wonders.43 And blessed is the Name of His glory forever, and may His glory fill the whole earth. Amein and Amein!            </Text>
+Blessed is Adonoy forever, Amein and Amein! 
+Blessed is Adonoy from Zion, 
+Who dwells in Jerusalem. Praise God. 
+Blessed is Adonoy, God, 
+God of Israel 
+Who alone performs wonders. 
+And blessed is the Name of His glory forever, 
+and may His glory fill the whole earth. Amein and Amein!
+</Text>
             : null}
 
             {language === 'linear' ? 

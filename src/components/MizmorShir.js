@@ -35,7 +35,27 @@ function MizmorShir({size, language}) {
 
             {language === 'english' || language === 'both' ?
             <Text fontSize={size}>
-            Blessed is He Who spoke, and the world came into being, blessed is He; blessed is He Who maintains the creation; blessed is He Who says and does;1 blessed is He Who decrees and fulfills;2 blessed is He Who has compassion on the earth; blessed is He Who has compassion on the creatures;3 blessed is He Who rewards well those who fear Him, blessed is He Who lives forever and exists eternally; blessed is He Who redeems and saves4 blessed is His Name. Blessed are You, Adonoy, our God, King of the Universe, the Almighty, the merciful Father, Who is verbally extolled by His people, praised and glorified by the tongue of His pious ones, and His servants, and through the songs of David Your servant. We will extoll You, Adonoy our God, with praises and psalms; we will exalt, praise, and glorify You; we will mention Your Name, and proclaim You—our King, our God. Unique One, Life of the worlds, King, praised and glorified forever is His great Name. Blessed are You, Adonoy, King, Who is extolled with praises.
+A Psalm, a song for the inauguration of the Temple, by David. 
+I will exalt You, Adonoy, for You have upheld me, 
+and not let my foes rejoice over me. 
+Adonoy, my God, I cried out to You, and You healed me. 
+Adonoy, You have raised my soul from the lower world. 
+You have kept me alive, lest I descend to the Pit. 
+Sing to Adonoy, [you,] His pious ones, 
+and give thanks to His holy Name.
+For His anger lasts only a moment, but there is [long] life, in His conciliation. 
+In the evening, one retires weeping, but in the morning there is [a cry of] joy! 
+I said, in my serenity, I would never be moved.
+ [But,] Adonoy, it was Your will [alone] that established my mountain as a stronghold. 
+When You concealed Your Presence, I was terrified. 
+To You, Adonoy, I called, and my Master I beseeched.
+ What gain is there in [the shedding of] my blood? In my going down to destruction? 
+Will the dust acknowledge You? Will it proclaim Your truth? 
+Hear [me] Adonoy, and be gracious to me, Adonoy, be a help to me. 
+You have turned my mourning into dancing, 
+You have loosened my sackcloth and supported me with joy. 
+In order that my soul. might sing to You and not be stilled, 
+Adonoy, my God, forever will I thank You.
             </Text>
             : null}
 
@@ -46,6 +66,9 @@ function MizmorShir({size, language}) {
                 )
             })
         : null}
+        
+        <p>*Texts and translations courtesy of Sefaria</p>
+
         </Container>
     )
 }

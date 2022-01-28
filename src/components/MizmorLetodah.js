@@ -4,7 +4,19 @@ import styled from "styled-components";
 function MizmorLetodah({size, language}) {
 
     const hebrew = `מִזְמוֹר לְתוֹדָה הָרִֽיעוּ לַיהוָֹה כָּל־הָאָֽרֶץ: עִבְדוּ אֶת יְהֹוָה בְּשִׂמְחָה בֹּֽאוּ לְפָנָיו בִּרְנָנָה: דְּעוּ כִּי־יְהֹוָה הוּא אֱלֹהִים הוּא עָשָֽׂנוּ וְלוֹ (וְלֹא) אֲנַֽחְנוּ עַמּוֹ וְצֹאן מַרְעִיתוֹ: בֹּֽאוּ שְׁעָרָיו בְּתוֹדָה חֲצֵרֹתָיו בִּתְהִלָּה הֽוֹדוּ לוֹ בָּרְ֒כוּ שְׁמוֹ: כִּי־טוֹב יְהֹוָה לְעוֹלָם חַסְדּוֹ וְעַד־דֹּר וָדֹר אֱמוּנָתוֹ`
-    const english = `A psalm of thanksgiving: Shout for joy to Adonoy, everyone on earth. Serve Adony with joy,1 come before Him with exultation. Know that Adonoy is God, He has made us, and we are His,2 His people and the sheep of His pasturing. Enter His gates3 with thanksgiving, His courtyards4 with praise. Give thanks to Him, bless His Name for Adonoy is good, His loving kindness is eternal, and to every generation His faithfulness [extends.]`
+    const english = `A psalm of thanksgiving: 
+    Shout for joy to Adonoy, everyone on earth.
+     Serve Adony with joy, 
+    come before Him with exultation.
+     Know that Adonoy is God, 
+    He has made us, and we are His, 
+    His people and the sheep of His pasturing.
+     Enter His gates with thanksgiving, 
+    His courtyards with praise.
+     Give thanks to Him, bless His Name 
+    for Adonoy is good, His loving kindness is eternal, 
+    and to every generation His faithfulness [extends.]
+    `
     const hebArray = ["מִזְמוֹר לְתוֹדָה", "הָרִֽיעוּ לַיהוָֹה כָּל־הָאָֽרֶץ", "עִבְדוּ אֶת יְהֹוָה בְּשִׂמְחָה", "בֹּֽאוּ לְפָנָיו בִּרְנָנָה", "דְּעוּ כִּי־יְהֹוָה הוּא אֱלֹהִים", "הוּא עָשָֽׂנוּ וְלוֹ אֲנַֽחְנוּ", "עַמּוֹ וְצֹאן מַרְעִיתוֹ", "בֹּֽאוּ שְׁעָרָיו בְּתוֹדָה", "חֲצֵרֹתָיו בִּתְהִלָּה", "הֽוֹדוּ לוֹ בָּרְ֒כוּ שְׁמוֹ", "כִּי־טוֹב יְהֹוָה לְעוֹלָם חַסְדּוֹ", "וְעַד־דֹּר וָדֹר אֱמוּנָתוֹ"]
     const engArray = ["A psalm of thanksgiving:", "Shout for joy to Adonoy, everyone on earth.", "Serve Adony with joy,", "come before Him with exultation.", "Know that Adonoy is God,", "He has made us, and we are His,", "His people and the sheep of His pasturing.", "Enter His gates with thanksgiving,", "His courtyards with praise.", "Give thanks to Him, bless His Name", "for Adonoy is good, His loving kindness is eternal,", "and to every generation His faithfulness [extends.]", ]
 

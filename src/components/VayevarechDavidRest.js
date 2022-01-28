@@ -7,10 +7,21 @@ function VayevarechDavidRest({size, language}) {
     אַתָּה־הוּא יְהֹוָה לְבַדֶּֽךָ, אַתָּה עָשִֽׂיתָ אֶת־הַשָּׁמַֽיִם שְׁמֵי הַשָּׁמַֽיִם וְכָל־צְבָאָם, הָאָֽרֶץ וְכָל־אֲשֶׁר עָלֶֽיהָ הַיַּמִּים וְכָל־אֲשֶׁר בָּהֶם, וְאַתָּה מְחַיֶּה אֶת־כֻּלָּם וּצְבָא הַשָּׁמַֽיִם לְךָ מִשְׁתַּחֲוִים: אַתָּה הוּא יְהֹוָה הָאֱלֹהִים אֲשֶׁר בָּחַֽרְתָּ בְּאַבְרָם וְהוֹצֵאתוֹ מֵאוּר כַּשְׂדִּים וְשַֽׂמְתָּ שְׁמוֹ אַבְרָהָם: וּמָצָֽאתָ אֶת־לְבָבוֹ נֶאֱמָן לְפָנֶֽיךָ
     `
     const english = `
-    You alone are Adonoy;48 You have made the skies, the skies of skies49 and all their hosts,50 the earth and all that is upon it, the seas and all that is in them; and You give life to all of them, and the heavenly hosts51 bow before You. You are Adonoy, the God Who chose Avrom, and brought him out of Ur Kasdim and established his name (as) Avrohom.52 And You found his heart faithful before You,53
-    `
+    You alone are Adonoy; 
+    You have made the skies, 
+    the skies of skies and all their hosts,
+     the earth and all that is upon it, 
+    the seas and all that is in them; 
+    and You give life to all of them,
+     and the heavenly hosts bow before You. 
+    You are Adonoy, 
+    the God Who chose Avrom, 
+    and brought him out of Ur Kasdim 
+    and established his name (as) Avrohom.
+     And You found his heart faithful before You.
+        `
     const hebArray = 	[, "אַתָּה־הוּא יְהֹוָה לְבַדֶּֽךָ", "אַתָּה עָשִֽׂיתָ אֶת־הַשָּׁמַֽיִם", "שְׁמֵי הַשָּׁמַֽיִם וְכָל־צְבָאָם", "הָאָֽרֶץ וְכָל־אֲשֶׁר עָלֶֽיהָ", "הַיַּמִּים וְכָל־אֲשֶׁר בָּהֶם", "וְאַתָּה מְחַיֶּה אֶת־כֻּלָּם", "וּצְבָא הַשָּׁמַֽיִם לְךָ מִשְׁתַּחֲוִים", "אַתָּה הוּא יְהֹוָה", "הָאֱלֹהִים אֲשֶׁר בָּחַֽרְתָּ בְּאַבְרָם", "וְהוֹצֵאתוֹ מֵאוּר כַּשְׂדִּים", "וְשַֽׂמְתָּ שְׁמוֹ אַבְרָהָם", "וּמָצָֽאתָ אֶת־לְבָבוֹ נֶאֱמָן לְפָנֶֽיךָ"]
-    const engArray = ["You alone are Adonoy;", "You have made the skies,", "the skies of skies and all their hosts,", "the earth and all that is upon it,", "the seas and all that is in them;", "and You give life to all of them,", "and the heavenly hosts bow before You.", "You are Adonoy,", "the God Who chose Avrom,", "and brought him out of Ur Kasdim", "and established his name (as) Avrohom.", "And You found his heart faithful before You."]
+    const engArray = ["test", "You alone are Adonoy;", "You have made the skies,", "the skies of skies and all their hosts,", "the earth and all that is upon it,", "the seas and all that is in them;", "and You give life to all of them,", "and the heavenly hosts bow before You.", "You are Adonoy,", "the God Who chose Avrom,", "and brought him out of Ur Kasdim", "and established his name (as) Avrohom.", "And You found his heart faithful before You."]
 
     var linearArray = hebArray.reduce(function(arr, v, i) {
         return arr.concat(v, engArray[i]); 

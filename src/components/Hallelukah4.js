@@ -3,11 +3,29 @@ import styled from "styled-components";
 
 function Hallelukah4({size, language}) {
 
-    const hebrew = `הַלְ֒לוּיָהּ שִֽׁירוּ לַיהוָֹה שִׁיר חָדָשׁ תְּהִלָּתוֹ בִּקְהַל חֲסִידִים: יִשְׂמַח יִשְׂרָאֵל בְּעֹשָׂיו בְּנֵי־צִיּוֹן יָגִֽילוּ בְמַלְכָּם: יְהַלְ֒לוּ שְׁמוֹ בְמָחוֹל בְּתֹף וְכִנּוֹר יְזַמְּ֒רוּ־לוֹ: כִּי־רוֹצֶה יְהֹוָה בְּעַמּוֹ יְפָאֵר עֲנָוִים בִּישׁוּעָה: יַעְלְזוּ חֲסִידִים בְּכָבוֹד יְרַנְּנוּ עַל־מִשְׁכְּבוֹתָם: רוֹמְ֒מוֹת אֵל בִּגְרוֹנָם וְחֶֽרֶב פִּיפִיּוֹת בְּיָדָם: לַעֲשׂוֹת נְקָמָה בַגּוֹיִם תּוֹכֵחוֹת בַּלְאֻמִּים: לֶאְסֹר מַלְכֵיהֶם בְּזִקִּים וְנִכְבְּדֵיהֶם בְּכַבְלֵי בַרְזֶל: לַעֲשׂוֹת בָּהֶם מִשְׁפָּט כָּתוּב הָדָר הוּא לְכָל־חֲסִידָיו הַלְ֒לוּיָהּ          </Text>
+    const hebrew = `הַלְ֒לוּיָהּ שִֽׁירוּ לַיהוָֹה שִׁיר חָדָשׁ תְּהִלָּתוֹ בִּקְהַל חֲסִידִים: יִשְׂמַח יִשְׂרָאֵל בְּעֹשָׂיו בְּנֵי־צִיּוֹן יָגִֽילוּ בְמַלְכָּם: יְהַלְ֒לוּ שְׁמוֹ בְמָחוֹל בְּתֹף וְכִנּוֹר יְזַמְּ֒רוּ־לוֹ: כִּי־רוֹצֶה יְהֹוָה בְּעַמּוֹ יְפָאֵר עֲנָוִים בִּישׁוּעָה: יַעְלְזוּ חֲסִידִים בְּכָבוֹד יְרַנְּנוּ עַל־מִשְׁכְּבוֹתָם: רוֹמְ֒מוֹת אֵל בִּגְרוֹנָם וְחֶֽרֶב פִּיפִיּוֹת בְּיָדָם: לַעֲשׂוֹת נְקָמָה בַגּוֹיִם תּוֹכֵחוֹת בַּלְאֻמִּים: לֶאְסֹר מַלְכֵיהֶם בְּזִקִּים וְנִכְבְּדֵיהֶם בְּכַבְלֵי בַרְזֶל: לַעֲשׂוֹת בָּהֶם מִשְׁפָּט כָּתוּב הָדָר הוּא לְכָל־חֲסִידָיו הַלְ֒לוּיָהּ          `
+    const english = `Praise God. 
+    Sing a new song to Adonoy, 
+    His praise in the assembly of the pious.
+     Israel will rejoice in its Maker; 
+    the children of Zion will exult in their King.
+     They will praise His Name with dance; 
+    with drum and harp they will make music to Him. 
+    Because Adonoy desires His people; 
+    He will adorn the humble with deliverance. 
+    The pious will rejoice in honor; 
+    they will sing joyously upon their beds. 
+    High praises of the Almighty in their throats, 
+    and a double-edged sword in their hand. 
+    To perform vengeance upon the nations, 
+    chastisement upon the peoples. 
+    To bind their kings with chains, 
+    and their nobles with iron fetters.
+     To execute upon them [the] written judgment; 
+    it is the splendor of all His pious ones. Praise God.
     `
-    const english = `Praise God. Sing a new song to Adonoy,28 His praise in the assembly of the pious. Israel will rejoice in its Maker; the children of Zion will exult in their King.29 They will praise His Name with dance; with drum and harp they will make music to Him. Because Adonoy desires His people; He will adorn the humble with deliverance.30 The pious will rejoice in honor; they will sing joyously upon their beds. High praises of the Almighty in their throats, and a double-edged sword in their hand.31 To perform vengeance upon the nations, chastisement upon the peoples. To bind their kings with chains, and their nobles with iron fetters. To execute upon them [the] written judgment; it32 is the splendor of all His pious ones. Praise God.`
     const hebArray = 	[, "הַלְ֒לוּיָהּ", "שִֽׁירוּ לַיהוָֹה שִׁיר חָדָשׁ", "תְּהִלָּתוֹ בִּקְהַל חֲסִידִים", "יִשְׂמַח יִשְׂרָאֵל בְּעֹשָׂיו", "בְּנֵי־צִיּוֹן יָגִֽילוּ בְמַלְכָּם", "יְהַלְ֒לוּ שְׁמוֹ בְמָחוֹל", "בְּתֹף וְכִנּוֹר יְזַמְּ֒רוּ־לוֹ", "כִּי־רוֹצֶה יְהֹוָה בְּעַמּוֹ", "יְפָאֵר עֲנָוִים בִּישׁוּעָה", "יַעְלְזוּ חֲסִידִים בְּכָבוֹד", "יְרַנְּנוּ עַל־מִשְׁכְּבוֹתָם", "רוֹמְ֒מוֹת אֵל בִּגְרוֹנָם", "וְחֶֽרֶב פִּיפִיּוֹת בְּיָדָם", "לַעֲשׂוֹת נְקָמָה בַגּוֹיִם", "תּוֹכֵחוֹת בַּלְאֻמִּים", "לֶאְסֹר מַלְכֵיהֶם בְּזִקִּים", "וְנִכְבְּדֵיהֶם בְּכַבְלֵי בַרְזֶל", "לַעֲשׂוֹת בָּהֶם מִשְׁפָּט כָּתוּב", "הָדָר הוּא לְכָל־חֲסִידָיו הַלְ֒לוּיָהּ", ]
-    const engArray = ["Praise God.", "Sing a new song to Adonoy,", "His praise in the assembly of the pious.", "Israel will rejoice in its Maker;", "the children of Zion will exult in their King.", "They will praise His Name with dance;", "with drum and harp they will make music to Him.", "Because Adonoy desires His people;", "He will adorn the humble with deliverance.", "The pious will rejoice in honor;", "they will sing joyously upon their beds.", "High praises of the Almighty in their throats,", "and a double-edged sword in their hand.", "To perform vengeance upon the nations,", "chastisement upon the peoples.", "To bind their kings with chains,", "and their nobles with iron fetters.", "To execute upon them [the] written judgment;", "it is the splendor of all His pious ones. Praise God."]
+    const engArray = ["test", "Praise God.", "Sing a new song to Adonoy,", "His praise in the assembly of the pious.", "Israel will rejoice in its Maker;", "the children of Zion will exult in their King.", "They will praise His Name with dance;", "with drum and harp they will make music to Him.", "Because Adonoy desires His people;", "He will adorn the humble with deliverance.", "The pious will rejoice in honor;", "they will sing joyously upon their beds.", "High praises of the Almighty in their throats,", "and a double-edged sword in their hand.", "To perform vengeance upon the nations,", "chastisement upon the peoples.", "To bind their kings with chains,", "and their nobles with iron fetters.", "To execute upon them [the] written judgment;", "it is the splendor of all His pious ones. Praise God."]
 
     var linearArray = hebArray.reduce(function(arr, v, i) {
         return arr.concat(v, engArray[i]); 

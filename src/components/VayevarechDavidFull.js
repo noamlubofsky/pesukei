@@ -57,9 +57,35 @@ function VayevarechDavidFull({size, language}) {
             {language === 'english' || language === 'both' ?
             <div>
                 <Text fontSize={size}>
-            And David blessed Adonoy in the presence of all the assembly; and David said, Blessed are You, Adonoy, God of Israel, our father,45 forever and ever. Yours, Adonoy, is the greatness, the might, the glory the victory and the beauty,46 for all that is in heaven and on earth [is Yours]; Yours, Adonoy, is the kingdom and You are uplifted, [supreme] over all rulers. The riches and the honor come from You, and You rule over all; in Your hand are power and might, and [it is] in Your hand to bestow greatness and strength upon all. And now, our God, we give thanks to You and praise Your glorious Name.47            </Text>
+                And David blessed Adonoy 
+in the presence of all the assembly; 
+and David said, 
+Blessed are You, Adonoy, 
+God of Israel, our father, 
+forever and ever. 
+Yours, Adonoy, is the greatness, the might, the glory the victory and the beauty, 
+for all that is in heaven and on earth [is Yours]; 
+Yours, Adonoy, is the kingdom and You are uplifted, [supreme] over all rulers. 
+The riches and the honor come from You, 
+and You rule over all;
+ in Your hand are power and might, 
+and [it is] in Your hand to bestow greatness and strength upon all.
+ And now, our God, we give thanks to You 
+and praise Your glorious Name.
+            </Text>
             <Text fontSize={size}>
-            You alone are Adonoy;48 You have made the skies, the skies of skies49 and all their hosts,50 the earth and all that is upon it, the seas and all that is in them; and You give life to all of them, and the heavenly hosts51 bow before You. You are Adonoy, the God Who chose Avrom, and brought him out of Ur Kasdim and established his name (as) Avrohom.52 And You found his heart faithful before You,53            
+            You alone are Adonoy; 
+You have made the skies, 
+the skies of skies and all their hosts,
+ the earth and all that is upon it, 
+the seas and all that is in them; 
+and You give life to all of them,
+ and the heavenly hosts bow before You. 
+You are Adonoy, 
+the God Who chose Avrom, 
+and brought him out of Ur Kasdim 
+and established his name (as) Avrohom.
+ And You found his heart faithful before You.
             </Text>
             </div>
             : null}

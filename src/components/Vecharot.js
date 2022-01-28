@@ -5,9 +5,24 @@ function Vecharot({size, language}) {
 
     const hebrew = `            וְכָרוֹת עִמּוֹ הַבְּ֒רִית לָתֵת אֶת־אֶרֶץ הַכְּ֒נַֽעֲנִי הַחִתִּי הָֽאֱמֹרִי וְהַפְּ֒רִזִּי וְהַיְבוּסִי וְהַגִּרְגָּשִׁי לָתֵת לְזַרְעוֹ. וַתָּקֶם אֶת־דְּבָרֶיךָ כִּי צַדִּיק אָֽתָּה. וַתֵּרֶא אֶת־עֳנִי אֲבֹתֵינוּ בְּמִצְרָיִם וְאֶת־זַֽעֲקָתָם שָׁמַעְתָּ עַל־יַם־סֽוּף. וַתִּתֵּן אֹתֹת וּמֹֽפְ֒תִים בְּפַרְעֹה וּבְכָל־עֲבָדָיו וּבְכָל־עַם אַרְצוֹ כִּי יָדַעְתָּ כִּי הֵזִידוּ עֲלֵיהֶם. וַתַּֽעַשׂ־לְךָ שֵׁם כְּהַיּוֹם הַזֶּֽה. וְהַיָּם בָּקַעְתָּ לִפְנֵיהֶם וַיַּֽעַבְרוּ בְתוֹךְ־הַיָּם בַּיַּבָּשָׁה. וְֽאֶת־רֹדְ֒פֵיהֶם הִשְׁלַכְתָּ בִמְצוֹלֹת כְּמוֹ־אֶבֶן בְּמַיִם עַזִּֽים            
     `
-    const english = `and You made the covenant with him54 to give the land of the Canaanites, the Hittites, the Amorites, the Perizites, the Jebusites, and the Girgashites, to give to his seed; and You kept Your word, for You are righteous. And You saw the affliction of our fathers in Egypt, and their cry You heard at the Sea of Reeds. And You imposed signs and wonders against Pharaoh and all his servants and all the people of his land, for You knew that they acted malevolently against them;55 and (thus) You have made a name for Yourself, like this day.56 And the sea, You split before them, and they went through the midst of the sea on the dry land; and their pursuers You hurled into the depths, like a stone into mighty waters.57`
+    const english = `and You made the covenant with him 
+    to give the land 
+    of the Canaanites, the Hittites, the Amorites, the Perizites, the Jebusites, and the Girgashites,
+     to give to his seed; 
+    and You kept Your word, for You are righteous. 
+    And You saw the affliction of our fathers in Egypt, 
+    and their cry You heard at the Sea of Reeds. 
+    And You imposed signs and wonders against Pharaoh
+     and all his servants and all the people of his land, 
+    for You knew that they acted malevolently against them; 
+    and (thus) You have made a name for Yourself, like this day. 
+    And the sea, You split before them,
+     and they went through the midst of the sea on the dry land; 
+    and their pursuers You hurled into the depths, 
+    like a stone into mighty waters.
+    `
     const hebArray = [, "וְכָרוֹת עִמּוֹ הַבְּ֒רִית", "לָתֵת אֶת־אֶרֶץ", "הַכְּ֒נַֽעֲנִי הַחִתִּי הָֽאֱמֹרִי וְהַפְּ֒רִזִּי וְהַיְבוּסִי וְהַגִּרְגָּשִׁי", "לָתֵת לְזַרְעוֹ", "וַתָּקֶם אֶת־דְּבָרֶיךָ כִּי צַדִּיק אָֽתָּה", "וַתֵּרֶא אֶת־עֳנִי אֲבֹתֵינוּ בְּמִצְרָיִם", "וְאֶת־זַֽעֲקָתָם שָׁמַעְתָּ עַל־יַם־סֽוּף", "וַתִּתֵּן אֹתֹת וּמֹֽפְ֒תִים בְּפַרְעֹה", "וּבְכָל־עֲבָדָיו וּבְכָל־עַם אַרְצוֹ", "כִּי יָדַעְתָּ כִּי הֵזִידוּ עֲלֵיהֶם", "וַתַּֽעַשׂ־לְךָ שֵׁם כְּהַיּוֹם הַזֶּֽה", "וְהַיָּם בָּקַעְתָּ לִפְנֵיהֶם", "וַיַּֽעַבְרוּ בְתוֹךְ־הַיָּם בַּיַּבָּשָׁה", "וְֽאֶת־רֹדְ֒פֵיהֶם הִשְׁלַכְתָּ בִמְצוֹלֹת", "כְּמוֹ־אֶבֶן בְּמַיִם עַזִּֽים"]
-    const engArray = ["and You made the covenant with him", "to give the land", "of the Canaanites, the Hittites, the Amorites, the Perizites, the Jebusites, and the Girgashites,", "to give to his seed;", "and You kept Your word, for You are righteous.", "And You saw the affliction of our fathers in Egypt,", "and their cry You heard at the Sea of Reeds.", "And You imposed signs and wonders against Pharaoh", "and all his servants and all the people of his land,", "for You knew that they acted malevolently against them;", "and (thus) You have made a name for Yourself, like this day.", "And the sea, You split before them,", "and they went through the midst of the sea on the dry land;", "and their pursuers You hurled into the depths,", "like a stone into mighty waters."]
+    const engArray = ["test", "and You made the covenant with him", "to give the land", "of the Canaanites, the Hittites, the Amorites, the Perizites, the Jebusites, and the Girgashites,", "to give to his seed;", "and You kept Your word, for You are righteous.", "And You saw the affliction of our fathers in Egypt,", "and their cry You heard at the Sea of Reeds.", "And You imposed signs and wonders against Pharaoh", "and all his servants and all the people of his land,", "for You knew that they acted malevolently against them;", "and (thus) You have made a name for Yourself, like this day.", "And the sea, You split before them,", "and they went through the midst of the sea on the dry land;", "and their pursuers You hurled into the depths,", "like a stone into mighty waters."]
 
     var linearArray = hebArray.reduce(function(arr, v, i) {
         return arr.concat(v, engArray[i]); 

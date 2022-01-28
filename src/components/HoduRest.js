@@ -58,10 +58,56 @@ function HoduRest({size, language}) {
             {language === 'english' || language === 'both' ?
             <div>
                 <Text fontSize={size}>
-            And He, the Merciful One, atones iniquity and does not destroy; He frequently withdraws His anger and does not arouse all His rage. You, Adonoy, withhold not Your mercy from me; may Your kindness and Your truth18 always protect me. Remember Your mercies Adonoy and kindnesses, for they are from the beginning of the world.19 Give might to God,20 His pride (majesty) hovers over Israel, and His might is in the clouds. You are awesome, God, from Your Sanctuaries,21 Almighty of Israel—He grants might and power to the people; blessed is God. Almighty of vengeance, Adonoy, Almighty of vengeance, reveal Yourself.22 Arise, Judge of the earth! Repay the arrogant their just reward. Deliverance is Adonoy’s.23 Upon Your people is Your blessing. Selah. Adonoy of Hosts is with us, a stronghold for us is the God of Jacob. Selah. Adonoy of Hosts! Fortunate is the man who trusts in You. Adonoy, deliver [us]. The King will answer us on the day we call.            
+                And He, the Merciful One, atones iniquity and does not destroy;
+ He frequently withdraws His anger 
+and does not arouse all His rage.
+ You, Adonoy, withhold not Your mercy from me; 
+may Your kindness and Your truth always protect me. 
+Remember Your mercies Adonoy and kindnesses,
+ for they are from the beginning of the world. 
+Give might to God, 
+His pride (majesty) hovers over Israel,
+ and His might is in the clouds. 
+You are awesome, God, from Your Sanctuaries, 
+Almighty of Israel—He grants might and power to the people;
+ blessed is God. 
+Almighty of vengeance, Adonoy, 
+Almighty of vengeance, reveal Yourself. 
+Arise, Judge of the earth! 
+Repay the arrogant their just reward. 
+Deliverance is Adonoy’s. 
+Upon Your people is Your blessing. Selah. 
+Adonoy of Hosts is with us,
+ a stronghold for us is the God of Jacob. Selah. 
+Adonoy of Hosts! 
+Fortunate is the man who trusts in You. 
+Adonoy, deliver [us]. 
+The King will answer us on the day we call.
+
             </Text>
             <Text fontSize={size}>
-            Deliver Your people and bless Your inheritance, tend them and uplift them forever.24 Our soul yearned for Adonoy, our help and our shield is He. For in Him our hearts will rejoice, for in His holy Name we trusted. May Your kindness, Adonoy, be upon us, as we have waited for You. Show us Your kindness, Adonoy, and grant25 us Your deliverance. Arise—come to our aid, and redeem us for the sake of Your kindness. I am Adonoy, Your God, Who brought you up from the land of Egypt; open your mouth wide, and I will fill it.26 Fortunate is the people whose lot is thus, fortunate is the people for whom Adonoy is their God. In Your loving kindness I trust, My heart will exult in Your deliverance; I will sing to Adonoy, for He dealt kindly with me.27           
+            Deliver Your people 
+and bless Your inheritance,
+ tend them and uplift them forever. 
+Our soul yearned for Adonoy, 
+our help and our shield is He.
+ For in Him our hearts will rejoice, 
+for in His holy Name we trusted. 
+May Your kindness, Adonoy, be upon us, 
+as we have waited for You.
+ Show us Your kindness, Adonoy, 
+and grant us Your deliverance. 
+Arise—come to our aid, 
+and redeem us for the sake of Your kindness.
+ I am Adonoy, Your God, 
+Who brought you up from the land of Egypt; 
+open your mouth wide, and I will fill it. 
+Fortunate is the people whose lot is thus, 
+fortunate is the people for whom Adonoy is their God.
+ In Your loving kindness I trust, 
+My heart will exult in Your deliverance; 
+I will sing to Adonoy, for He dealt kindly with me.
+
             </Text>
             </div>
             : null}

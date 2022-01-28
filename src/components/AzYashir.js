@@ -57,9 +57,79 @@ Then Moses and the Children of Israel sang this song to Adonoy, and they said: I
             {language === 'english' || language === 'both' ?
             <div>
             <Text fontSize={size}>
-            On that day,3 Adonoy delivered Israel from the hand of Egypt, and Israel saw the Egyptians dead on the seashore. And Israel saw the great hand4 which Adonoy wielded against Egypt, and the people feared Adonoy, and they believed in Adonoy, and that Moses was His servant.            </Text>
+            On that day, Adonoy delivered 
+Israel from the hand of Egypt,
+ and Israel saw the Egyptians dead on the seashore. 
+And Israel saw the great hand 
+which Adonoy wielded against Egypt, 
+and the people feared Adonoy, 
+and they believed in Adonoy, 
+and that Moses was His servant.
+            </Text>
             <Text fontSize={size}>
-Then Moses and the Children of Israel sang this song to Adonoy, and they said: I will sing to Adonoy for He is most high;5 the horse with its rider, He threw into the sea. The strength and retribution of God was the cause of my deliverance;6 this is my Almighty and I will glorify Him, God of my father and I will exalt Him. Adonoy is master of war Adonoy is His Name. Pharaoh’s chariots and army, He hurled into the sea; and his elite officers were drowned in the Sea of Reeds. The deep waters covered them; they descended into the depths like stone. Your right hand Adonoy is adorned with power, Your right hand Adonoy crushes the enemy. And in Your great majesty, You destroyed Your opponents; You sent forth Your fury, it consumed them like straw.7 And with the wind from Your nostrils the waters were heaped up, flowing water stood erect like a wall; the deep waters congealed in the heart of the sea.8 The enemy (Pharaoh) said: I will pursue [them], I will overtake [them], I will divide the spoils; I will satisfy myself; I will unsheathe my sword, my hand will destroy them. You blew with Your wind, the sea covered them; they sank like lead in the mighty waters.9 Who is like You among the mighty, Adonoy! who is like You? [You are] adorned in holiness, awesome in praise, performing wonders.10 You stretched out Your right hand, the earth swallowed them. You led in Your kindliness, the people whom You redeemed; You guided them with Your might to Your holy dwelling place. The peoples heard and trembled, pangs of fear gripped the inhabitants of Philistia.11 Then the chieftains of Edom panicked, the mighty men of Moab were seized with trembling, all the inhabitants of Canaan melted away.12 Terror and dread fall upon them; at the greatness of Your arm they were still as stone; until Your people cross over, Adonoy, until [they] cross over,13 —the people You have acquired. You will bring them and plant them14 on the mountain of Your inheritance, the place for Your habitation which You, Adonoy, have made; the Sanctuary, my Master, [which] Your hands established.15 Adonoy will reign forever and ever.16 Adonoy will reign forever and ever. Adonoy! His sovereignty is established forever and to all eternity.17 When Pharaoh’s horses, with his chariots, and his horsemen, went into the sea, Adonoy turned back on them the waters of the sea; and the Children of Israel walked on dry land in the midst of the sea.18 For the kingship is Adonoy’s and He rules over nations.19 And deliverers will go up to Mount Zion to judge Mount Esau, and the kingdom will be Adonoy’s.20 And Adonoy will be King over the whole earth; on that day Adonoy will be One and His Name One.            
+            Then Moses and the Children of Israel sang 
+this song to Adonoy, 
+and they said:
+ I will sing to Adonoy for He is most high;
+ the horse with its rider, He threw into the sea. 
+The strength and retribution of God 
+was the cause of my deliverance; 
+this is my Almighty and I will glorify Him, 
+God of my father and I will exalt Him. 
+Adonoy is master of war 
+Adonoy is His Name. 
+Pharaoh’s chariots and army, He hurled into the sea; 
+and his elite officers were drowned in the Sea of Reeds.
+ The deep waters covered them; 
+they descended into the depths like stone. 
+Your right hand Adonoy is adorned with power, 
+Your right hand Adonoy crushes the enemy. 
+And in Your great majesty, You destroyed Your opponents;
+ You sent forth Your fury, it consumed them like straw. 
+And with the wind from Your nostrils the waters were heaped up, 
+flowing water stood erect like a wall; 
+the deep waters congealed in the heart of the sea.
+ The enemy (Pharaoh) said: 
+I will pursue [them], I will overtake [them], 
+I will divide the spoils;
+ I will satisfy myself;
+ I will unsheathe my sword,
+ my hand will destroy them. 
+You blew with Your wind, the sea covered them;
+ they sank like lead in the mighty waters. 
+Who is like You among the mighty, Adonoy! 
+who is like You? [You are] adorned in holiness, 
+awesome in praise, performing wonders. 
+You stretched out Your right hand, the earth swallowed them. 
+You led in Your kindliness, the people whom You redeemed; 
+You guided them with Your might to Your holy dwelling place. 
+The peoples heard and trembled, 
+pangs of fear gripped the inhabitants of Philistia. 
+Then the chieftains of Edom panicked,
+ the mighty men of Moab were seized with trembling,
+ all the inhabitants of Canaan melted away. 
+Terror and dread fall upon them; 
+at the greatness of Your arm they were still as stone; 
+until Your people cross over, Adonoy,
+ until [they] cross over, the people You have acquired. 
+You will bring them and plant them on the mountain of Your inheritance,
+ the place for Your habitation which You, Adonoy, have made; 
+the Sanctuary, my Master, [which] Your hands established. 
+Adonoy will reign forever and ever.
+ Adonoy will reign forever and ever. 
+Adonoy! His sovereignty is established forever and to all eternity. 
+When Pharaoh’s horses,
+ with his chariots, and his horsemen, went into the sea, 
+Adonoy turned back on them the waters of the sea; 
+and the Children of Israel walked on dry land in the midst of the sea. 
+For the kingship is Adonoy’s 
+and He rules over nations. 
+And deliverers will go up to Mount Zion 
+to judge Mount Esau,
+ and the kingdom will be Adonoy’s. 
+And Adonoy will be King over the whole earth; 
+on that day Adonoy will be One 
+and His Name One.
 </Text>
 </div>
             : null}
