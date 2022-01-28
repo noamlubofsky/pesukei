@@ -137,13 +137,6 @@ function App() {
         <TLetter>-</TLetter>
           </Letters>
           </Button>
-        <Button onClick={() => setLanguage('hebrew')}>
-          <Letters>
-        <TLetter>─</TLetter>
-          <Letter>א</Letter>
-        <TLetter>A</TLetter>
-          </Letters>
-          </Button>
         <Button onClick={() => setLanguage('linear')}>
           <Letters>
           <Letter>א</Letter>
@@ -151,6 +144,13 @@ function App() {
           <Letter>A</Letter>
           </Letters>
         </Button>
+        <Button onClick={() => setLanguage('hebrew')}>
+          <Letters>
+        <TLetter>─</TLetter>
+          <Letter>א</Letter>
+        <TLetter>A</TLetter>
+          </Letters>
+          </Button>
 
       </Buttons>
       </Top>}
