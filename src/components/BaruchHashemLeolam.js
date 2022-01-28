@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 function BaruchHashemLeolam({size, language}) {
 
-    const hebrew = `            בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן: בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ: בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ: וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן      
+    const hebrew = `בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן: בָּרוּךְ יְהֹוָה מִצִּיּוֹן שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ: בָּרוּךְ יְהֹוָה אֱלֹהִים אֱלֹהֵי יִשְׂרָאֵל עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ: וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן      
     `
     const english = `Blessed is Adonoy forever, Amein and Amein!41 Blessed is Adonoy from Zion, Who dwells in Jerusalem. Praise God.42 Blessed is Adonoy, God, God of Israel Who alone performs wonders.43 And blessed is the Name of His glory forever, and may His glory fill the whole earth. Amein and Amein!44`
-    const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
-    const engArray = splitMulti(english, ['.', ',', ':', ';'])
+    const hebArray = ["בָּרוּךְ יְהֹוָה לְעוֹלָם אָמֵן וְאָמֵן", "בָּרוּךְ יְהֹוָה מִצִּיּוֹן", "שֹׁכֵן יְרוּשָׁלָֽםִ הַלְ֒לוּיָהּ", "בָּרוּךְ יְהֹוָה אֱלֹהִים", "אֱלֹהֵי יִשְׂרָאֵל", "עֹשֵׂה נִפְלָאוֹת לְבַדּוֹ", "וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם", "וְיִמָּלֵא כְבוֹדוֹ אֶת־כָּל־הָאָֽרֶץ אָמֵן וְאָמֵן", ]
+    const engArray = ["Blessed is Adonoy forever, Amein and Amein!", "Blessed is Adonoy from Zion,", "Who dwells in Jerusalem. Praise God.", "Blessed is Adonoy, God,", "God of Israel", "Who alone performs wonders.", "And blessed is the Name of His glory forever,", "and may His glory fill the whole earth. Amein and Amein!"]
 
     var linearArray = hebArray.reduce(function(arr, v, i) {
         return arr.concat(v, engArray[i]); 

@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 function Hallelukah5({size, language}) {
 
-    const hebrew = `            הַלְ֒לוּיָהּ הַֽלְ֒לוּ־אֵל בְּקָדְשׁוֹ הַלְ֒לֽוּהוּ בִּרְקִֽיעַ עֻזּוֹ: הַלְ֒לֽוּהוּ בִּגְבוּרֹתָיו הַלְ֒לֽוּהוּ כְּרֹב גֻּדְלוֹ: הַלְ֒לֽוּהוּ בְּתֵֽקַע שׁוֹפָר הַלְ֒לֽוּהוּ בְּנֵֽבֶל וְכִנּוֹר: הַלְ֒לֽוּהוּ בְּתֹף וּמָחוֹל הַלְ֒לֽוּהוּ בְּמִנִּים וְעֻגָב: הַלְ֒לֽוּהוּ בְצִלְצְלֵי־שָֽׁמַע הַלְ֒לֽוּהוּ בְּצִלְצְלֵי תְרוּעָה: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ        </Text>
+    const hebrew = `הַלְ֒לוּיָהּ הַֽלְ֒לוּ־אֵל בְּקָדְשׁוֹ הַלְ֒לֽוּהוּ בִּרְקִֽיעַ עֻזּוֹ: הַלְ֒לֽוּהוּ בִּגְבוּרֹתָיו הַלְ֒לֽוּהוּ כְּרֹב גֻּדְלוֹ: הַלְ֒לֽוּהוּ בְּתֵֽקַע שׁוֹפָר הַלְ֒לֽוּהוּ בְּנֵֽבֶל וְכִנּוֹר: הַלְ֒לֽוּהוּ בְּתֹף וּמָחוֹל הַלְ֒לֽוּהוּ בְּמִנִּים וְעֻגָב: הַלְ֒לֽוּהוּ בְצִלְצְלֵי־שָֽׁמַע הַלְ֒לֽוּהוּ בְּצִלְצְלֵי תְרוּעָה: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ: כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ        </Text>
     `
     const english = `Praise God. Praise the Almighty in His Sanctuary33 Praise God in the firmament of His might34 Praise Him for His mighty deeds; Praise Him according to the abundance of His greatness. Praise Him with the blowing of the shofar;35 praise Him with lyre and harp.36 Praise Him with drum and dance.37 Praise Him with stringed instruments and flute.38 Praise Him with resounding cymbals.39 Praise Him with clanging cymbals. Let every soul praise God. Praise God. Let every soul praise God. Praise God.40`
-    const hebArray = splitMulti(hebrew, ['.', ',', ':', ';'])
-    const engArray = splitMulti(english, ['.', ',', ':', ';'])
+    const hebArray = ["הַלְ֒לוּיָהּ", "הַֽלְ֒לוּ־אֵל בְּקָדְשׁוֹ", "הַלְ֒לֽוּהוּ בִּרְקִֽיעַ עֻזּוֹ", "הַלְ֒לֽוּהוּ בִּגְבוּרֹתָיו", "הַלְ֒לֽוּהוּ כְּרֹב גֻּדְלוֹ", "הַלְ֒לֽוּהוּ בְּתֵֽקַע שׁוֹפָר", "הַלְ֒לֽוּהוּ בְּנֵֽבֶל וְכִנּוֹר", "הַלְ֒לֽוּהוּ בְּתֹף וּמָחוֹל", "הַלְ֒לֽוּהוּ בְּמִנִּים וְעֻגָב", "הַלְ֒לֽוּהוּ בְצִלְצְלֵי־שָֽׁמַע", "הַלְ֒לֽוּהוּ בְּצִלְצְלֵי תְרוּעָה", "כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ", "כֹּל הַנְּ֒שָׁמָה תְּהַלֵּל יָהּ הַלְ֒לוּיָהּ"]
+    const engArray = ["Praise God.", "Praise the Almighty in His Sanctuary", "Praise God in the firmament of His might", "Praise Him for His mighty deeds;", "Praise Him according to the abundance of His greatness.", "Praise Him with the blowing of the shofar;", "praise Him with lyre and harp.", "Praise Him with drum and dance.", "Praise Him with stringed instruments and flute.", "Praise Him with resounding cymbals.", "Praise Him with clanging cymbals.", "Let every soul praise God. Praise God.", "Let every soul praise God. Praise God."]
 
     var linearArray = hebArray.reduce(function(arr, v, i) {
         return arr.concat(v, engArray[i]); 
