@@ -317,7 +317,7 @@ const timezone = (Intl.DateTimeFormat().resolvedOptions().timeZone)
             }
 
             </Container>
-
+            <br></br>
             <Header>Halachot</Header>
             <Heading>The time to say Pesukei DeZimrah is from Alot Hashachar (72 minutes before sunrise) until the 4th hour in Shaot Zmaniot.[1]</Heading>
             <Heading>If one missed the time unintentionally or unwillingly one can say pesukei dzimra after 4 hours until Chatzot with shem umalchut.[2]</Heading>
@@ -340,7 +340,7 @@ const Buttons = styled.div`
 //   grid-template-columns: 10fr 10fr;
 //   justify-content: center;
 //   align-items: center;
-margin-bottom: 25vh;
+margin-bottom: 2vh;
 // display: flex;
 // flex-direction: row;
 width: 100%;
@@ -392,7 +392,7 @@ margin-bottom: 5vh;
 const ShowButton = styled.button`
 
   margin-top: 2vh;
-//   margin-bottom: 2vh;
+  margin-bottom: 2vh;
   width: 35vw;
   height: 13vh;
   /* line-height: 50px; */
@@ -497,6 +497,7 @@ outline: none;
 background-color: transparent;
 border-radius: none;
 // transition: height 0.25s linear;
+// margin-bottom: 5vh;
 
 &:focus {
     outline: none;
@@ -517,6 +518,7 @@ margin-right: 5vw;
 font-size: 1.5em;
 font-weight: 45000;
 text-decoration: underline;
+padding: 2px;
 `;
 
 const Time = styled.h1`
@@ -529,7 +531,7 @@ const TimeHeader = styled.h2`
 margin-right: 5vw;
 margin-left: 5vw;
 font-weight: 600;
-margin-top: 5vh;
+// margin-top: 15vh;
 `;
 
 const P = styled.p`
@@ -557,6 +559,7 @@ const HeaderContainer = styled.div`
 align-items: center;
 justify-content: center;
 text-align: center;
+margin-top: 20vh;
 `;
 
 export default Zmanim;
