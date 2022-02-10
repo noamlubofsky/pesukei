@@ -253,7 +253,7 @@ function Footer({minimum,
             window.location.pathname === '/Zmanim' || 
             window.location.pathname === '/Halachot' 
             ? <CompassButton onClick={toCompass}>🧭</CompassButton> : null} 
-                {window.location.pathname === '/' ? <Copyright>© Pesukei</Copyright> :
+                {window.location.pathname === '/' ? <Copyright>© {new Date().getFullYear()} Pesukei</Copyright> :
                 <Buttons>
             {/* {minimum ? <Button onClick={minimumClick}>{window.location.pathname === '/Yishtabach' ? 'Done' : 'Next'}</Button> : null} */}
             {minimum ? (window.location.pathname === '/Yishtabach' ||

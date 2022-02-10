@@ -85,6 +85,8 @@ color: #424242;
 
 const Container = styled.div`
 min-height: 64vh;
+-webkit-backface-visibility: hidden;
+
 `;
 
 const Heading = styled.h1`
@@ -95,6 +97,8 @@ font-family: 'Times New Roman', Georgia, serif;
 
 const Text = styled.div`
 font-size: ${props => props.fontSize}px;
+-webkit-backface-visibility: hidden;
+
 text-align: right;
 margin-right: 5vw;
 margin-left: 2vw;
